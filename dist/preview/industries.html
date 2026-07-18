@@ -85,26 +85,6 @@ p{margin-bottom:1rem}
 .nav-phone svg{width:18px;height:18px;color:var(--acc)}
 .nav-phone:hover{color:var(--acc-d)}
 .nav-getbtn{padding:11px 20px;font-size:.92rem}
-/* top drawer (hidden quick menu above nav) */
-.topdrawer{position:fixed;top:0;left:0;right:0;z-index:150}
-.td-panel{background:var(--ink);color:#c9d2e0;max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.2,.7,.2,1);box-shadow:0 22px 44px rgba(11,18,32,.28)}
-.topdrawer.open .td-panel{max-height:340px}
-.td-inner{display:flex;gap:44px;flex-wrap:wrap;padding:22px 26px}
-.td-col{display:flex;flex-direction:column;gap:8px;min-width:180px}
-.td-h{font-family:var(--head);font-weight:700;color:#fff;font-size:.7rem;text-transform:uppercase;letter-spacing:.14em;margin-bottom:4px}
-.td-lk{display:inline-flex;align-items:center;gap:9px;color:#c9d2e0;font-size:.9rem}
-.td-lk svg{width:17px;height:17px;color:var(--acc-lt);flex-shrink:0}
-.td-lk:hover{color:#fff}
-.td-net{display:flex;flex-wrap:wrap;gap:6px 16px}
-.td-net a{color:#c9d2e0;font-size:.9rem}
-.td-net a:hover{color:var(--acc-lt)}
-.td-note{display:inline-flex;align-items:center;gap:8px;color:#8b93a2;font-size:.8rem;margin-top:6px}
-.td-note svg{width:15px;height:15px}
-.td-pull{position:absolute;top:100%;left:50%;transform:translateX(-50%);display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;border:0;border-radius:0 0 12px 12px;padding:5px 16px;font-family:var(--head);font-weight:600;font-size:.76rem;cursor:pointer;box-shadow:0 8px 18px rgba(11,18,32,.22);transition:background .2s}
-.td-pull:hover{background:var(--acc)}
-.td-dot{width:7px;height:7px;border-radius:50%;background:var(--acc-lt)}
-.td-caret{font-style:normal;transition:transform .3s;font-size:.9rem;line-height:1}
-.topdrawer.open .td-caret{transform:rotate(180deg)}
 /* hero */
 .hero{padding:74px 0 40px;position:relative}
 .hero .container{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
@@ -240,13 +220,34 @@ p{margin-bottom:1rem}
 .ctabox p{color:#a9b4c6;max-width:52ch;margin:14px auto 26px}
 .ctabox .acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 /* footer */
-.footer{background:var(--ink);color:#8f9bb0;padding:64px 0 28px}
-.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:34px;margin-bottom:40px}
-.footer h4{font-family:var(--head);color:#fff;font-size:.95rem;margin-bottom:15px}
-.footer ul{list-style:none}.footer li{margin-bottom:9px}
-.footer a:hover{color:var(--acc-lt)}
-.footer .brand{color:#fff}
-.foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.83rem;color:#69748a}
+.footer{position:relative;background:var(--ink);color:#93a0b6;padding:0 0 26px;overflow:hidden}
+.footer::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--acc),var(--acc-lt),var(--acc))}
+.footer::after{content:"";position:absolute;top:-130px;right:-90px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(194,11,88,.16),transparent 70%);pointer-events:none}
+.foot-top{position:relative;display:grid;grid-template-columns:1.5fr 2fr;gap:48px;padding:60px 0 42px}
+.foot-brand .brand{color:#fff}
+.foot-tag{margin-top:14px;font-family:var(--head);font-weight:600;color:#fff;font-size:.98rem}
+.foot-descr{margin-top:10px;max-width:44ch;font-size:.92rem;line-height:1.7;color:#8b98ad}
+.foot-rating{display:inline-flex;align-items:center;gap:9px;margin-top:18px;padding:9px 15px;border:1px solid rgba(255,255,255,.14);border-radius:40px;background:rgba(255,255,255,.04)}
+.foot-rating svg{width:18px;height:18px;color:#f5a623}
+.foot-rating strong{color:#fff}
+.foot-rating span{font-size:.86rem;color:#aeb8c8}
+.foot-social{display:flex;gap:12px;margin-top:20px}
+.foot-social a{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.06);color:#cbd3e0;transition:background .2s,color .2s,transform .2s}
+.foot-social a:hover{background:var(--acc);color:#fff;transform:translateY(-3px)}
+.foot-social svg{width:19px;height:19px}
+.foot-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.footer h4{font-family:var(--head);color:#fff;font-size:.95rem;margin-bottom:16px;position:relative;padding-bottom:10px}
+.footer h4::after{content:"";position:absolute;left:0;bottom:0;width:26px;height:2px;background:var(--acc);border-radius:2px}
+.footer ul{list-style:none}.footer li{margin-bottom:11px}
+.footer a{transition:color .2s}.footer a:hover{color:var(--acc-lt)}
+.footer .foot-col a{font-size:.92rem}
+.fdom{display:block;font-size:.76rem;color:#6f7c92;margin-top:1px}
+.foot-col a:hover .fdom{color:var(--acc-lt)}
+.foot-contact a,.foot-hours{display:inline-flex;align-items:center;gap:9px;font-size:.92rem}
+.foot-contact svg,.foot-hours svg{width:17px;height:17px;color:var(--acc-lt);flex-shrink:0}
+.foot-contact .wa-ic,.foot-contact svg[fill]{color:var(--acc-lt)}
+.foot-hours{color:#7f8ca1}
+.foot-bottom{position:relative;border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.83rem;color:#69748a}
 .foot-legal a{color:#8b95a8}.foot-legal a:hover{color:var(--acc-lt)}
 .prose h2{font-family:'Sora',sans-serif;font-size:1.25rem;margin:28px 0 8px}
 .prose p{margin:0 0 6px}
@@ -281,20 +282,21 @@ p{margin-bottom:1rem}
 }
 @media(max-width:1150px){.nav-phone{display:none}}
 @media(max-width:1000px){.nav-links{gap:18px;font-size:.9rem}}
+@media(max-width:880px){.foot-top{grid-template-columns:1fr;gap:36px}}
 @media(max-width:640px){
   .section{padding:60px 0}.nav-links{display:none}.nav-toggle{display:block}
   .site-header.open .nav-links{display:flex;position:absolute;top:78px;left:0;right:0;flex-direction:column;align-items:flex-start;background:#fff;padding:20px 26px;gap:16px;border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
-  .foot-grid{grid-template-columns:1fr}
+  .foot-cols{grid-template-columns:1fr 1fr;gap:24px}
   .btn{width:100%}
   .nav-cta{display:none}
   .hero-visual .fcard{display:none}
   .floaties{display:none}
   .mobar{display:flex}
   .totop{bottom:74px;right:14px}
-  .td-inner{gap:22px;padding:18px 20px}
   .map-wrap{height:320px}
   body{padding-bottom:60px}
 }
+@media(max-width:420px){.foot-cols{grid-template-columns:1fr}}
 
 </style>
 <link rel="alternate" type="application/json" href="/ai-about-sanctify.json" title="About Sanctify (structured summary for AI)">
@@ -302,19 +304,7 @@ p{margin-bottom:1rem}
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.sanctify.co/"},{"@type":"ListItem","position":2,"name":"Industries","item":"https://www.sanctify.co/industries.html"}]}</script>
 </head>
 <body>
-<div class="progress" id="progress"></div><div class="topdrawer" id="topdrawer">
-  <div class="td-panel"><div class="container td-inner">
-    <div class="td-col"><span class="td-h">Quick contact</span>
-      <a class="td-lk" href="tel:+919923352923"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.3 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg>+91-9923352923</a>
-      <a class="td-lk" href="https://wa.me/919923352923" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.29-.15-1.7-.84-1.96-.94-.26-.09-.45-.14-.64.15-.19.29-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.59.13-.13.29-.34.44-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.64-1.55-.88-2.12-.23-.55-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.38s1.02 2.77 1.17 2.96c.15.19 2.02 3.08 4.9 4.32.68.3 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2a10 10 0 0 0-8.55 15.19L2 22l4.94-1.3A10 10 0 1 0 12 2z"/></svg>WhatsApp us</a>
-      <a class="td-lk" href="mailto:business@sanctify.biz"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>business@sanctify.biz</a>
-    </div>
-    <div class="td-col"><span class="td-h">Our network</span><div class="td-net"><a href="https://www.sanctify.in" rel="noopener">Sanctify Goa</a><a href="https://www.sanctify.biz" rel="noopener">Sanctify.biz</a><a href="https://www.sanctify.co.in" rel="noopener">Sanctify Hostings</a><a href="https://www.goa.guru" rel="noopener">Goa Guru</a></div></div>
-    <div class="td-col"><span class="td-h">Follow us</span><div class="td-net"><a href="https://www.facebook.com/sanctify.in" rel="noopener" aria-label="Facebook">Facebook</a><a href="https://www.instagram.com/sanctify.in" rel="noopener" aria-label="Instagram">Instagram</a><a href="https://www.linkedin.com/company/sanctify" rel="noopener" aria-label="LinkedIn">LinkedIn</a></div>
-      <span class="td-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Mon–Sat · Replies within 1 working day</span></div>
-  </div></div>
-  <button class="td-pull" id="tdPull" aria-expanded="false" aria-controls="topdrawer"><span class="td-dot"></span>Quick links &amp; contact<i class="td-caret">⌄</i></button>
-</div><header class="site-header" id="hdr"><div class="container"><nav class="nav" aria-label="Primary">
+<div class="progress" id="progress"></div><header class="site-header" id="hdr"><div class="container"><nav class="nav" aria-label="Primary">
     <a class="brand" href="https://htmlpreview.github.io/?https://github.com/consecrating/Sanctify-Co/blob/feat/corporate-home-preview/dist/preview/index.html"><span class="m">S</span>Sanctify</a>
     <ul class="nav-links"><li><a href="https://htmlpreview.github.io/?https://github.com/consecrating/Sanctify-Co/blob/feat/corporate-home-preview/dist/preview/index.html">Home</a></li><li><a href="https://htmlpreview.github.io/?https://github.com/consecrating/Sanctify-Co/blob/feat/corporate-home-preview/dist/preview/about.html">About</a></li><li><a href="https://htmlpreview.github.io/?https://github.com/consecrating/Sanctify-Co/blob/feat/corporate-home-preview/dist/preview/capabilities.html">Capabilities</a></li><li><a href="https://htmlpreview.github.io/?https://github.com/consecrating/Sanctify-Co/blob/feat/corporate-home-preview/dist/preview/industries.html" class="active">Industries</a></li><li><a href="https://htmlpreview.github.io/?https://github.com/consecrating/Sanctify-Co/blob/feat/corporate-home-preview/dist/preview/work.html">Work</a></li><li><a href="https://htmlpreview.github.io/?https://github.com/consecrating/Sanctify-Co/blob/feat/corporate-home-preview/dist/preview/insights.html">Insights</a></li><li><a href="https://htmlpreview.github.io/?https://github.com/consecrating/Sanctify-Co/blob/feat/corporate-home-preview/dist/preview/contact.html">Contact</a></li></ul>
     <div class="nav-cta">
@@ -335,12 +325,24 @@ p{margin-bottom:1rem}
       <a class="btn btn-wa" href="https://wa.me/919923352923"><svg class="wa-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.29-.15-1.7-.84-1.96-.94-.26-.09-.45-.14-.64.15-.19.29-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.59.13-.13.29-.34.44-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.64-1.55-.88-2.12-.23-.55-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.38s1.02 2.77 1.17 2.96c.15.19 2.02 3.08 4.9 4.32.68.3 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2a10 10 0 0 0-8.55 15.19L2 22l4.94-1.3A10 10 0 1 0 12 2z"/></svg> WhatsApp us</a>
     </div>
   </div></div></section></main><nav class="tagmarq" aria-label="Explore our services"><div class="t"><a href="/capabilities.html#digital-marketing">#DigitalMarketing</a><span class="s">✦</span><a href="/capabilities.html#seo">#SEO</a><span class="s">✦</span><a href="/capabilities.html#web-design-development">#WebDesign</a><span class="s">✦</span><a href="/capabilities.html#digital-marketing">#GoogleAds</a><span class="s">✦</span><a href="/capabilities.html#social-media-marketing">#SocialMedia</a><span class="s">✦</span><a href="/capabilities.html#branding-creative">#Branding</a><span class="s">✦</span><a href="/capabilities.html#content-marketing">#ContentMarketing</a><span class="s">✦</span><a href="/capabilities.html#seo">#LocalSEO</a><span class="s">✦</span><a href="https://www.sanctify.co.in" rel="noopener">#WebHosting</a><span class="s">✦</span><a href="https://htmlpreview.github.io/?https://github.com/consecrating/Sanctify-Co/blob/feat/corporate-home-preview/dist/preview/industries.html">#GoaBusiness</a><span class="s">✦</span><a href="/capabilities.html#digital-marketing">#DigitalMarketing</a><span class="s">✦</span><a href="/capabilities.html#seo">#SEO</a><span class="s">✦</span><a href="/capabilities.html#web-design-development">#WebDesign</a><span class="s">✦</span><a href="/capabilities.html#digital-marketing">#GoogleAds</a><span class="s">✦</span><a href="/capabilities.html#social-media-marketing">#SocialMedia</a><span class="s">✦</span><a href="/capabilities.html#branding-creative">#Branding</a><span class="s">✦</span><a href="/capabilities.html#content-marketing">#ContentMarketing</a><span class="s">✦</span><a href="/capabilities.html#seo">#LocalSEO</a><span class="s">✦</span><a href="https://www.sanctify.co.in" rel="noopener">#WebHosting</a><span class="s">✦</span><a href="https://htmlpreview.github.io/?https://github.com/consecrating/Sanctify-Co/blob/feat/corporate-home-preview/dist/preview/industries.html">#GoaBusiness</a><span class="s">✦</span></div></nav><footer class="footer"><div class="container">
-    <div class="foot-grid">
-      <div><a class="brand" href="https://htmlpreview.github.io/?https://github.com/consecrating/Sanctify-Co/blob/feat/corporate-home-preview/dist/preview/index.html"><span class="m">S</span>Sanctify</a>
-        <p style="margin-top:14px;max-width:34ch">Sanctify is one award-winning digital marketing and advertising agency founded in Goa in 2012. Alongside our flagship agency we run a small network of platforms — a local-SEO engine, web hosting and a Goa discovery portal — and together we have grown 100+ brands with web design, SEO, advertising, social media and branding.</p></div>
-      <div><h4>Explore</h4><ul><li><a href="https://htmlpreview.github.io/?https://github.com/consecrating/Sanctify-Co/blob/feat/corporate-home-preview/dist/preview/about.html">About</a></li><li><a href="https://htmlpreview.github.io/?https://github.com/consecrating/Sanctify-Co/blob/feat/corporate-home-preview/dist/preview/capabilities.html">Capabilities</a></li><li><a href="https://htmlpreview.github.io/?https://github.com/consecrating/Sanctify-Co/blob/feat/corporate-home-preview/dist/preview/industries.html">Industries</a></li><li><a href="https://htmlpreview.github.io/?https://github.com/consecrating/Sanctify-Co/blob/feat/corporate-home-preview/dist/preview/work.html">Work</a></li><li><a href="https://htmlpreview.github.io/?https://github.com/consecrating/Sanctify-Co/blob/feat/corporate-home-preview/dist/preview/insights.html">Insights</a></li><li><a href="https://htmlpreview.github.io/?https://github.com/consecrating/Sanctify-Co/blob/feat/corporate-home-preview/dist/preview/contact.html">Contact</a></li></ul></div>
-      <div><h4>The Network</h4><ul><li><a href="https://www.sanctify.in" rel="noopener">Sanctify Goa ↗</a></li><li><a href="https://www.sanctify.biz" rel="noopener">Sanctify.biz ↗</a></li><li><a href="https://www.sanctify.co.in" rel="noopener">Sanctify Hostings ↗</a></li><li><a href="https://www.goa.guru" rel="noopener">Goa Guru ↗</a></li></ul></div>
-      <div><h4>Get in touch</h4><ul><li><a href="tel:+919923352923">+91-9923352923</a></li><li><a href="mailto:business@sanctify.biz">business@sanctify.biz</a></li><li><a href="https://wa.me/919923352923" rel="noopener">WhatsApp</a></li></ul></div>
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="https://htmlpreview.github.io/?https://github.com/consecrating/Sanctify-Co/blob/feat/corporate-home-preview/dist/preview/index.html"><span class="m">S</span>Sanctify</a>
+        <p class="foot-tag">Digital Marketing &amp; Advertising Agency · Goa, since 2012</p>
+        <p class="foot-descr">Sanctify is one award-winning digital marketing and advertising agency founded in Goa in 2012. Alongside our flagship agency we run a small network of platforms — a local-SEO engine, web hosting and a Goa discovery portal — and together we have grown 100+ brands with web design, SEO, advertising, social media and branding.</p>
+        <div class="foot-rating"><svg viewBox="0 0 24 24" fill="currentColor" ><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9.6l6.9-.7z"/></svg><span><strong>4.8/5</strong> · 128 Google reviews</span></div>
+        <div class="foot-social"><a href="https://www.facebook.com/sanctify.in" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H9v3h2v6h3v-6h2.5l.5-3H14V9.5c0-.3.2-.5.5-.5z"/></svg></a><a href="https://www.instagram.com/sanctify.in" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a><a href="https://www.linkedin.com/company/sanctify" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 8A1.5 1.5 0 1 0 5 6.5 1.5 1.5 0 0 0 6.5 8zM5.5 9.5h2v9h-2zM10 9.5h1.9v1.2h.03c.27-.5.93-1.03 1.9-1.03 2 0 2.4 1.3 2.4 3v5.3h-2V14c0-.8 0-1.9-1.2-1.9s-1.3.9-1.3 1.8v4.6h-2z"/></svg></a></div>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col"><h4>Explore</h4><ul><li><a href="https://htmlpreview.github.io/?https://github.com/consecrating/Sanctify-Co/blob/feat/corporate-home-preview/dist/preview/about.html">About</a></li><li><a href="https://htmlpreview.github.io/?https://github.com/consecrating/Sanctify-Co/blob/feat/corporate-home-preview/dist/preview/capabilities.html">Capabilities</a></li><li><a href="https://htmlpreview.github.io/?https://github.com/consecrating/Sanctify-Co/blob/feat/corporate-home-preview/dist/preview/industries.html">Industries</a></li><li><a href="https://htmlpreview.github.io/?https://github.com/consecrating/Sanctify-Co/blob/feat/corporate-home-preview/dist/preview/work.html">Work</a></li><li><a href="https://htmlpreview.github.io/?https://github.com/consecrating/Sanctify-Co/blob/feat/corporate-home-preview/dist/preview/insights.html">Insights</a></li><li><a href="https://htmlpreview.github.io/?https://github.com/consecrating/Sanctify-Co/blob/feat/corporate-home-preview/dist/preview/contact.html">Contact</a></li></ul></div>
+        <div class="foot-col"><h4>Our Network</h4><ul><li><a href="https://www.sanctify.in" rel="noopener">Sanctify Goa<span class="fdom">sanctify.in</span></a></li><li><a href="https://www.sanctify.biz" rel="noopener">Sanctify.biz<span class="fdom">sanctify.biz</span></a></li><li><a href="https://www.sanctify.co.in" rel="noopener">Sanctify Hostings<span class="fdom">sanctify.co.in</span></a></li><li><a href="https://www.goa.guru" rel="noopener">Goa Guru<span class="fdom">goa.guru</span></a></li></ul></div>
+        <div class="foot-col"><h4>Get in touch</h4><ul class="foot-contact">
+          <li><a href="tel:+919923352923"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.3 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg>+91-9923352923</a></li>
+          <li><a href="mailto:business@sanctify.biz"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>business@sanctify.biz</a></li>
+          <li><a href="https://wa.me/919923352923" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.29-.15-1.7-.84-1.96-.94-.26-.09-.45-.14-.64.15-.19.29-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.59.13-.13.29-.34.44-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.64-1.55-.88-2.12-.23-.55-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.38s1.02 2.77 1.17 2.96c.15.19 2.02 3.08 4.9 4.32.68.3 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2a10 10 0 0 0-8.55 15.19L2 22l4.94-1.3A10 10 0 1 0 12 2z"/></svg>WhatsApp us</a></li>
+          <li><span class="foot-hours"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Mon–Sat · replies within 1 working day</span></li>
+        </ul></div>
+      </div>
     </div>
     <div class="foot-bottom"><span>© <span id="year">2026</span> Sanctify Advertising &amp; Digital Marketing Agency</span><span class="foot-legal"><a href="https://htmlpreview.github.io/?https://github.com/consecrating/Sanctify-Co/blob/feat/corporate-home-preview/dist/preview/terms.html">Terms of Use</a> · <a href="https://htmlpreview.github.io/?https://github.com/consecrating/Sanctify-Co/blob/feat/corporate-home-preview/dist/preview/privacy.html">Privacy Policy</a></span><span>Vasco-da-Gama, Goa, India</span></div>
   </div></footer><button class="totop" id="totop" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
@@ -460,19 +462,6 @@ p{margin-bottom:1rem}
     window.location.href = "mailto:" + to + "?subject=" + encodeURIComponent("Enquiry from Sanctify.co") + "&body=" + encodeURIComponent(body.join("\n"));
     if (status) status.textContent = "Opening your email app…";
   });
-
-  // Top drawer: pull to open, auto-close 5s after the pointer leaves
-  (function () {
-    var td = document.getElementById("topdrawer"), pull = document.getElementById("tdPull");
-    if (!td || !pull) return;
-    var timer;
-    function arm() { clearTimeout(timer); timer = setTimeout(close, 5000); }
-    function open() { td.classList.add("open"); pull.setAttribute("aria-expanded", "true"); arm(); }
-    function close() { td.classList.remove("open"); pull.setAttribute("aria-expanded", "false"); clearTimeout(timer); }
-    pull.addEventListener("click", function () { td.classList.contains("open") ? close() : open(); });
-    td.addEventListener("mouseenter", function () { clearTimeout(timer); });
-    td.addEventListener("mouseleave", function () { if (td.classList.contains("open")) arm(); });
-  })();
 
   var y = document.getElementById("year"); if (y) y.textContent = new Date().getFullYear();
 })();

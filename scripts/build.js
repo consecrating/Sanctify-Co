@@ -24,6 +24,11 @@ const ICONS = {
   home: '<path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/>',
   clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'
 };
+const SOCIAL = {
+  facebook: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H9v3h2v6h3v-6h2.5l.5-3H14V9.5c0-.3.2-.5.5-.5z"/></svg>',
+  instagram: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>',
+  linkedin: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.5 8A1.5 1.5 0 1 0 5 6.5 1.5 1.5 0 0 0 6.5 8zM5.5 9.5h2v9h-2zM10 9.5h1.9v1.2h.03c.27-.5.93-1.03 1.9-1.03 2 0 2.4 1.3 2.4 3v5.3h-2V14c0-.8 0-1.9-1.2-1.9s-1.3.9-1.3 1.8v4.6h-2z"/></svg>'
+};
 const icon = (n, stroke = true) => `<svg viewBox="0 0 24 24" fill="${stroke ? "none" : "currentColor"}" ${stroke ? 'stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"' : ""}>${ICONS[n] || ICONS.rocket}</svg>`;
 const WA = '<svg class="wa-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.29-.15-1.7-.84-1.96-.94-.26-.09-.45-.14-.64.15-.19.29-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.59.13-.13.29-.34.44-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.64-1.55-.88-2.12-.23-.55-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.38s1.02 2.77 1.17 2.96c.15.19 2.02 3.08 4.9 4.32.68.3 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2a10 10 0 0 0-8.55 15.19L2 22l4.94-1.3A10 10 0 1 0 12 2z"/></svg>';
 const PHONE = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.3 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg>';
@@ -91,7 +96,7 @@ function header(active) {
     const on = n.href === "/" ? (active === "" || active === "/") : active === n.href;
     return `<li><a href="${n.href}"${on ? ' class="active"' : ""}>${esc(n.label)}</a></li>`;
   }).join("");
-  return `${topdrawer()}<header class="site-header" id="hdr"><div class="container"><nav class="nav" aria-label="Primary">
+  return `<header class="site-header" id="hdr"><div class="container"><nav class="nav" aria-label="Primary">
     <a class="brand" href="/"><span class="m">S</span>${esc(site.brand)}</a>
     <ul class="nav-links">${links}</ul>
     <div class="nav-cta">
@@ -101,34 +106,29 @@ function header(active) {
     <button class="nav-toggle" aria-label="Menu">☰</button>
   </nav></div></header>`;
 }
-/* Hidden quick-access drawer above the main nav — opens via pull tab, auto-closes 5s after the pointer leaves. */
-function topdrawer() {
-  const net = site.network.map(n => `<a href="${n.url}" rel="noopener">${esc(n.name)}</a>`).join("");
-  const soc = `<a href="${site.social.facebook}" rel="noopener" aria-label="Facebook">Facebook</a><a href="${site.social.instagram}" rel="noopener" aria-label="Instagram">Instagram</a><a href="${site.social.linkedin}" rel="noopener" aria-label="LinkedIn">LinkedIn</a>`;
-  return `<div class="topdrawer" id="topdrawer">
-  <div class="td-panel"><div class="container td-inner">
-    <div class="td-col"><span class="td-h">Quick contact</span>
-      <a class="td-lk" href="tel:${site.phoneRaw}">${PHONE}${esc(site.phone)}</a>
-      <a class="td-lk" href="https://wa.me/${site.whatsapp}" rel="noopener">${WA.replace('class="wa-ic" ', '')}WhatsApp us</a>
-      <a class="td-lk" href="mailto:${site.email}">${icon("mail")}${esc(site.email)}</a>
-    </div>
-    <div class="td-col"><span class="td-h">Our network</span><div class="td-net">${net}</div></div>
-    <div class="td-col"><span class="td-h">Follow us</span><div class="td-net">${soc}</div>
-      <span class="td-note">${icon("clock")} Mon–Sat · Replies within 1 working day</span></div>
-  </div></div>
-  <button class="td-pull" id="tdPull" aria-expanded="false" aria-controls="topdrawer"><span class="td-dot"></span>Quick links &amp; contact<i class="td-caret">⌄</i></button>
-</div>`;
-}
 function footer() {
-  const netLi = site.network.map(n => `<li><a href="${n.url}" rel="noopener">${esc(n.name)} ↗</a></li>`).join("");
+  const netLi = site.network.map(n => `<li><a href="${n.url}" rel="noopener">${esc(n.name)}<span class="fdom">${esc(n.domain)}</span></a></li>`).join("");
   const navLi = site.nav.map(n => `<li><a href="${n.href}">${esc(n.label)}</a></li>`).join("");
+  const social = `<a href="${site.social.facebook}" rel="noopener" aria-label="Facebook">${SOCIAL.facebook}</a><a href="${site.social.instagram}" rel="noopener" aria-label="Instagram">${SOCIAL.instagram}</a><a href="${site.social.linkedin}" rel="noopener" aria-label="LinkedIn">${SOCIAL.linkedin}</a>`;
   return `<footer class="footer"><div class="container">
-    <div class="foot-grid">
-      <div><a class="brand" href="/"><span class="m">S</span>${esc(site.brand)}</a>
-        <p style="margin-top:14px;max-width:34ch">${esc(site.descr)}</p></div>
-      <div><h4>Explore</h4><ul>${navLi}<li><a href="/contact.html">Contact</a></li></ul></div>
-      <div><h4>The Network</h4><ul>${netLi}</ul></div>
-      <div><h4>Get in touch</h4><ul><li><a href="tel:${site.phoneRaw}">${esc(site.phone)}</a></li><li><a href="mailto:${site.email}">${esc(site.email)}</a></li><li><a href="https://wa.me/${site.whatsapp}" rel="noopener">WhatsApp</a></li></ul></div>
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="/"><span class="m">S</span>${esc(site.brand)}</a>
+        <p class="foot-tag">${esc(site.tagline)} · Goa, since ${site.foundedYear}</p>
+        <p class="foot-descr">${esc(site.descr)}</p>
+        <div class="foot-rating">${icon("star", false)}<span><strong>${site.rating.value}/5</strong> · ${site.rating.count} Google reviews</span></div>
+        <div class="foot-social">${social}</div>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col"><h4>Explore</h4><ul>${navLi}<li><a href="/contact.html">Contact</a></li></ul></div>
+        <div class="foot-col"><h4>Our Network</h4><ul>${netLi}</ul></div>
+        <div class="foot-col"><h4>Get in touch</h4><ul class="foot-contact">
+          <li><a href="tel:${site.phoneRaw}">${PHONE}${esc(site.phone)}</a></li>
+          <li><a href="mailto:${site.email}">${icon("mail")}${esc(site.email)}</a></li>
+          <li><a href="https://wa.me/${site.whatsapp}" rel="noopener">${WA.replace('class="wa-ic" ', '')}WhatsApp us</a></li>
+          <li><span class="foot-hours">${icon("clock")}Mon–Sat · replies within 1 working day</span></li>
+        </ul></div>
+      </div>
     </div>
     <div class="foot-bottom"><span>© <span id="year">2026</span> ${esc(site.legalName)}</span><span class="foot-legal"><a href="/terms.html">Terms of Use</a> · <a href="/privacy.html">Privacy Policy</a></span><span>${esc(site.addressLocality)}, ${esc(site.addressRegion)}, India</span></div>
   </div></footer>`;
