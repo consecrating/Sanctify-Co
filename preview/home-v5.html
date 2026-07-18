@@ -14,7 +14,7 @@
 <style>
 :root{
   --bg:#ffffff;--ink:#0b1220;--ink-2:#1b2536;--body:#586172;--muted:#8b93a2;--line:#e9edf3;--soft:#f4f7fb;--dark:#0b1220;
-  --acc:#c20b58;--acc-d:#9e0946;--acc-soft:#fbe3ee;--acc-2:#0b1220;
+  --acc:#c20b58;--acc-d:#9e0946;--acc-soft:#fbe3ee;--acc-2:#0b1220;--acc-lt:#ff5c95;
   --maxw:1220px;--head:"Sora",system-ui,Segoe UI,Arial,sans-serif;--sans:"Inter",system-ui,Segoe UI,Arial,sans-serif;
   --radius:20px;--radius-s:14px;--shadow-s:0 6px 20px rgba(11,18,32,.06);--shadow:0 20px 50px rgba(11,18,32,.10);--shadow-l:0 34px 80px rgba(11,18,32,.16);
 }
@@ -35,7 +35,7 @@ p{margin-bottom:1rem}
 .dark h2,.dark h3{color:#fff}
 .eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--head);font-weight:600;text-transform:uppercase;letter-spacing:.14em;font-size:.74rem;color:var(--acc-d);margin-bottom:16px}
 .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--acc)}
-.dark .eyebrow{color:var(--acc)}
+.dark .eyebrow{color:var(--acc-lt)}
 .section-head{max-width:720px;margin:0 auto 54px;text-align:center}
 .lead{font-size:1.18rem}
 .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--head);font-weight:600;font-size:1rem;padding:15px 28px;border-radius:100px;cursor:pointer;border:2px solid transparent;transition:transform .16s,box-shadow .16s,background .16s,color .16s}
@@ -95,6 +95,20 @@ p{margin-bottom:1rem}
 .pill:hover,.pill.on{background:var(--acc);color:#ffffff;border-color:var(--acc)}
 .who-img{border-radius:24px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:1/1}
 .who-img img{width:100%;height:100%;object-fit:cover}
+/* network */
+.netgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.net{position:relative;display:flex;gap:18px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:transform .2s,box-shadow .2s;overflow:hidden}
+.net::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--acc)}
+.net:hover{transform:translateY(-5px);box-shadow:var(--shadow-l)}
+.net .ic{width:52px;height:52px;border-radius:13px;background:var(--acc-soft);color:var(--acc);display:grid;place-items:center;flex-shrink:0}
+.net .ic svg{width:26px;height:26px}
+.net h3{margin-bottom:2px}
+.net .dom{font-family:var(--head);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:8px}
+.net p{font-size:.92rem;margin:0 0 8px;color:var(--body)}
+.net .go{font-family:var(--head);font-weight:600;color:var(--acc);font-size:.9rem}
+.btn-acc-lt{background:var(--acc-lt);color:#42001d}
+.btn-acc-lt:hover{filter:brightness(1.05)}
+@media(max-width:900px){.netgrid{grid-template-columns:1fr}}
 /* results / before-after */
 .results-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
 .ba{position:relative;border-radius:20px;overflow:hidden;box-shadow:var(--shadow-l);aspect-ratio:16/11;user-select:none;touch-action:none;border:1px solid rgba(255,255,255,.1)}
@@ -111,7 +125,7 @@ p{margin-bottom:1rem}
 .statgrid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}
 .rstat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px}
 .dark .rstat{background:#111a2b;border-color:#1e293d}
-.rstat .n{font-family:var(--head);font-weight:800;font-size:2rem;color:var(--acc)}
+.rstat .n{font-family:var(--head);font-weight:800;font-size:2rem;color:var(--acc-lt)}
 .rstat .l{font-size:.88rem;color:var(--muted);margin-top:4px}
 /* services */
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
@@ -171,7 +185,7 @@ p{margin-bottom:1rem}
 .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:34px;margin-bottom:40px}
 .footer h4{font-family:var(--head);color:#fff;font-size:.95rem;margin-bottom:15px}
 .footer ul{list-style:none}.footer li{margin-bottom:9px}
-.footer a:hover{color:var(--acc)}
+.footer a:hover{color:var(--acc-lt)}
 .footer .brand{color:#fff}
 .foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.83rem;color:#69748a}
 /* floaties */
@@ -199,20 +213,20 @@ p{margin-bottom:1rem}
 </head>
 <body>
 <div class="progress" id="progress"></div>
-<div class="previewbar">PREVIEW <b>v5</b> — reference-matched layout · #c20b58 accent · WhatsApp logo · image syncs with headline. Nothing is live.</div>
+<div class="previewbar">PREVIEW <b>v5</b> — corporate HQ strategy · dual-tone pink (#c20b58 / bright on dark) · Sanctify Network added. Nothing is live.</div>
 
 <header class="site-header" id="hdr">
   <div class="container">
     <nav class="nav">
       <a class="brand" href="#"><span class="m">S</span>Sanctify</a>
       <ul class="nav-links">
-        <li><a href="#who">Who We Are</a></li>
-        <li><a href="#services">Services</a></li>
+        <li><a href="#network">Network</a></li>
+        <li><a href="#who">About</a></li>
+        <li><a href="#services">Capabilities</a></li>
         <li><a href="#work">Work</a></li>
-        <li><a href="#process">Process</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
-      <a class="btn btn-acc" href="#contact" style="padding:11px 22px;font-size:.92rem">Get a Free Audit</a>
+      <a class="btn btn-acc" href="#contact" style="padding:11px 22px;font-size:.92rem">Get in Touch</a>
       <button class="nav-toggle" aria-label="Menu">☰</button>
     </nav>
   </div>
@@ -223,16 +237,16 @@ p{margin-bottom:1rem}
 <section class="hero">
   <div class="container">
     <div>
-      <span class="welcome"><span class="d"></span>Welcome to Sanctify Goa</span>
-      <h1>Best SEO &amp; Digital<br>Marketing <span class="rot" id="rot">Campaigns</span></h1>
-      <p>Grow your business with expert SEO &amp; digital marketing from Goa's award-winning agency — trusted by 100+ brands since 2012.</p>
+      <span class="welcome"><span class="d"></span>The Sanctify Group · Since 2012</span>
+      <h1>Helping Goa's brands <span class="rot" id="rot">grow</span></h1>
+      <p>Sanctify is an award-winning digital marketing group — a family of agencies &amp; platforms that has grown 100+ brands across Goa and beyond.</p>
       <div class="acts">
-        <a class="btn btn-acc" href="#contact">Get a Free Audit →</a>
+        <a class="btn btn-acc" href="#network">Explore the Network →</a>
         <a class="btn btn-wa" href="https://wa.me/919923352923"><svg class="wa-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.29-.15-1.7-.84-1.96-.94-.26-.09-.45-.14-.64.15-.19.29-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.59.13-.13.29-.34.44-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.64-1.55-.88-2.12-.23-.55-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.38s1.02 2.77 1.17 2.96c.15.19 2.02 3.08 4.9 4.32.68.3 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2a10 10 0 0 0-8.55 15.19L2 22l4.94-1.3A10 10 0 1 0 12 2z"/></svg>Message us now</a>
       </div>
     </div>
     <div class="hero-visual rv">
-      <div class="main"><img id="heroImg" src="https://www.sanctify.biz/assets/img/social-media.jpg" alt="Digital marketing campaigns by Sanctify Goa"></div>
+      <div class="main"><img id="heroImg" src="https://www.sanctify.biz/assets/img/google-ads.jpg" alt="Sanctify helping Goa brands grow"></div>
       <div class="fcard fc1"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 4-6"/></svg></span><span><b>+180%</b><span>Organic traffic</span></span></div>
       <div class="fcard fc2"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9.6l6.9-.7z"/></svg></span><span><b>4.8/5</b><span>128 reviews</span></span></div>
     </div>
@@ -258,6 +272,19 @@ p{margin-bottom:1rem}
       <div class="pills">
         <span class="pill on">SEO Expertise</span><span class="pill">Creative Strategy</span><span class="pill">Digital Growth</span><span class="pill">Brand Visibility</span><span class="pill">Proven Results</span>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- NETWORK -->
+<section class="section" id="network">
+  <div class="section-head rv"><span class="eyebrow">The Sanctify Network</span><h2>One group, four ways we help you grow</h2><p class="lead">More than an agency — a connected family of properties covering every stage of your growth.</p></div>
+  <div class="container">
+    <div class="netgrid">
+      <a class="net rv" href="https://www.sanctify.in"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3l7 17 2.5-6.5L19 11 3 3z"/></svg></span><div><h3>Sanctify Goa</h3><div class="dom">sanctify.in</div><p>Our flagship digital marketing agency for Goa businesses — web, SEO, ads &amp; social.</p><span class="go">Visit site →</span></div></a>
+      <a class="net rv" href="https://www.sanctify.biz"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></span><div><h3>Sanctify.biz</h3><div class="dom">sanctify.biz</div><p>A local-SEO engine that wins "near me" searches across Goa.</p><span class="go">Visit site →</span></div></a>
+      <a class="net rv" href="https://www.sanctify.co.in"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="7" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7.5h.01M7 17h.01"/></svg></span><div><h3>Sanctify Hostings</h3><div class="dom">sanctify.co.in</div><p>Reliable web hosting, domains &amp; business email — the infrastructure.</p><span class="go">Visit site →</span></div></a>
+      <a class="net rv" href="https://www.goa.guru"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><h3>Goa Guru</h3><div class="dom">goa.guru</div><p>Goa's local discovery portal for visitors &amp; businesses.</p><span class="go">Visit site →</span></div></a>
     </div>
   </div>
 </section>
@@ -290,7 +317,7 @@ p{margin-bottom:1rem}
 
 <!-- SERVICES -->
 <section class="section soft" id="services">
-  <div class="section-head rv"><span class="eyebrow">Smarter marketing strategies</span><h2>Our services</h2><p class="lead">Professional digital marketing solutions in Goa for your business.</p></div>
+  <div class="section-head rv"><span class="eyebrow">What the group does</span><h2>Our capabilities</h2><p class="lead">Full-service digital marketing — strategy, build &amp; growth, delivered in Goa by <a href="https://www.sanctify.in" style="color:var(--acc-d);font-weight:600">Sanctify Goa</a>.</p></div>
   <div class="container">
     <div class="svc-grid">
       <div class="svc rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3l7 17 2.5-6.5L19 11 3 3z"/></svg></div><h3>Digital Marketing</h3><p>Data-driven campaigns that boost visibility, traffic and online conversions.</p><span class="lm">Learn more →</span></div>
@@ -359,11 +386,11 @@ p{margin-bottom:1rem}
 <section class="section" id="contact" style="padding-top:0">
   <div class="container">
     <div style="background:var(--ink);border-radius:26px;padding:60px 40px;text-align:center;color:#fff;position:relative;overflow:hidden">
-      <span class="eyebrow" style="color:var(--acc);justify-content:center">Let's grow together</span>
-      <h2 style="color:#fff;margin-top:8px">Ready to rank higher &amp; grow faster?</h2>
-      <p style="color:#a9b4c6;max-width:52ch;margin:14px auto 26px">Get a free digital marketing audit — our team responds within one working day.</p>
+      <span class="eyebrow" style="color:var(--acc-lt);justify-content:center">Work with the group</span>
+      <h2 style="color:#fff;margin-top:8px">Ready to grow your brand?</h2>
+      <p style="color:#a9b4c6;max-width:52ch;margin:14px auto 26px">Tell us about your goals — our team responds within one working day.</p>
       <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
-        <a class="btn btn-acc" href="mailto:business@sanctify.biz">Get a Free Audit</a>
+        <a class="btn btn-acc-lt" href="mailto:business@sanctify.biz">Get in Touch</a>
         <a class="btn btn-wa" href="https://wa.me/919923352923"><svg class="wa-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.29-.15-1.7-.84-1.96-.94-.26-.09-.45-.14-.64.15-.19.29-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.59.13-.13.29-.34.44-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.64-1.55-.88-2.12-.23-.55-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.38s1.02 2.77 1.17 2.96c.15.19 2.02 3.08 4.9 4.32.68.3 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2a10 10 0 0 0-8.55 15.19L2 22l4.94-1.3A10 10 0 1 0 12 2z"/></svg>WhatsApp us</a>
       </div>
     </div>
@@ -401,10 +428,10 @@ if(tog)tog.addEventListener('click',function(){hdr.classList.toggle('open')});
 window.addEventListener('scroll',function(){var h=document.documentElement,st=h.scrollTop,sh=h.scrollHeight-h.clientHeight;if(prog)prog.style.width=(sh>0?st/sh*100:0)+'%';hdr.classList.toggle('scrolled',st>12);},{passive:true});
 // rotating hero word + synced image
 var hslides=[
-  {w:'Campaigns',img:'https://www.sanctify.biz/assets/img/social-media.jpg',alt:'Digital marketing campaigns by Sanctify Goa'},
-  {w:'Approaches',img:'https://www.sanctify.biz/assets/img/content-marketing.jpg',alt:'Content marketing strategy at Sanctify Goa'},
-  {w:'Performance',img:'https://www.sanctify.biz/assets/img/google-ads.jpg',alt:'Marketing performance analytics at Sanctify Goa'},
-  {w:'Expertise',img:'https://www.sanctify.biz/assets/img/professional.jpg',alt:'The expert Sanctify digital marketing team in Goa'}
+  {w:'grow',img:'https://www.sanctify.biz/assets/img/google-ads.jpg',alt:'Sanctify helping Goa brands grow'},
+  {w:'rank',img:'https://www.sanctify.biz/assets/img/seo.jpg',alt:'SEO that helps Goa brands rank on Google'},
+  {w:'convert',img:'https://www.sanctify.biz/assets/img/content-marketing.jpg',alt:'Content that converts visitors into customers'},
+  {w:'lead',img:'https://www.sanctify.biz/assets/img/professional.jpg',alt:'The Sanctify team leading Goa brands forward'}
 ];
 var ri=0,rot=document.getElementById('rot'),hImg=document.getElementById('heroImg');
 if(rot){
