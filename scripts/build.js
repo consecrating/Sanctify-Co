@@ -102,7 +102,7 @@ function footer() {
       <div><h4>The Network</h4><ul>${netLi}</ul></div>
       <div><h4>Get in touch</h4><ul><li><a href="tel:${site.phoneRaw}">${esc(site.phone)}</a></li><li><a href="mailto:${site.email}">${esc(site.email)}</a></li><li><a href="https://wa.me/${site.whatsapp}" rel="noopener">WhatsApp</a></li></ul></div>
     </div>
-    <div class="foot-bottom"><span>© <span id="year">2026</span> ${esc(site.legalName)}</span><span>${esc(site.addressLocality)}, ${esc(site.addressRegion)}, India</span></div>
+    <div class="foot-bottom"><span>© <span id="year">2026</span> ${esc(site.legalName)}</span><span class="foot-legal"><a href="/terms.html">Terms of Use</a> · <a href="/privacy.html">Privacy Policy</a></span><span>${esc(site.addressLocality)}, ${esc(site.addressRegion)}, India</span></div>
   </div></footer>`;
 }
 function chrome() {
@@ -331,11 +331,75 @@ ${pageHero("Get in touch", "Let's grow your brand together", "Tell us about your
 /* ---------- assets + sitemap + robots ---------- */
 function copyDir(from, to) { fs.mkdirSync(to, { recursive: true }); for (const e of fs.readdirSync(from, { withFileTypes: true })) { const s = path.join(from, e.name), d = path.join(to, e.name); if (e.isDirectory()) copyDir(s, d); else fs.copyFileSync(s, d); } }
 function sitemapRobots() {
-  const pages = ["/", "/about.html", "/capabilities.html", "/industries.html", "/work.html", "/insights.html", "/contact.html"];
+  const pages = ["/", "/about.html", "/capabilities.html", "/industries.html", "/work.html", "/insights.html", "/contact.html", "/terms.html", "/privacy.html"];
   const today = new Date().toISOString().slice(0, 10);
   const sm = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map(u => `  <url><loc>${site.baseUrl}${u}</loc><lastmod>${today}</lastmod><changefreq>monthly</changefreq><priority>${u === "/" ? "1.0" : "0.8"}</priority></url>`).join("\n")}\n</urlset>\n`;
   write("sitemap.xml", sm);
   write("robots.txt", `User-agent: *\nAllow: /\n\nSitemap: ${site.baseUrl}/sitemap.xml\n`);
+}
+
+/* ---------- legal pages ---------- */
+function legalBody(blocks) {
+  return `<main>${pageHero(blocks.eyebrow, blocks.h1, blocks.sub)}
+<section class="section" style="padding-top:12px"><div class="container" style="max-width:820px">
+  <article class="prose" style="line-height:1.8">${blocks.html}
+  <p style="margin-top:34px;color:var(--mut,#5a6472);font-size:.92rem">Last updated: ${new Date().toISOString().slice(0, 10)}. Questions? Email <a href="mailto:${site.email}" style="color:var(--acc-d);font-weight:600">${esc(site.email)}</a>.</p>
+  </article>
+</div></section></main>`;
+}
+function renderTerms() {
+  const html = `
+  <p>Welcome to ${esc(site.brand)} (${esc(site.legalName)}). By accessing or using ${site.baseUrl.replace(/^https?:\/\//, "")} (the "Site"), you agree to these Terms of Use. If you do not agree, please do not use the Site.</p>
+  <h2>1. About this website</h2>
+  <p>This Site is the corporate website of ${esc(site.brand)}, an award-winning digital marketing and advertising agency founded in Goa, India in ${site.foundedYear}. Our day-to-day client services are delivered through our flagship agency at <a href="https://www.sanctify.in" rel="noopener" style="color:var(--acc-d);font-weight:600">sanctify.in</a>.</p>
+  <h2>2. Use of the Site</h2>
+  <p>You may browse the Site for lawful, informational and business enquiry purposes. You agree not to misuse the Site, attempt to gain unauthorised access, copy or reproduce our content without permission, or use it in any way that could damage, disable or impair the Site.</p>
+  <h2>3. Intellectual property</h2>
+  <p>All content on this Site — including text, graphics, logos, the Sanctify name and mark, case studies and design — is the property of ${esc(site.legalName)} or its licensors and is protected by applicable intellectual property laws. Client logos and brand names shown remain the property of their respective owners and are used to indicate work delivered.</p>
+  <h2>4. Enquiries and communications</h2>
+  <p>When you contact us via our forms, phone, WhatsApp or email, you consent to us responding to your enquiry. Submitting an enquiry does not create a contract; any engagement is governed by a separate written agreement.</p>
+  <h2>5. Third-party links</h2>
+  <p>The Site links to other properties we operate (such as sanctify.in, sanctify.biz, sanctify.co.in and goa.guru) and to third-party sites. We are not responsible for the content or practices of external websites.</p>
+  <h2>6. Disclaimer</h2>
+  <p>The Site is provided "as is". While we work to keep information accurate and current, we make no warranties about completeness or reliability. Marketing results referenced are illustrative and past performance does not guarantee future outcomes.</p>
+  <h2>7. Limitation of liability</h2>
+  <p>To the extent permitted by law, ${esc(site.legalName)} shall not be liable for any indirect or consequential loss arising from use of the Site.</p>
+  <h2>8. Governing law</h2>
+  <p>These Terms are governed by the laws of India, with jurisdiction of the courts of Goa.</p>
+  <h2>9. Changes</h2>
+  <p>We may update these Terms from time to time. Continued use of the Site after changes constitutes acceptance of the revised Terms.</p>`;
+  const body = legalBody({ eyebrow: "Legal", h1: "Terms of Use", sub: "The terms that apply when you use the Sanctify corporate website.", html });
+  write("terms.html", page({ pathname: "/terms.html", active: "", image: "goa-hero-1",
+    title: `Terms of Use | ${site.brand}`,
+    description: `Terms of Use for the ${site.brand} corporate website — how you may use the site, intellectual property, disclaimers and governing law.`,
+    schema: [orgSchema(), breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Terms of Use", href: "/terms.html" }])] }, body));
+}
+function renderPrivacy() {
+  const html = `
+  <p>${esc(site.legalName)} ("${esc(site.brand)}", "we", "us") respects your privacy. This policy explains what information we collect through ${site.baseUrl.replace(/^https?:\/\//, "")}, how we use it and your choices.</p>
+  <h2>1. Information we collect</h2>
+  <p>We collect information you voluntarily provide through our contact and enquiry forms — such as your name, email address, phone number and message. We also collect standard technical data (such as IP address, browser type and pages viewed) automatically via cookies and analytics.</p>
+  <h2>2. How we use your information</h2>
+  <p>We use your information to respond to enquiries, provide requested services, improve the Site, and — where you have consented — send relevant updates. We do not sell your personal data.</p>
+  <h2>3. Cookies and analytics</h2>
+  <p>The Site uses cookies and analytics tools (such as Google Analytics) to understand how visitors use the Site and to improve performance. You can control cookies through your browser settings.</p>
+  <h2>4. Sharing your information</h2>
+  <p>We may share information with trusted service providers who help us operate the Site and deliver services, always under appropriate confidentiality obligations. We may also disclose information where required by law.</p>
+  <h2>5. Data retention</h2>
+  <p>We retain enquiry and personal data only as long as necessary for the purposes described here or as required by law.</p>
+  <h2>6. Your rights</h2>
+  <p>You may request access to, correction of, or deletion of your personal data by emailing <a href="mailto:${site.email}" style="color:var(--acc-d);font-weight:600">${esc(site.email)}</a>. We will respond within a reasonable period.</p>
+  <h2>7. Security</h2>
+  <p>We apply reasonable technical and organisational measures to protect your data. However, no online transmission is completely secure.</p>
+  <h2>8. Third-party links</h2>
+  <p>The Site links to our other properties and to third-party websites, which have their own privacy policies. We are not responsible for their practices.</p>
+  <h2>9. Contact</h2>
+  <p>For any privacy questions, contact us at <a href="mailto:${site.email}" style="color:var(--acc-d);font-weight:600">${esc(site.email)}</a> or call <a href="tel:${site.phoneRaw}" style="color:var(--acc-d);font-weight:600">${esc(site.phone)}</a>.</p>`;
+  const body = legalBody({ eyebrow: "Legal", h1: "Privacy Policy", sub: "How Sanctify collects, uses and protects your information.", html });
+  write("privacy.html", page({ pathname: "/privacy.html", active: "", image: "goa-hero-1",
+    title: `Privacy Policy | ${site.brand}`,
+    description: `Privacy Policy for the ${site.brand} corporate website — what data we collect, how we use it, cookies, analytics and your rights.`,
+    schema: [orgSchema(), breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Privacy Policy", href: "/privacy.html" }])] }, body));
 }
 
 /* ---------- AI overview summary (for LLMs / AI search) ---------- */
@@ -367,7 +431,7 @@ function aiAbout() {
 /* ---------- run ---------- */
 fs.rmSync(DIST, { recursive: true, force: true });
 fs.mkdirSync(DIST, { recursive: true });
-renderHome(); renderAbout(); renderCapabilities(); renderIndustries(); renderWork(); renderInsights(); renderContact();
+renderHome(); renderAbout(); renderCapabilities(); renderIndustries(); renderWork(); renderInsights(); renderContact(); renderTerms(); renderPrivacy();
 copyDir(path.join(ROOT, "src", "assets"), path.join(DIST, "assets"));
 sitemapRobots();
 aiAbout();
