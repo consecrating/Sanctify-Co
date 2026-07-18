@@ -97,8 +97,7 @@ function footer() {
   return `<footer class="footer"><div class="container">
     <div class="foot-grid">
       <div><a class="brand" href="/"><span class="m">S</span>${esc(site.brand)}</a>
-        <p style="margin-top:14px;max-width:34ch">${esc(site.descr)}</p>
-        <p><a href="tel:${site.phoneRaw}">${esc(site.phone)}</a> · <a href="mailto:${site.email}">${esc(site.email)}</a></p></div>
+        <p style="margin-top:14px;max-width:34ch">${esc(site.descr)}</p></div>
       <div><h4>Explore</h4><ul>${navLi}<li><a href="/contact.html">Contact</a></li></ul></div>
       <div><h4>The Network</h4><ul>${netLi}</ul></div>
       <div><h4>Get in touch</h4><ul><li><a href="tel:${site.phoneRaw}">${esc(site.phone)}</a></li><li><a href="mailto:${site.email}">${esc(site.email)}</a></li><li><a href="https://wa.me/${site.whatsapp}" rel="noopener">WhatsApp</a></li></ul></div>
