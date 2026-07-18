@@ -19,7 +19,10 @@ const ICONS = {
   doc: '<path d="M4 5h16v11H8l-4 4V5z"/><path d="M8 9h8M8 12h5"/>',
   pen: '<path d="M12 19l7-7-4-4-7 7v4h4zM14 6l4 4"/>',
   chart: '<path d="M4 19V5M4 19h16M8 15l3-4 3 2 4-6"/>',
-  star: '<path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9.6l6.9-.7z"/>'
+  star: '<path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9.6l6.9-.7z"/>',
+  mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/>',
+  home: '<path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/>',
+  clock: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>'
 };
 const icon = (n, stroke = true) => `<svg viewBox="0 0 24 24" fill="${stroke ? "none" : "currentColor"}" ${stroke ? 'stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"' : ""}>${ICONS[n] || ICONS.rocket}</svg>`;
 const WA = '<svg class="wa-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.29-.15-1.7-.84-1.96-.94-.26-.09-.45-.14-.64.15-.19.29-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.59.13-.13.29-.34.44-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.64-1.55-.88-2.12-.23-.55-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.38s1.02 2.77 1.17 2.96c.15.19 2.02 3.08 4.9 4.32.68.3 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2a10 10 0 0 0-8.55 15.19L2 22l4.94-1.3A10 10 0 1 0 12 2z"/></svg>';
@@ -83,13 +86,38 @@ ${schema}
 <div class="progress" id="progress"></div>`;
 }
 function header(active) {
-  const links = site.nav.map(n => `<li><a href="${n.href}"${active === n.href ? ' class="active"' : ""}>${esc(n.label)}</a></li>`).join("");
-  return `<header class="site-header" id="hdr"><div class="container"><nav class="nav" aria-label="Primary">
+  const items = [{ label: "Home", href: "/" }, ...site.nav, { label: "Contact", href: "/contact.html" }];
+  const links = items.map(n => {
+    const on = n.href === "/" ? (active === "" || active === "/") : active === n.href;
+    return `<li><a href="${n.href}"${on ? ' class="active"' : ""}>${esc(n.label)}</a></li>`;
+  }).join("");
+  return `${topdrawer()}<header class="site-header" id="hdr"><div class="container"><nav class="nav" aria-label="Primary">
     <a class="brand" href="/"><span class="m">S</span>${esc(site.brand)}</a>
     <ul class="nav-links">${links}</ul>
-    <a class="btn btn-acc" href="/contact.html" style="padding:11px 22px;font-size:.92rem">Get in Touch</a>
+    <div class="nav-cta">
+      <a class="nav-phone" href="tel:${site.phoneRaw}" aria-label="Call Sanctify">${PHONE}<span>${esc(site.phone)}</span></a>
+      <a class="btn btn-acc nav-getbtn" href="/contact.html">${icon("chat")} Get in Touch</a>
+    </div>
     <button class="nav-toggle" aria-label="Menu">☰</button>
   </nav></div></header>`;
+}
+/* Hidden quick-access drawer above the main nav — opens via pull tab, auto-closes 5s after the pointer leaves. */
+function topdrawer() {
+  const net = site.network.map(n => `<a href="${n.url}" rel="noopener">${esc(n.name)}</a>`).join("");
+  const soc = `<a href="${site.social.facebook}" rel="noopener" aria-label="Facebook">Facebook</a><a href="${site.social.instagram}" rel="noopener" aria-label="Instagram">Instagram</a><a href="${site.social.linkedin}" rel="noopener" aria-label="LinkedIn">LinkedIn</a>`;
+  return `<div class="topdrawer" id="topdrawer">
+  <div class="td-panel"><div class="container td-inner">
+    <div class="td-col"><span class="td-h">Quick contact</span>
+      <a class="td-lk" href="tel:${site.phoneRaw}">${PHONE}${esc(site.phone)}</a>
+      <a class="td-lk" href="https://wa.me/${site.whatsapp}" rel="noopener">${WA.replace('class="wa-ic" ', '')}WhatsApp us</a>
+      <a class="td-lk" href="mailto:${site.email}">${icon("mail")}${esc(site.email)}</a>
+    </div>
+    <div class="td-col"><span class="td-h">Our network</span><div class="td-net">${net}</div></div>
+    <div class="td-col"><span class="td-h">Follow us</span><div class="td-net">${soc}</div>
+      <span class="td-note">${icon("clock")} Mon–Sat · Replies within 1 working day</span></div>
+  </div></div>
+  <button class="td-pull" id="tdPull" aria-expanded="false" aria-controls="topdrawer"><span class="td-dot"></span>Quick links &amp; contact<i class="td-caret">⌄</i></button>
+</div>`;
 }
 function footer() {
   const netLi = site.network.map(n => `<li><a href="${n.url}" rel="noopener">${esc(n.name)} ↗</a></li>`).join("");
@@ -202,7 +230,7 @@ function renderHome() {
 </div></div></section>
 
 <section class="section soft"><div class="container">
-  <div class="thead"><div class="rv"><span class="eyebrow">Real stories</span><h2>Client experiences</h2></div><div class="tnav"><button id="tprev" aria-label="Previous">‹</button><button id="tnext" aria-label="Next">›</button></div></div>
+  <div class="thead"><div class="rv"><span class="eyebrow">Real stories</span><h2>Client experiences</h2><p class="rev-badge"><span class="stars">★★★★★</span> <strong>${site.rating.value}/5</strong> from ${site.rating.count} reviews · <a href="${site.reviewsUrl}" rel="noopener">See all on Google →</a></p></div><div class="tnav"><button id="tprev" aria-label="Previous">‹</button><button id="tnext" aria-label="Next">›</button></div></div>
   <div class="tslider" id="tslider">${tcards}</div>
 </div></section>
 
@@ -321,6 +349,11 @@ ${pageHero("Get in touch", "Let's grow your brand together", "Tell us about your
     <button class="btn btn-acc" type="submit" style="width:100%">Send Message →</button>
     <p class="form-status" style="font-size:.85rem;color:var(--acc-d);margin-top:10px"></p>
   </form></div>
+</div></section>
+<section class="section soft" style="padding-top:0"><div class="container">
+  <div class="section-head rv" style="margin-bottom:26px"><span class="eyebrow">Find us</span><h2>Visit Sanctify in Goa</h2><p class="lead">Serving businesses across North &amp; South Goa. Rated ${site.rating.value}/5 by ${site.rating.count} clients on Google.</p></div>
+  <div class="map-wrap rv"><iframe src="${site.mapEmbed}" title="Map showing Sanctify Digital Marketing Agency in Goa" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+  <div style="text-align:center;margin-top:20px"><a class="btn btn-out" href="${site.reviewsUrl}" rel="noopener">${icon("star", false)} Read our Google reviews</a> <a class="btn btn-acc" href="${site.mapLink}" rel="noopener">${icon("pin")} Get directions</a></div>
 </div></section></main>`;
   write("contact.html", page({ pathname: "/contact.html", active: "/contact.html", image: "goa-hero-2",
     title: `Contact Sanctify — Digital Marketing Agency in Goa`,

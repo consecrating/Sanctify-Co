@@ -105,5 +105,18 @@
     if (status) status.textContent = "Opening your email app…";
   });
 
+  // Top drawer: pull to open, auto-close 5s after the pointer leaves
+  (function () {
+    var td = document.getElementById("topdrawer"), pull = document.getElementById("tdPull");
+    if (!td || !pull) return;
+    var timer;
+    function arm() { clearTimeout(timer); timer = setTimeout(close, 5000); }
+    function open() { td.classList.add("open"); pull.setAttribute("aria-expanded", "true"); arm(); }
+    function close() { td.classList.remove("open"); pull.setAttribute("aria-expanded", "false"); clearTimeout(timer); }
+    pull.addEventListener("click", function () { td.classList.contains("open") ? close() : open(); });
+    td.addEventListener("mouseenter", function () { clearTimeout(timer); });
+    td.addEventListener("mouseleave", function () { if (td.classList.contains("open")) arm(); });
+  })();
+
   var y = document.getElementById("year"); if (y) y.textContent = new Date().getFullYear();
 })();

@@ -17,6 +17,9 @@
   "addressCountry": "IN",
   "geo": { "lat": "15.3860", "lng": "73.8157" },
   "rating": { "value": "4.8", "count": "128" },
+  "reviewsUrl": "https://www.google.com/search?kgmid=/g/1hc7h4hhv&q=Sanctify+Digital+Marketing+Agency+Goa",
+  "mapEmbed": "https://www.google.com/maps?q=Sanctify+Digital+Marketing+Agency,+Goa&output=embed",
+  "mapLink": "https://www.google.com/maps/search/?api=1&query=Sanctify+Digital+Marketing+Agency+Goa",
   "social": {
     "facebook": "https://www.facebook.com/sanctify.in",
     "instagram": "https://www.instagram.com/sanctify.in",
@@ -67,7 +70,12 @@
     { "av": "SD", "name": "Shreya Dutta", "role": "Digital Marketing", "quote": "Working with Sanctify felt practical and transparent. Their SEO and ads improved visibility, leads grew within weeks, and reporting stayed honest." },
     { "av": "AH", "name": "Ashutosh Hazare", "role": "Digital Marketing", "quote": "Impressed with the team's professionalism and effectiveness. I highly recommend Sanctify to any company that needs help with digital marketing." },
     { "av": "M", "name": "Moin", "role": "Branding", "quote": "Enthusiastic team, great for luxury brands. They quickly learn your business need and strategise the digital marketing accordingly." },
-    { "av": "BN", "name": "Benz Nx", "role": "SEO & Social", "quote": "Their expertise in SEO and social media helped my business rank higher and attract more customers. Highly recommended in Goa!" }
+    { "av": "BN", "name": "Benz Nx", "role": "SEO & Social", "quote": "Their expertise in SEO and social media helped my business rank higher and attract more customers. Highly recommended in Goa!" },
+    { "av": "PN", "name": "Prajyot Naik", "role": "Web Design", "quote": "They redesigned our website and the difference is night and day. Fast, modern and it actually brings enquiries. Great support throughout." },
+    { "av": "RK", "name": "Rhea Kamat", "role": "Social Media", "quote": "Our Instagram and Facebook finally look consistent and on-brand. Engagement is up and the content calendar keeps us organised." },
+    { "av": "VS", "name": "Vikram Shetty", "role": "Google Ads", "quote": "Cost per lead dropped noticeably after they restructured our Google Ads. Clear communication and no jargon — just results." },
+    { "av": "AF", "name": "Aliya Fernandes", "role": "Local SEO", "quote": "We now show up on Google Maps for searches in our area. Calls from the listing have gone up and the whole process was smooth." },
+    { "av": "SG", "name": "Sameer Gaonkar", "role": "Branding & Web", "quote": "From logo to launch, the Sanctify team handled everything with care. Professional, creative and genuinely invested in our growth." }
   ],
   "faqs": [
     { "q": "What is Sanctify?", "a": "Sanctify is an award-winning digital marketing and advertising agency founded in Goa in 2012. Our flagship agency is Sanctify Goa (sanctify.in), and we also run a small network of supporting platforms — the Sanctify.biz local-SEO engine, Sanctify Hostings (sanctify.co.in) and the Goa Guru local portal — offering web design, SEO, advertising, social media and branding." },
