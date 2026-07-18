@@ -14,7 +14,7 @@
 <style>
 :root{
   --bg:#ffffff;--ink:#0b1220;--ink-2:#1b2536;--body:#586172;--muted:#8b93a2;--line:#e9edf3;--soft:#f4f7fb;--dark:#0b1220;
-  --acc:#12c979;--acc-d:#0fae68;--acc-soft:#e7faf1;--acc-2:#0b1220;
+  --acc:#c20b58;--acc-d:#9e0946;--acc-soft:#fbe3ee;--acc-2:#0b1220;
   --maxw:1220px;--head:"Sora",system-ui,Segoe UI,Arial,sans-serif;--sans:"Inter",system-ui,Segoe UI,Arial,sans-serif;
   --radius:20px;--radius-s:14px;--shadow-s:0 6px 20px rgba(11,18,32,.06);--shadow:0 20px 50px rgba(11,18,32,.10);--shadow-l:0 34px 80px rgba(11,18,32,.16);
 }
@@ -40,13 +40,14 @@ p{margin-bottom:1rem}
 .lead{font-size:1.18rem}
 .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--head);font-weight:600;font-size:1rem;padding:15px 28px;border-radius:100px;cursor:pointer;border:2px solid transparent;transition:transform .16s,box-shadow .16s,background .16s,color .16s}
 .btn:hover{transform:translateY(-3px)}
-.btn-acc{background:var(--acc);color:#04240f;box-shadow:0 14px 30px rgba(18,201,121,.34)}
+.btn-acc{background:var(--acc);color:#ffffff;box-shadow:0 14px 30px rgba(194,11,88,.34)}
 .btn-acc:hover{background:var(--acc-d)}
 .btn-ink{background:var(--ink);color:#fff}
 .btn-ink:hover{box-shadow:var(--shadow)}
 .btn-out{background:transparent;color:var(--ink);border-color:var(--line)}
 .btn-out:hover{border-color:var(--ink)}
-.btn-wa{background:#25d366;color:#04240f}
+.btn-wa{background:#25d366;color:#ffffff}
+.wa-ic{width:21px;height:21px;flex-shrink:0}
 .progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--acc);z-index:200;transition:width .1s linear}
 .previewbar{background:var(--ink);color:#9fb0c6;text-align:center;font-size:.78rem;padding:8px;font-family:var(--head);letter-spacing:.03em}
 .previewbar b{color:var(--acc)}
@@ -55,7 +56,7 @@ p{margin-bottom:1rem}
 .site-header.scrolled{box-shadow:var(--shadow-s);border-color:var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:78px}
 .brand{display:flex;align-items:center;gap:10px;font-family:var(--head);font-weight:800;font-size:1.4rem;color:var(--ink)}
-.brand .m{width:34px;height:34px;border-radius:10px;background:var(--acc);display:grid;place-items:center;color:#04240f;font-weight:800}
+.brand .m{width:34px;height:34px;border-radius:10px;background:var(--acc);display:grid;place-items:center;color:#ffffff;font-weight:800}
 .nav-links{display:flex;gap:28px;list-style:none;font-family:var(--head);font-weight:500;font-size:.95rem}
 .nav-links a{color:var(--ink);position:relative}
 .nav-links a:hover{color:var(--acc-d)}
@@ -65,7 +66,7 @@ p{margin-bottom:1rem}
 .hero .container{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
 .hero .welcome{display:inline-flex;align-items:center;gap:10px;background:var(--acc-soft);color:var(--acc-d);font-family:var(--head);font-weight:600;font-size:.82rem;padding:8px 16px;border-radius:100px;margin-bottom:22px}
 .hero .welcome .d{width:7px;height:7px;border-radius:50%;background:var(--acc);animation:pulse 1.8s infinite}
-@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(18,201,121,.5)}50%{box-shadow:0 0 0 6px rgba(18,201,121,0)}}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(194,11,88,.5)}50%{box-shadow:0 0 0 6px rgba(194,11,88,0)}}
 .hero h1 .rot{color:var(--acc-d);display:inline-block;position:relative}
 .hero p{font-size:1.2rem;color:var(--body);max-width:50ch;margin:20px 0 30px}
 .hero .acts{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
@@ -91,7 +92,7 @@ p{margin-bottom:1rem}
 .who-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
 .pills{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
 .pill{font-family:var(--head);font-weight:600;font-size:.9rem;padding:10px 18px;border-radius:100px;border:1px solid var(--line);color:var(--ink);background:#fff;transition:background .2s,color .2s,border-color .2s}
-.pill:hover,.pill.on{background:var(--acc);color:#04240f;border-color:var(--acc)}
+.pill:hover,.pill.on{background:var(--acc);color:#ffffff;border-color:var(--acc)}
 .who-img{border-radius:24px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:1/1}
 .who-img img{width:100%;height:100%;object-fit:cover}
 /* results / before-after */
@@ -103,7 +104,7 @@ p{margin-bottom:1rem}
 .ba .before .inner{position:absolute;inset:0;width:100vw;max-width:none}
 .ba .lbl{position:absolute;top:16px;font-family:var(--head);font-weight:700;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:100px;color:#fff;backdrop-filter:blur(4px)}
 .ba .lb-before{left:16px;background:rgba(11,18,32,.6)}
-.ba .lb-after{right:16px;background:var(--acc);color:#04240f}
+.ba .lb-after{right:16px;background:var(--acc);color:#ffffff}
 .ba .handle{position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:44px;display:flex;align-items:center;justify-content:center;cursor:ew-resize}
 .ba .handle::before{content:"";position:absolute;top:0;bottom:0;width:3px;background:#fff}
 .ba .knob{width:44px;height:44px;border-radius:50%;background:#fff;box-shadow:var(--shadow);display:grid;place-items:center;color:var(--ink);font-weight:800;position:relative;z-index:2}
@@ -119,7 +120,7 @@ p{margin-bottom:1rem}
 .svc:hover{transform:translateY(-6px);box-shadow:var(--shadow-l);border-color:transparent}
 .svc:hover::after{transform:scaleX(1)}
 .svc .ic{width:58px;height:58px;border-radius:15px;background:var(--acc-soft);color:var(--acc-d);display:grid;place-items:center;margin-bottom:18px;transition:background .2s,color .2s}
-.svc:hover .ic{background:var(--acc);color:#04240f}
+.svc:hover .ic{background:var(--acc);color:#ffffff}
 .svc .ic svg{width:28px;height:28px}
 .svc h3{margin-bottom:8px}
 .svc p{font-size:.94rem;color:var(--body);margin-bottom:14px}
@@ -144,14 +145,14 @@ p{margin-bottom:1rem}
 .thead{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:36px}
 .tnav{display:flex;gap:10px}
 .tnav button{width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:1.2rem;cursor:pointer;transition:background .2s,color .2s}
-.tnav button:hover{background:var(--acc);color:#04240f;border-color:var(--acc)}
+.tnav button:hover{background:var(--acc);color:#ffffff;border-color:var(--acc)}
 .tslider{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding-bottom:8px;scrollbar-width:none}
 .tslider::-webkit-scrollbar{display:none}
 .tcard{flex:0 0 clamp(290px,42%,440px);scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px}
 .tcard .stars{color:#f5a623;letter-spacing:2px;margin-bottom:14px}
 .tcard .q{color:var(--ink-2);font-size:1.02rem;margin-bottom:18px}
 .tcard .who{display:flex;align-items:center;gap:12px}
-.tcard .av{width:46px;height:46px;border-radius:50%;background:var(--acc);color:#04240f;display:grid;place-items:center;font-family:var(--head);font-weight:800}
+.tcard .av{width:46px;height:46px;border-radius:50%;background:var(--acc);color:#ffffff;display:grid;place-items:center;font-family:var(--head);font-weight:800}
 .tcard .who b{font-family:var(--head);color:var(--ink);font-size:.95rem}
 .tcard .who small{color:var(--muted);font-size:.82rem;display:block}
 /* faq */
@@ -163,7 +164,7 @@ p{margin-bottom:1rem}
 .faq[open] summary::after{transform:rotate(45deg)}
 .faq .b{padding:0 24px 20px;color:var(--body)}
 /* footer marquee */
-.footmarq{background:var(--acc);color:#04240f;overflow:hidden;padding:20px 0;border-bottom:1px solid rgba(0,0,0,.1)}
+.footmarq{background:var(--acc);color:#ffffff;overflow:hidden;padding:20px 0;border-bottom:1px solid rgba(0,0,0,.1)}
 .footmarq .t{display:flex;gap:36px;width:max-content;animation:mv 24s linear infinite;font-family:var(--head);font-weight:800;font-size:clamp(1.4rem,2.6vw,2rem);text-transform:uppercase;align-items:center}
 /* footer */
 .footer{background:var(--ink);color:#8f9bb0;padding:64px 0 28px}
@@ -177,7 +178,7 @@ p{margin-bottom:1rem}
 .floaties{position:fixed;right:18px;bottom:18px;z-index:80;display:flex;flex-direction:column;gap:12px}
 .floatie{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:1.4rem;box-shadow:var(--shadow-l);transition:transform .16s}
 .floatie:hover{transform:scale(1.1)}
-.floatie.wa{background:#25d366}.floatie.call{background:var(--acc);color:#04240f}
+.floatie.wa{background:#25d366}.floatie.call{background:var(--acc);color:#ffffff}
 /* reveal */
 .has-js .rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
 .has-js .rv.in{opacity:1;transform:none}
@@ -198,7 +199,7 @@ p{margin-bottom:1rem}
 </head>
 <body>
 <div class="progress" id="progress"></div>
-<div class="previewbar">PREVIEW <b>v5</b> — modelled on the reference layout you liked, with a fresh emerald palette. Nothing is live.</div>
+<div class="previewbar">PREVIEW <b>v5</b> — reference-matched layout · #c20b58 accent · WhatsApp logo · image syncs with headline. Nothing is live.</div>
 
 <header class="site-header" id="hdr">
   <div class="container">
@@ -227,11 +228,11 @@ p{margin-bottom:1rem}
       <p>Grow your business with expert SEO &amp; digital marketing from Goa's award-winning agency — trusted by 100+ brands since 2012.</p>
       <div class="acts">
         <a class="btn btn-acc" href="#contact">Get a Free Audit →</a>
-        <a class="btn btn-wa" href="https://wa.me/919923352923">💬 Message us now</a>
+        <a class="btn btn-wa" href="https://wa.me/919923352923"><svg class="wa-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.29-.15-1.7-.84-1.96-.94-.26-.09-.45-.14-.64.15-.19.29-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.59.13-.13.29-.34.44-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.64-1.55-.88-2.12-.23-.55-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.38s1.02 2.77 1.17 2.96c.15.19 2.02 3.08 4.9 4.32.68.3 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2a10 10 0 0 0-8.55 15.19L2 22l4.94-1.3A10 10 0 1 0 12 2z"/></svg>Message us now</a>
       </div>
     </div>
     <div class="hero-visual rv">
-      <div class="main"><img src="https://www.sanctify.biz/assets/img/professional.jpg" alt="Sanctify digital marketing team in Goa"></div>
+      <div class="main"><img id="heroImg" src="https://www.sanctify.biz/assets/img/social-media.jpg" alt="Digital marketing campaigns by Sanctify Goa"></div>
       <div class="fcard fc1"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 19V5M4 19h16M8 15l3-4 3 2 4-6"/></svg></span><span><b>+180%</b><span>Organic traffic</span></span></div>
       <div class="fcard fc2"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9.6l6.9-.7z"/></svg></span><span><b>4.8/5</b><span>128 reviews</span></span></div>
     </div>
@@ -363,7 +364,7 @@ p{margin-bottom:1rem}
       <p style="color:#a9b4c6;max-width:52ch;margin:14px auto 26px">Get a free digital marketing audit — our team responds within one working day.</p>
       <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
         <a class="btn btn-acc" href="mailto:business@sanctify.biz">Get a Free Audit</a>
-        <a class="btn btn-wa" href="https://wa.me/919923352923">💬 WhatsApp us</a>
+        <a class="btn btn-wa" href="https://wa.me/919923352923"><svg class="wa-ic" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.29-.15-1.7-.84-1.96-.94-.26-.09-.45-.14-.64.15-.19.29-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.59.13-.13.29-.34.44-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.64-1.55-.88-2.12-.23-.55-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.38s1.02 2.77 1.17 2.96c.15.19 2.02 3.08 4.9 4.32.68.3 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2a10 10 0 0 0-8.55 15.19L2 22l4.94-1.3A10 10 0 1 0 12 2z"/></svg>WhatsApp us</a>
       </div>
     </div>
   </div>
@@ -389,7 +390,7 @@ p{margin-bottom:1rem}
 </footer>
 
 <div class="floaties">
-  <a class="floatie wa" href="https://wa.me/919923352923" aria-label="WhatsApp">🟢</a>
+  <a class="floatie wa" href="https://wa.me/919923352923" aria-label="WhatsApp"><svg viewBox="0 0 24 24" width="30" height="30" fill="#fff"><path d="M17.47 14.38c-.29-.15-1.7-.84-1.96-.94-.26-.09-.45-.14-.64.15-.19.29-.74.94-.9 1.13-.17.19-.33.21-.62.07-.29-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.03-.17-.29-.02-.45.13-.59.13-.13.29-.34.44-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.15-.64-1.55-.88-2.12-.23-.55-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.38s1.02 2.77 1.17 2.96c.15.19 2.02 3.08 4.9 4.32.68.3 1.22.47 1.63.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34zM12 2a10 10 0 0 0-8.55 15.19L2 22l4.94-1.3A10 10 0 1 0 12 2z"/></svg></a>
   <a class="floatie call" href="tel:+919923352923" aria-label="Call">📞</a>
 </div>
 
@@ -398,10 +399,27 @@ document.documentElement.classList.add('has-js');
 var hdr=document.getElementById('hdr'),tog=document.querySelector('.nav-toggle'),prog=document.getElementById('progress');
 if(tog)tog.addEventListener('click',function(){hdr.classList.toggle('open')});
 window.addEventListener('scroll',function(){var h=document.documentElement,st=h.scrollTop,sh=h.scrollHeight-h.clientHeight;if(prog)prog.style.width=(sh>0?st/sh*100:0)+'%';hdr.classList.toggle('scrolled',st>12);},{passive:true});
-// rotating hero word
-var words=['Campaigns','Approaches','Performance','Expertise'],ri=0,rot=document.getElementById('rot');
-if(rot)setInterval(function(){ri=(ri+1)%words.length;rot.style.opacity=0;setTimeout(function(){rot.textContent=words[ri];rot.style.opacity=1;},300);},2200);
-if(rot)rot.style.transition='opacity .3s';
+// rotating hero word + synced image
+var hslides=[
+  {w:'Campaigns',img:'https://www.sanctify.biz/assets/img/social-media.jpg',alt:'Digital marketing campaigns by Sanctify Goa'},
+  {w:'Approaches',img:'https://www.sanctify.biz/assets/img/content-marketing.jpg',alt:'Content marketing strategy at Sanctify Goa'},
+  {w:'Performance',img:'https://www.sanctify.biz/assets/img/google-ads.jpg',alt:'Marketing performance analytics at Sanctify Goa'},
+  {w:'Expertise',img:'https://www.sanctify.biz/assets/img/professional.jpg',alt:'The expert Sanctify digital marketing team in Goa'}
+];
+var ri=0,rot=document.getElementById('rot'),hImg=document.getElementById('heroImg');
+if(rot){
+  rot.style.transition='opacity .3s ease';
+  if(hImg){hImg.style.transition='opacity .45s ease';[1,2,3].forEach(function(k){var im=new Image();im.src=hslides[k].img;});}
+  setInterval(function(){
+    ri=(ri+1)%hslides.length;
+    rot.style.opacity=0; if(hImg)hImg.style.opacity=0;
+    setTimeout(function(){
+      rot.textContent=hslides[ri].w;
+      if(hImg){hImg.src=hslides[ri].img;hImg.alt=hslides[ri].alt;}
+      rot.style.opacity=1; if(hImg)hImg.style.opacity=1;
+    },330);
+  },2800);
+}
 // marquees
 document.getElementById('cm').innerHTML=(['Mercedes-Benz','TVS','Casino Pride','Hindustan Petroleum','BJP','Hotel Supreme Grande','Kenkre Dental','Mahalasa Travels'].map(function(x){return '<span class="wm">'+x+'</span>'}).join('')).repeat(2);
 document.getElementById('fm').innerHTML=(['Optimization','✦','Development','✦','Execution','✦','Strategy','✦','Growth','✦'].join(' ')+' ').repeat(3);
