@@ -1,0 +1,10 @@
+{
+  "name": "sanctify-co",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sanctify.co — corporate digital marketing group website (static, SEO-optimized).",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "package": "npm run build && cd dist && zip -qr ../sanctify-co-site.zip . && cd .. && echo packaged"
+  }
+}

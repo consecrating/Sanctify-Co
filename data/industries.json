@@ -1,0 +1,8 @@
+[
+  { "slug": "hospitality", "name": "Hospitality", "img": "hotel", "desc": "Hotels, resorts, restaurants and beach shacks — from Hotel Supreme Grande to The Flora Grand." },
+  { "slug": "automotive", "name": "Automotive", "img": "automobile", "desc": "Dealers and rentals — including work for Mercedes-Benz and TVS — marketing that drives leads." },
+  { "slug": "real-estate", "name": "Real Estate", "img": "real-estate", "desc": "Villas and property brands — high-intent buyer campaigns and lead capture." },
+  { "slug": "healthcare", "name": "Healthcare", "img": "healthcare", "desc": "Clinics like Kenkre Dental — trusted, findable and easy to book online." },
+  { "slug": "retail-luxury", "name": "Retail & Luxury", "img": "retail", "desc": "Boutiques and jewellery brands — e-commerce and brand storytelling." },
+  { "slug": "education", "name": "Education", "img": "education", "desc": "Schools and academies — admissions-driving digital presence." }
+]

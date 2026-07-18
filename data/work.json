@@ -1,0 +1,8 @@
+[
+  { "client": "Mercedes-Benz", "industry": "Automotive", "location": "Porvorim, Goa", "service": "Digital Marketing, SEO & SEM", "img": "automobile" },
+  { "client": "Casino Pride", "industry": "Entertainment", "location": "Goa", "service": "Brand identity & guidelines", "img": "nightlife" },
+  { "client": "Hindustan Petroleum", "industry": "Corporate", "location": "Goa", "service": "Event management & social media", "img": "professional" },
+  { "client": "Hotel Supreme Grande", "industry": "Hospitality", "location": "Calangute, Goa", "service": "Website & Facebook marketing", "img": "hotel" },
+  { "client": "Kenkre Dental Care", "industry": "Healthcare", "location": "Panjim, Goa", "service": "Dentist website & local SEO", "img": "healthcare" },
+  { "client": "Mahalasa Travels", "industry": "Travel", "location": "Vasco, Goa", "service": "Website design", "img": "travel" }
+]

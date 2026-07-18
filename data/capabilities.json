@@ -1,0 +1,8 @@
+[
+  { "slug": "digital-marketing", "name": "Digital Marketing", "icon": "rocket", "desc": "Data-driven, full-funnel campaigns that boost visibility, traffic and online conversions.", "points": ["Full-funnel strategy & planning", "Multi-channel campaign management", "Analytics, tracking & reporting"] },
+  { "slug": "seo", "name": "Search Engine Optimization", "icon": "search", "desc": "Rank higher on Google with expert keyword strategy, technical SEO, links and on-page optimisation.", "points": ["Technical & on-page SEO", "Local SEO & Google Business Profile", "Content & link building"] },
+  { "slug": "social-media-marketing", "name": "Social Media Marketing", "icon": "chat", "desc": "Engage audiences and build brand presence with content and campaigns that drive real results.", "points": ["Content calendars & creatives", "Instagram, Facebook & LinkedIn", "Paid social campaigns"] },
+  { "slug": "web-design-development", "name": "Web Design & Development", "icon": "browser", "desc": "Stunning, SEO-optimised websites built for speed, performance and lead generation.", "points": ["Mobile-first responsive design", "E-commerce & booking systems", "Core Web Vitals tuned"] },
+  { "slug": "content-marketing", "name": "Content Marketing", "icon": "doc", "desc": "Powerful content strategies that build authority, engagement and lasting organic reach.", "points": ["SEO blog & article writing", "Video & reel scripting", "Email newsletters"] },
+  { "slug": "branding-creative", "name": "Branding & Creative", "icon": "pen", "desc": "Distinctive identities and creative that make brands unforgettable across every touchpoint.", "points": ["Logo & identity design", "Brand guidelines", "Print & digital creative"] }
+]

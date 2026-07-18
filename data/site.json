@@ -1,0 +1,68 @@
+{
+  "brand": "Sanctify",
+  "legalName": "Sanctify Advertising & Digital Marketing Agency",
+  "domain": "sanctify.co",
+  "baseUrl": "https://www.sanctify.co",
+  "tagline": "The Digital Marketing Group",
+  "descr": "Sanctify is an award-winning digital marketing group founded in Goa in 2012 — a family of agencies and platforms that has grown 100+ brands with web design, SEO, advertising, social media and branding.",
+  "foundedYear": 2012,
+  "phone": "+91-9923352923",
+  "phoneRaw": "+919923352923",
+  "whatsapp": "919923352923",
+  "email": "business@sanctify.biz",
+  "streetAddress": "Vasco-da-Gama",
+  "addressLocality": "Vasco-da-Gama",
+  "addressRegion": "Goa",
+  "postalCode": "403802",
+  "addressCountry": "IN",
+  "geo": { "lat": "15.3860", "lng": "73.8157" },
+  "rating": { "value": "4.8", "count": "128" },
+  "social": {
+    "facebook": "https://www.facebook.com/sanctify.in",
+    "instagram": "https://www.instagram.com/sanctify.in",
+    "linkedin": "https://www.linkedin.com/company/sanctify"
+  },
+  "nav": [
+    { "label": "About", "href": "/about.html" },
+    { "label": "Capabilities", "href": "/capabilities.html" },
+    { "label": "Industries", "href": "/industries.html" },
+    { "label": "Work", "href": "/work.html" },
+    { "label": "Insights", "href": "/insights.html" }
+  ],
+  "network": [
+    { "name": "Sanctify Goa", "domain": "sanctify.in", "url": "https://www.sanctify.in", "desc": "Our flagship digital marketing agency for Goa businesses — web, SEO, ads & social.", "icon": "rocket" },
+    { "name": "Sanctify.biz", "domain": "sanctify.biz", "url": "https://www.sanctify.biz", "desc": "A local-SEO engine that wins \"near me\" searches across Goa.", "icon": "search" },
+    { "name": "Sanctify Hostings", "domain": "sanctify.co.in", "url": "https://www.sanctify.co.in", "desc": "Reliable web hosting, domains & business email — the infrastructure.", "icon": "server" },
+    { "name": "Goa Guru", "domain": "goa.guru", "url": "https://www.goa.guru", "desc": "Goa's local discovery portal for visitors & businesses.", "icon": "pin" }
+  ],
+  "trustBrands": [
+    { "name": "Mercedes-Benz", "tag": "Automotive", "badge": "MB", "color": "#111820" },
+    { "name": "TVS", "tag": "Automotive", "badge": "TVS", "color": "#ec5a2a" },
+    { "name": "Casino Pride", "tag": "Entertainment", "badge": "CP", "color": "#c20b58" },
+    { "name": "Hindustan Petroleum", "tag": "Corporate", "badge": "HP", "color": "#1e6fb8" },
+    { "name": "Bharatiya Janata Party", "tag": "Political", "badge": "BJP", "color": "#f58220" },
+    { "name": "Hotel Supreme Grande", "tag": "Hospitality", "badge": "HS", "color": "#0e8f6e" },
+    { "name": "Kenkre Dental", "tag": "Healthcare", "badge": "KD", "color": "#e5233d" }
+  ],
+  "hashtags": ["#DigitalMarketing", "#SEO", "#WebDesign", "#GoogleAds", "#SocialMedia", "#Branding", "#ContentMarketing", "#LocalSEO", "#PerformanceMarketing", "#GoaBusiness"],
+  "pills": ["SEO Expertise", "Creative Strategy", "Digital Growth", "Brand Visibility", "Proven Results"],
+  "results": [
+    { "n": "180", "suffix": "%", "label": "Organic traffic growth" },
+    { "n": "2", "suffix": "s", "label": "Avg page-speed time" },
+    { "n": "45", "suffix": "%", "label": "Lower bounce rate" },
+    { "n": "120", "suffix": "%", "label": "More conversions" }
+  ],
+  "testimonials": [
+    { "av": "SD", "name": "Shreya Dutta", "role": "Digital Marketing", "quote": "Working with Sanctify felt practical and transparent. Their SEO and ads improved visibility, leads grew within weeks, and reporting stayed honest." },
+    { "av": "AH", "name": "Ashutosh Hazare", "role": "Digital Marketing", "quote": "Impressed with the team's professionalism and effectiveness. I highly recommend Sanctify to any company that needs help with digital marketing." },
+    { "av": "M", "name": "Moin", "role": "Branding", "quote": "Enthusiastic team, great for luxury brands. They quickly learn your business need and strategise the digital marketing accordingly." },
+    { "av": "BN", "name": "Benz Nx", "role": "SEO & Social", "quote": "Their expertise in SEO and social media helped my business rank higher and attract more customers. Highly recommended in Goa!" }
+  ],
+  "faqs": [
+    { "q": "What is Sanctify?", "a": "Sanctify is an award-winning digital marketing group founded in Goa in 2012. It operates a family of properties — the Sanctify Goa agency (sanctify.in), the Sanctify.biz local-SEO engine, Sanctify Hostings (sanctify.co.in) and the Goa Guru local portal — offering web design, SEO, advertising, social media and branding." },
+    { "q": "What services does the Sanctify group offer?", "a": "The group offers digital marketing, search engine optimization (SEO), Google Ads and paid advertising, social media marketing, web design and development, content marketing, branding and creative, and web hosting." },
+    { "q": "Where is Sanctify based and which areas does it serve?", "a": "Sanctify is headquartered in Vasco-da-Gama, Goa, India, and serves businesses across North and South Goa and beyond, including Panjim, Calangute, Mapusa, Margao and other towns." },
+    { "q": "How experienced is Sanctify?", "a": "Sanctify has 13+ years of experience (since 2012), has grown 100+ brands, and holds a 4.8/5 rating across 128 client reviews." },
+    { "q": "How do I get in touch with Sanctify?", "a": "You can reach Sanctify by phone at +91-9923352923, on WhatsApp, or by email at business@sanctify.biz. The team responds within one working day." }
+  ]
+}
