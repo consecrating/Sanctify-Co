@@ -91,10 +91,10 @@ ${schema}
 <div class="progress" id="progress"></div>`;
 }
 function header(active) {
-  const items = [{ label: "Home", href: "/" }, ...site.nav, { label: "Contact", href: "/contact.html" }];
+  const items = [{ label: "Home", href: "/" }, ...site.nav, { label: "Contact", href: "/contact.html", cls: "nav-contact" }];
   const links = items.map(n => {
     const on = n.href === "/" ? (active === "" || active === "/") : active === n.href;
-    return `<li><a href="${n.href}"${on ? ' class="active"' : ""}>${esc(n.label)}</a></li>`;
+    return `<li${n.cls ? ` class="${n.cls}"` : ""}><a href="${n.href}"${on ? ' class="active"' : ""}>${esc(n.label)}</a></li>`;
   }).join("");
   return `<header class="site-header" id="hdr"><div class="container"><nav class="nav" aria-label="Primary">
     <a class="brand" href="/"><span class="m">S</span>${esc(site.brand)}</a>

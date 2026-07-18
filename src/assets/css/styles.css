@@ -253,6 +253,7 @@ p{margin-bottom:1rem}
   .svc-grid,.steps,.workgrid{grid-template-columns:1fr}.svc-grid,.workgrid{gap:20px}
   .foot-grid{grid-template-columns:1fr 1fr}.statgrid{grid-template-columns:1fr 1fr}
 }
+@media(min-width:641px){.nav-links .nav-contact{display:none}}
 @media(max-width:1150px){.nav-phone{display:none}}
 @media(max-width:1000px){.nav-links{gap:18px;font-size:.9rem}}
 @media(max-width:880px){.foot-top{grid-template-columns:1fr;gap:36px}}
