@@ -83,11 +83,12 @@ p{margin-bottom:1rem}
 .cmcard span{font-size:.74rem;color:var(--muted)}
 @keyframes mv{to{transform:translateX(-50%)}}
 /* hashtag marquee (bottom, like sanctify.in) */
-.tagmarq{background:var(--acc);overflow:hidden;padding:16px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
-.tagmarq .t{display:flex;gap:34px;width:max-content;animation:mv 26s linear infinite;font-family:var(--head);font-weight:700;font-size:1.05rem;color:#fff;align-items:center}
+.tagmarq{background:var(--acc);overflow:hidden;padding:15px 0}
+.tagmarq .t{display:flex;gap:28px;width:max-content;animation:mv 30s linear infinite;font-family:var(--head);font-weight:700;font-size:1.02rem;align-items:center}
 .tagmarq:hover .t{animation-play-state:paused}
-.tagmarq .t span{opacity:.92}
-.tagmarq .t .s{opacity:.5}
+.tagmarq a{color:#fff;opacity:.95;display:inline-block;transition:transform .2s,opacity .2s;white-space:nowrap}
+.tagmarq a:hover{opacity:1;transform:translateY(-2px);text-decoration:underline}
+.tagmarq .s{color:#fff;opacity:.4}
 /* who + pills */
 .who-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
 .pills{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
@@ -217,7 +218,9 @@ p{margin-bottom:1rem}
 @media(max-width:640px){
   .section{padding:60px 0}.nav-links{display:none}.nav-toggle{display:block}
   .site-header.open .nav-links{display:flex;position:absolute;top:78px;left:0;right:0;flex-direction:column;align-items:flex-start;background:#fff;padding:20px 26px;gap:16px;border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
-  .foot-grid{grid-template-columns:1fr}.btn{width:100%}
+  .foot-grid{grid-template-columns:1fr}
+  .btn{width:100%}
+  .nav>.btn-acc{display:none}
   .hero-visual .fcard{display:none}
   .floaties{display:none}
   .mobar{display:flex}

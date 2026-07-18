@@ -1,8 +1,8 @@
 [
-  { "client": "Mercedes-Benz", "industry": "Automotive", "location": "Porvorim, Goa", "service": "Digital Marketing, SEO & SEM", "img": "automobile" },
-  { "client": "Casino Pride", "industry": "Entertainment", "location": "Goa", "service": "Brand identity & guidelines", "img": "nightlife" },
-  { "client": "Hindustan Petroleum", "industry": "Corporate", "location": "Goa", "service": "Event management & social media", "img": "professional" },
-  { "client": "Hotel Supreme Grande", "industry": "Hospitality", "location": "Calangute, Goa", "service": "Website & Facebook marketing", "img": "hotel" },
-  { "client": "Kenkre Dental Care", "industry": "Healthcare", "location": "Panjim, Goa", "service": "Dentist website & local SEO", "img": "healthcare" },
-  { "client": "Mahalasa Travels", "industry": "Travel", "location": "Vasco, Goa", "service": "Website design", "img": "travel" }
+  { "client": "Mercedes-Benz (Counto Motors)", "industry": "Automotive", "location": "Ribandar / Porvorim, Goa", "service": "Digital marketing, SEO & SEM", "img": "automobile", "summary": "Full digital marketing, SEO and paid search for the Mercedes-Benz dealership — driving qualified showroom enquiries across North Goa.", "inLink": "https://www.sanctify.in/counto-motors-mercedes-benz-dealership-in-ribander-north-goa-goa/", "inAnchor": "the Counto Motors Mercedes-Benz case study on Sanctify Goa" },
+  { "client": "Casino Pride", "industry": "Entertainment", "location": "Goa", "service": "Brand identity & guidelines", "img": "nightlife", "summary": "Brand identity and guidelines for one of Goa's best-known entertainment destinations." },
+  { "client": "Hindustan Petroleum", "industry": "Corporate", "location": "Goa", "service": "Event management & social media", "img": "professional", "summary": "On-ground event management and social media coverage for a national energy brand." },
+  { "client": "Hotel Supreme Grande", "industry": "Hospitality", "location": "Calangute, Goa", "service": "Website & Facebook marketing", "img": "hotel", "summary": "A booking-focused hotel website plus Facebook marketing to help fill rooms through peak season." },
+  { "client": "Kenkre Dental Care", "industry": "Healthcare", "location": "Panjim, Goa", "service": "Clinic website & local SEO", "img": "healthcare", "summary": "A trust-building clinic website and local SEO that makes the practice easy to find and book in Panjim.", "inLink": "https://www.sanctify.in/kenkre-dental-care-dental-clinic-in-panjim-north-goa-goa/", "inAnchor": "the Kenkre Dental Care case study on Sanctify Goa" },
+  { "client": "Mahalasa Travels", "industry": "Travel", "location": "Vasco, Goa", "service": "Website design", "img": "travel", "summary": "A clean, conversion-ready website for a Vasco-based travel operator." }
 ]

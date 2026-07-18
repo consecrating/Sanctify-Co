@@ -57,6 +57,8 @@ function head(o) {
 <title>${esc(o.title)}</title>
 <meta name="description" content="${esc(o.description)}">
 <link rel="canonical" href="${esc(canonical)}">
+<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+<link rel="apple-touch-icon" href="/assets/favicon.svg">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#c20b58">
 <meta name="author" content="${esc(site.legalName)}">
@@ -74,6 +76,7 @@ function head(o) {
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="/assets/css/styles.css">
+<link rel="alternate" type="application/json" href="/ai-about-sanctify.json" title="About Sanctify (structured summary for AI)">
 ${schema}
 </head>
 <body>
@@ -118,12 +121,12 @@ function chrome() {
 </body></html>`;
 }
 function tagmarq() {
-  const items = site.hashtags.map(h => `<span>${esc(h)}</span><span class="s">✦</span>`).join("");
-  return `<div class="tagmarq"><div class="t">${items}${items}</div></div>`;
+  const items = site.hashtags.map(h => `<a href="${h.href}"${h.href.indexOf("http") === 0 ? ' rel="noopener"' : ""}>${esc(h.tag)}</a><span class="s">✦</span>`).join("");
+  return `<nav class="tagmarq" aria-label="Explore our services"><div class="t">${items}${items}</div></nav>`;
 }
 function ctaSection() {
   return `<section class="section" id="contact-cta"><div class="container"><div class="ctabox rv">
-    <span class="eyebrow" style="color:var(--acc-lt);justify-content:center">Work with the group</span>
+    <span class="eyebrow" style="color:var(--acc-lt);justify-content:center">Work with us</span>
     <h2>Ready to grow your brand?</h2>
     <p>Tell us about your goals — our team responds within one working day.</p>
     <div class="acts">
@@ -148,7 +151,7 @@ function renderHome() {
   const body = `<main>
 <section class="hero"><div class="container">
   <div>
-    <span class="welcome"><span class="d"></span>The Sanctify Group · Since ${site.foundedYear}</span>
+    <span class="welcome"><span class="d"></span>Award-winning · Goa · Since ${site.foundedYear}</span>
     <h1>Helping Goa's brands <span class="rot" id="rot">grow</span></h1>
     <p>${esc(site.descr)}</p>
     <div class="acts">
@@ -167,13 +170,13 @@ function renderHome() {
 
 <section class="section" id="who"><div class="container who-grid">
   <div class="who-img rv"><img src="${img("social-media")}" alt="The Sanctify team planning a campaign" loading="lazy"></div>
-  <div class="rv"><span class="eyebrow">Who we are</span><h2>Your trusted digital marketing group in Goa</h2>
+  <div class="rv"><span class="eyebrow">Who we are</span><h2>Your trusted digital marketing agency in Goa</h2>
   <p>We're a creative team of SEO experts, content strategists, social media marketers and data-driven professionals helping brands grow online. With 13+ years of experience, we deliver measurable growth, higher visibility and lasting results across Goa and beyond.</p>
   <div class="pills">${pills}</div></div>
 </div></section>
 
 <section class="section soft" id="network"><div class="container">
-  <div class="section-head rv"><span class="eyebrow">The Sanctify Network</span><h2>One group, four ways we help you grow</h2><p class="lead">More than an agency — a connected family of properties covering every stage of your growth.</p></div>
+  <div class="section-head rv"><span class="eyebrow">The Sanctify Network</span><h2>Our websites &amp; platforms</h2><p class="lead">One agency, backed by a small network of platforms covering every stage of your growth.</p></div>
   <div class="netgrid">${netCards}</div>
 </div></section>
 
@@ -189,7 +192,7 @@ function renderHome() {
   </div>
 </div></div></section>
 
-<section class="section" id="capabilities-pre"><div class="section-head rv"><span class="eyebrow">What the group does</span><h2>Our capabilities</h2><p class="lead">Full-service digital marketing — strategy, build &amp; growth, delivered in Goa by <a href="https://www.sanctify.in" rel="noopener" style="color:var(--acc-d);font-weight:600">Sanctify Goa</a>.</p></div><div class="container"><div class="svc-grid">${svc}</div></div></section>
+<section class="section" id="capabilities-pre"><div class="section-head rv"><span class="eyebrow">What we do</span><h2>Our capabilities</h2><p class="lead">Full-service digital marketing — strategy, build &amp; growth, delivered in Goa by <a href="https://www.sanctify.in" rel="noopener" style="color:var(--acc-d);font-weight:600">Sanctify Goa</a>.</p></div><div class="container"><div class="svc-grid">${svc}</div></div></section>
 
 <section class="section soft"><div class="section-head rv"><span class="eyebrow">Concept projects</span><h2>Selected work</h2></div><div class="container"><div class="workgrid">${wtiles}</div><div style="text-align:center;margin-top:34px"><a class="btn btn-out" href="/work.html">View all case studies →</a></div></div></section>
 
@@ -211,7 +214,7 @@ ${ctaSection()}
 
   const schema = [orgSchema(), websiteSchema(), faqSchema(site.faqs), breadcrumbSchema([{ name: "Home", href: "/" }])];
   write("index.html", page({ pathname: "/", active: "", image: "goa-hero-1",
-    title: `${site.brand} — Digital Marketing Group in Goa | SEO, Ads & Web`,
+    title: `${site.brand} — Digital Marketing Agency in Goa | SEO, Ads & Web`,
     description: site.descr, schema }, body));
 }
 
@@ -223,11 +226,12 @@ function bc(name, href) { return breadcrumbSchema([{ name: "Home", href: "/" }, 
 
 function renderAbout() {
   const body = `<main>
-${pageHero("About the group", "A group built on results, since 2012", "Founded in Vasco-da-Gama, Sanctify has grown into a full-service digital marketing group trusted by national brands and loved local businesses alike.")}
+${pageHero("About Sanctify", "An agency built on results, since 2012", "Founded in Vasco-da-Gama, Sanctify has grown into a full-service digital marketing and advertising agency trusted by national brands and loved local businesses alike.")}
 <section class="section"><div class="container who-grid">
   <div class="who-img rv"><img src="${img("professional")}" alt="The Sanctify team in Goa" loading="lazy"></div>
   <div class="rv"><span class="eyebrow">Our story</span><h2>Global craft, deep local insight</h2>
   <p>Since 2012 we've helped over 100 brands — from Mercedes-Benz and Casino Pride to loved local hotels and clinics — get found, get chosen and grow. We pair global best-practice with an intimate understanding of the Goan market.</p>
+  <p style="margin-top:12px">Our day-to-day client work is delivered through our flagship agency, <a href="https://www.sanctify.in/about-sanctify/" rel="noopener" style="color:var(--acc-d);font-weight:600">Sanctify Goa</a> — where you can explore our full story, team and service pages in depth.</p>
   <ul style="list-style:none;margin-top:16px">
     <li style="padding:8px 0;border-bottom:1px solid var(--line)"><strong>13+ years</strong> serving Goa &amp; beyond</li>
     <li style="padding:8px 0;border-bottom:1px solid var(--line)"><strong>100+ brands</strong> grown across industries</li>
@@ -236,20 +240,20 @@ ${pageHero("About the group", "A group built on results, since 2012", "Founded i
   </ul></div>
 </div></section>
 <section class="section soft"><div class="container">
-  <div class="section-head rv"><span class="eyebrow">The Sanctify Network</span><h2>One group, four properties</h2></div>
+  <div class="section-head rv"><span class="eyebrow">The Sanctify Network</span><h2>Four connected properties</h2></div>
   <div class="netgrid">${site.network.map(n => `<a class="net rv" href="${n.url}" rel="noopener"><span class="ic">${icon(n.icon)}</span><div><h3>${esc(n.name)}</h3><div class="dom">${esc(n.domain)}</div><p>${esc(n.desc)}</p><span class="go">Visit site →</span></div></a>`).join("")}</div>
 </div></section>
 ${ctaSection()}</main>`;
   write("about.html", page({ pathname: "/about.html", active: "/about.html", image: "professional",
-    title: `About Sanctify — Goa's Digital Marketing Group Since 2012`,
-    description: "Sanctify is an award-winning digital marketing group in Goa, founded 2012 — 100+ brands grown, 4.8/5 from 128 reviews. Meet the group and its network.",
+    title: `About Sanctify — Goa's Digital Marketing Agency Since 2012`,
+    description: "Sanctify is an award-winning digital marketing and advertising agency in Goa, founded 2012 — 100+ brands grown, 4.8/5 from 128 reviews. Meet the team and our network.",
     schema: [orgSchema(), bc("About", "/about.html")] }, body));
 }
 
 function renderCapabilities() {
-  const cards = caps.map(c => `<div class="svc rv" id="${c.slug}"><div class="ic">${icon(c.icon)}</div><h3>${esc(c.name)}</h3><p>${esc(c.desc)}</p><ul style="list-style:none;margin-top:6px">${c.points.map(p => `<li style="font-size:.9rem;color:var(--muted);padding:3px 0">✓ ${esc(p)}</li>`).join("")}</ul></div>`).join("");
+  const cards = caps.map(c => `<div class="svc rv" id="${c.slug}"><div class="ic">${icon(c.icon)}</div><h3>${esc(c.name)}</h3><p>${esc(c.long)}</p><ul style="list-style:none;margin:8px 0 14px">${c.points.map(p => `<li style="font-size:.9rem;color:var(--muted);padding:3px 0">✓ ${esc(p)}</li>`).join("")}</ul><a class="lm" href="${c.inLink}" rel="noopener">Delivered in Goa by ${esc(c.inAnchor)} →</a></div>`).join("");
   const body = `<main>
-${pageHero("What the group does", "Capabilities across the full journey", "Strategy, creativity and technology working together to grow your brand. Delivered in Goa by Sanctify Goa (sanctify.in).")}
+${pageHero("What we do", "Capabilities across the full journey", "Strategy, creativity and technology working together to grow your brand. Delivered in Goa by Sanctify Goa (sanctify.in).")}
 <section class="section"><div class="container"><div class="svc-grid">${cards}</div></div></section>
 ${ctaSection()}</main>`;
   write("capabilities.html", page({ pathname: "/capabilities.html", active: "/capabilities.html", image: "web-design",
@@ -262,7 +266,8 @@ function renderIndustries() {
   const cards = inds.map(i => `<a class="wtile rv" href="/work.html" style="background-image:url('${img(i.img)}')"><div class="wc"><span class="wt">Industry</span><h3>${esc(i.name)}</h3><p>${esc(i.desc)}</p></div></a>`).join("");
   const body = `<main>
 ${pageHero("Industries", "Sector expertise, proven by results", "From hospitality and automotive to healthcare, retail and education — we know what makes each industry's customers click.")}
-<section class="section"><div class="container"><div class="workgrid">${cards}</div></div></section>
+<section class="section"><div class="container"><div class="workgrid">${cards}</div>
+<p class="lead" style="text-align:center;margin-top:34px;max-width:60ch;margin-left:auto;margin-right:auto">Every sector needs a different playbook. See real, industry-specific campaigns in our <a href="https://www.sanctify.in/showcase/" rel="noopener" style="color:var(--acc-d);font-weight:600">Sanctify Goa showcase</a>.</p></div></section>
 ${ctaSection()}</main>`;
   write("industries.html", page({ pathname: "/industries.html", active: "/industries.html", image: "hotel",
     title: `Industries We Serve — Hospitality, Auto, Healthcare & More | Sanctify`,
@@ -271,10 +276,10 @@ ${ctaSection()}</main>`;
 }
 
 function renderWork() {
-  const tiles = work.map(w => `<a class="wtile rv" href="/contact.html" style="background-image:url('${img(w.img)}')"><div class="wc"><span class="wt">${esc(w.industry)}</span><h3>${esc(w.client)}</h3><p>${esc(w.service)} · ${esc(w.location)}</p></div></a>`).join("");
+  const tiles = work.map(w => `<div class="svc rv" style="padding:0;overflow:hidden"><div style="height:200px;background-size:cover;background-position:center;background-image:url('${img(w.img)}')" role="img" aria-label="${esc(w.client + " — " + w.industry + " digital marketing project by Sanctify in " + w.location)}"></div><div style="padding:26px"><span class="lm" style="text-transform:uppercase;font-size:.68rem;letter-spacing:.08em">${esc(w.industry)}</span><h3 style="margin:8px 0 6px">${esc(w.client)}</h3><p style="font-size:.93rem">${esc(w.summary)}</p><p style="font-size:.84rem;color:var(--muted);margin:8px 0 0">${esc(w.service)} · ${esc(w.location)}</p>${w.inLink ? `<a class="lm" href="${w.inLink}" rel="noopener" style="display:inline-block;margin-top:10px">View ${esc(w.inAnchor)} ↗</a>` : ""}</div></div>`).join("");
   const body = `<main>
 ${pageHero("Selected work", "Brands we've helped grow", "A snapshot from a portfolio of 100+ projects across Goa and beyond.")}
-<section class="section"><div class="container"><div class="workgrid">${tiles}</div></div></section>
+<section class="section"><div class="container"><div class="svc-grid">${tiles}</div></div></section>
 ${ctaSection()}</main>`;
   write("work.html", page({ pathname: "/work.html", active: "/work.html", image: "automobile",
     title: `Our Work & Case Studies — Sanctify Digital Marketing Goa`,
@@ -290,7 +295,7 @@ ${pageHero("Insights", "Ideas & guides from our studio", "Practical digital mark
 ${ctaSection()}</main>`;
   write("insights.html", page({ pathname: "/insights.html", active: "/insights.html", image: "seo",
     title: `Insights — Digital Marketing Tips & Trends | Sanctify Goa`,
-    description: "Read the latest digital marketing, SEO and web design insights from Sanctify — Goa's award-winning digital marketing group.",
+    description: "Read the latest digital marketing, SEO and web design insights from Sanctify — Goa's award-winning digital marketing agency.",
     schema: [orgSchema(), bc("Insights", "/insights.html")] }, body));
 }
 
@@ -319,8 +324,8 @@ ${pageHero("Get in touch", "Let's grow your brand together", "Tell us about your
   </form></div>
 </div></section></main>`;
   write("contact.html", page({ pathname: "/contact.html", active: "/contact.html", image: "goa-hero-2",
-    title: `Contact Sanctify — Digital Marketing Group in Goa`,
-    description: "Get in touch with Sanctify, Goa's digital marketing group. Call +91-9923352923, WhatsApp or email business@sanctify.biz. We respond within one working day.",
+    title: `Contact Sanctify — Digital Marketing Agency in Goa`,
+    description: "Get in touch with Sanctify, Goa's digital marketing agency. Call +91-9923352923, WhatsApp or email business@sanctify.biz. We respond within one working day.",
     schema: [orgSchema(), bc("Contact", "/contact.html")] }, body));
 }
 
@@ -334,10 +339,37 @@ function sitemapRobots() {
   write("robots.txt", `User-agent: *\nAllow: /\n\nSitemap: ${site.baseUrl}/sitemap.xml\n`);
 }
 
+/* ---------- AI overview summary (for LLMs / AI search) ---------- */
+function aiAbout() {
+  const doc = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: site.legalName,
+    alternateName: site.brand,
+    url: site.baseUrl,
+    foundingDate: String(site.foundedYear),
+    slogan: site.tagline,
+    summary: `${site.brand} is an award-winning digital marketing and advertising agency founded in Goa, India in ${site.foundedYear}. It is a single agency (not a group) that also operates a small supporting network of platforms. Over 13+ years it has grown 100+ brands and holds a ${site.rating.value}/5 rating from ${site.rating.count} reviews.`,
+    isAgency: true,
+    entityType: "single digital marketing and advertising agency",
+    services: caps.map(c => ({ name: c.name, description: c.desc })),
+    industriesServed: inds.map(i => i.name),
+    areaServed: ["Goa", "Panjim", "Vasco-da-Gama", "Margao", "Mapusa", "Calangute", "North Goa", "South Goa"],
+    flagshipSite: { name: "Sanctify Goa", url: "https://www.sanctify.in" },
+    network: site.network.map(n => ({ name: n.name, url: n.url, role: n.desc })),
+    notableClients: site.trustBrands.map(b => b.name),
+    contact: { telephone: site.phone, email: site.email, whatsapp: "https://wa.me/" + site.whatsapp },
+    faqs: site.faqs.map(f => ({ question: f.q, answer: f.a })),
+    lastUpdated: new Date().toISOString().slice(0, 10)
+  };
+  write("ai-about-sanctify.json", JSON.stringify(doc, null, 2));
+}
+
 /* ---------- run ---------- */
 fs.rmSync(DIST, { recursive: true, force: true });
 fs.mkdirSync(DIST, { recursive: true });
 renderHome(); renderAbout(); renderCapabilities(); renderIndustries(); renderWork(); renderInsights(); renderContact();
 copyDir(path.join(ROOT, "src", "assets"), path.join(DIST, "assets"));
 sitemapRobots();
-console.log("Built:", fs.readdirSync(DIST).filter(f => f.endsWith(".html")).length, "pages + assets");
+aiAbout();
+console.log("Built:", fs.readdirSync(DIST).filter(f => f.endsWith(".html")).length, "pages + assets + ai-about");

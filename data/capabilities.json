@@ -1,8 +1,44 @@
 [
-  { "slug": "digital-marketing", "name": "Digital Marketing", "icon": "rocket", "desc": "Data-driven, full-funnel campaigns that boost visibility, traffic and online conversions.", "points": ["Full-funnel strategy & planning", "Multi-channel campaign management", "Analytics, tracking & reporting"] },
-  { "slug": "seo", "name": "Search Engine Optimization", "icon": "search", "desc": "Rank higher on Google with expert keyword strategy, technical SEO, links and on-page optimisation.", "points": ["Technical & on-page SEO", "Local SEO & Google Business Profile", "Content & link building"] },
-  { "slug": "social-media-marketing", "name": "Social Media Marketing", "icon": "chat", "desc": "Engage audiences and build brand presence with content and campaigns that drive real results.", "points": ["Content calendars & creatives", "Instagram, Facebook & LinkedIn", "Paid social campaigns"] },
-  { "slug": "web-design-development", "name": "Web Design & Development", "icon": "browser", "desc": "Stunning, SEO-optimised websites built for speed, performance and lead generation.", "points": ["Mobile-first responsive design", "E-commerce & booking systems", "Core Web Vitals tuned"] },
-  { "slug": "content-marketing", "name": "Content Marketing", "icon": "doc", "desc": "Powerful content strategies that build authority, engagement and lasting organic reach.", "points": ["SEO blog & article writing", "Video & reel scripting", "Email newsletters"] },
-  { "slug": "branding-creative", "name": "Branding & Creative", "icon": "pen", "desc": "Distinctive identities and creative that make brands unforgettable across every touchpoint.", "points": ["Logo & identity design", "Brand guidelines", "Print & digital creative"] }
+  {
+    "slug": "digital-marketing", "name": "Digital Marketing", "icon": "rocket",
+    "desc": "Data-driven, full-funnel campaigns that boost visibility, traffic and online conversions.",
+    "long": "Great marketing isn't a single channel — it's a system. We connect strategy, search, social, email and paid media into one measurable funnel so every rupee works harder. From first awareness to final conversion, campaigns are planned around your real business goals and reported on the metrics that actually matter — leads, calls and revenue, not vanity numbers.",
+    "points": ["Full-funnel strategy & planning", "Multi-channel campaign management", "Conversion tracking & transparent reporting"],
+    "inLink": "https://www.sanctify.in/sanctify-facility/digital-marketing-agency-goa/", "inAnchor": "Sanctify Goa's digital marketing services"
+  },
+  {
+    "slug": "seo", "name": "Search Engine Optimization", "icon": "search",
+    "desc": "Rank higher on Google with expert keyword strategy, technical SEO, links and on-page optimisation.",
+    "long": "Search is where buying decisions begin. Our SEO pairs a clean technical foundation with on-page optimisation, genuinely useful content and trusted local citations to earn rankings that compound month after month. It's the kind of organic visibility that keeps sending customers long after the work is done — especially for local 'near me' searches across Goa.",
+    "points": ["Technical & on-page SEO", "Local SEO & Google Business Profile", "Content strategy & quality link building"],
+    "inLink": "https://www.sanctify.in/sanctify-facility/search-engine-optimization-seo-company-in-goa-india/", "inAnchor": "the SEO company in Goa, Sanctify Goa"
+  },
+  {
+    "slug": "social-media-marketing", "name": "Social Media Marketing", "icon": "chat",
+    "desc": "Engage audiences and build brand presence with content and campaigns that drive real results.",
+    "long": "Social is where brands become part of everyday life. We craft a consistent voice, a steady content calendar and scroll-stopping creative, then amplify the best of it with targeted paid campaigns on Facebook and Instagram — turning followers into a community, and a community into paying customers.",
+    "points": ["Content calendars & branded creatives", "Instagram, Facebook & LinkedIn management", "Paid social campaigns"],
+    "inLink": "https://www.sanctify.in/sanctify-the-best-facebook-marketing-agency-in-goa/", "inAnchor": "Sanctify Goa's social & Facebook marketing"
+  },
+  {
+    "slug": "web-design-development", "name": "Web Design & Development", "icon": "browser",
+    "desc": "Stunning, SEO-optimised websites built for speed, performance and lead generation.",
+    "long": "Your website is your hardest-working salesperson. We design and build fast, mobile-first sites engineered around a single goal — turning visitors into enquiries — with clean code, thoughtful UX and the technical SEO that helps Google trust your pages from day one. Every build is responsive, secure and ready to scale.",
+    "points": ["Mobile-first responsive design", "E-commerce & booking systems", "Core Web Vitals & speed tuned"],
+    "inLink": "https://www.sanctify.in/sanctify-facility/web-designing-company-in-goa-india/", "inAnchor": "the web designing company in Goa, Sanctify Goa"
+  },
+  {
+    "slug": "content-marketing", "name": "Content Marketing", "icon": "doc",
+    "desc": "Powerful content strategies that build authority, engagement and lasting organic reach.",
+    "long": "Content is how brands earn attention instead of renting it. From SEO articles and guides to video scripts and email, we create content mapped to what your customers are genuinely searching for — building the kind of authority that fuels your SEO, social and email channels together, and keeps compounding over time.",
+    "points": ["SEO blog & article writing", "Video & reel scripting", "Email newsletters & sequences"],
+    "inLink": "https://www.sanctify.in/sanctify-facility/", "inAnchor": "the full Sanctify Goa services"
+  },
+  {
+    "slug": "branding-creative", "name": "Branding & Creative", "icon": "pen",
+    "desc": "Distinctive identities and creative that make brands unforgettable across every touchpoint.",
+    "long": "A brand is a promise people can recognise in a glance. We shape identities — logo, colour, typography and tone of voice — into a coherent system that looks unmistakably yours across every screen, print piece and storefront. Strong branding isn't decoration; it's what makes marketing memorable and trust easy to give.",
+    "points": ["Logo & visual identity design", "Brand guidelines & systems", "Print & digital creative"],
+    "inLink": "https://www.sanctify.in/sanctify-facility/graphic-designing-company-in-goa-india/", "inAnchor": "the graphic design & branding company in Goa, Sanctify Goa"
+  }
 ]

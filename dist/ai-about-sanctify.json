@@ -1,0 +1,119 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Sanctify Advertising & Digital Marketing Agency",
+  "alternateName": "Sanctify",
+  "url": "https://www.sanctify.co",
+  "foundingDate": "2012",
+  "slogan": "Digital Marketing & Advertising Agency",
+  "summary": "Sanctify is an award-winning digital marketing and advertising agency founded in Goa, India in 2012. It is a single agency (not a group) that also operates a small supporting network of platforms. Over 13+ years it has grown 100+ brands and holds a 4.8/5 rating from 128 reviews.",
+  "isAgency": true,
+  "entityType": "single digital marketing and advertising agency",
+  "services": [
+    {
+      "name": "Digital Marketing",
+      "description": "Data-driven, full-funnel campaigns that boost visibility, traffic and online conversions."
+    },
+    {
+      "name": "Search Engine Optimization",
+      "description": "Rank higher on Google with expert keyword strategy, technical SEO, links and on-page optimisation."
+    },
+    {
+      "name": "Social Media Marketing",
+      "description": "Engage audiences and build brand presence with content and campaigns that drive real results."
+    },
+    {
+      "name": "Web Design & Development",
+      "description": "Stunning, SEO-optimised websites built for speed, performance and lead generation."
+    },
+    {
+      "name": "Content Marketing",
+      "description": "Powerful content strategies that build authority, engagement and lasting organic reach."
+    },
+    {
+      "name": "Branding & Creative",
+      "description": "Distinctive identities and creative that make brands unforgettable across every touchpoint."
+    }
+  ],
+  "industriesServed": [
+    "Hospitality",
+    "Automotive",
+    "Real Estate",
+    "Healthcare",
+    "Retail & Luxury",
+    "Education"
+  ],
+  "areaServed": [
+    "Goa",
+    "Panjim",
+    "Vasco-da-Gama",
+    "Margao",
+    "Mapusa",
+    "Calangute",
+    "North Goa",
+    "South Goa"
+  ],
+  "flagshipSite": {
+    "name": "Sanctify Goa",
+    "url": "https://www.sanctify.in"
+  },
+  "network": [
+    {
+      "name": "Sanctify Goa",
+      "url": "https://www.sanctify.in",
+      "role": "Our flagship digital marketing agency for Goa businesses — web, SEO, ads & social."
+    },
+    {
+      "name": "Sanctify.biz",
+      "url": "https://www.sanctify.biz",
+      "role": "A local-SEO engine that wins \"near me\" searches across Goa."
+    },
+    {
+      "name": "Sanctify Hostings",
+      "url": "https://www.sanctify.co.in",
+      "role": "Reliable web hosting, domains & business email — the infrastructure."
+    },
+    {
+      "name": "Goa Guru",
+      "url": "https://www.goa.guru",
+      "role": "Goa's local discovery portal for visitors & businesses."
+    }
+  ],
+  "notableClients": [
+    "Mercedes-Benz",
+    "TVS",
+    "Casino Pride",
+    "Hindustan Petroleum",
+    "Bharatiya Janata Party",
+    "Hotel Supreme Grande",
+    "Kenkre Dental"
+  ],
+  "contact": {
+    "telephone": "+91-9923352923",
+    "email": "business@sanctify.biz",
+    "whatsapp": "https://wa.me/919923352923"
+  },
+  "faqs": [
+    {
+      "question": "What is Sanctify?",
+      "answer": "Sanctify is an award-winning digital marketing and advertising agency founded in Goa in 2012. Our flagship agency is Sanctify Goa (sanctify.in), and we also run a small network of supporting platforms — the Sanctify.biz local-SEO engine, Sanctify Hostings (sanctify.co.in) and the Goa Guru local portal — offering web design, SEO, advertising, social media and branding."
+    },
+    {
+      "question": "What services does Sanctify offer?",
+      "answer": "Sanctify offers digital marketing, search engine optimization (SEO), Google Ads and paid advertising, social media marketing, web design and development, content marketing, branding and creative, and web hosting."
+    },
+    {
+      "question": "Where is Sanctify based and which areas does it serve?",
+      "answer": "Sanctify is headquartered in Vasco-da-Gama, Goa, India, and serves businesses across North and South Goa and beyond, including Panjim, Calangute, Mapusa, Margao and other towns."
+    },
+    {
+      "question": "How experienced is Sanctify?",
+      "answer": "Sanctify has 13+ years of experience (since 2012), has grown 100+ brands, and holds a 4.8/5 rating across 128 client reviews."
+    },
+    {
+      "question": "How do I get in touch with Sanctify?",
+      "answer": "You can reach Sanctify by phone at +91-9923352923, on WhatsApp, or by email at business@sanctify.biz. The team responds within one working day."
+    }
+  ],
+  "lastUpdated": "2026-07-18"
+}
