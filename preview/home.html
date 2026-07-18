@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sanctify — The Digital Marketing Group | Home (Design Preview)</title>
+<meta name="description" content="Design preview of the Sanctify.co corporate home page.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800;900&display=swap">
+<style>
+:root{
+  --brand:#0b6b53;--brand-dark:#073e30;--brand-light:#17b489;--accent:#f5a623;--accent-2:#ffca55;
+  --ink:#0c1f1a;--body:#43554e;--muted:#708279;--line:#e6efeb;--bg:#fff;--bg-soft:#f2f8f5;--bg-mint:#eaf5f0;--bg-dark:#07201a;
+  --radius:20px;--radius-sm:13px;
+  --shadow-sm:0 4px 14px rgba(9,45,36,.06);--shadow:0 16px 44px rgba(9,45,36,.11);--shadow-lg:0 34px 80px rgba(9,45,36,.18);
+  --shadow-brand:0 18px 40px rgba(11,107,83,.3);--shadow-accent:0 16px 34px rgba(245,166,35,.42);
+  --grad-brand:linear-gradient(135deg,#0d7a5f,#17b489);--grad-accent:linear-gradient(135deg,#ffb42e,#f59300);
+  --grad-dark:linear-gradient(150deg,#0b2a22,#07201a 60%,#051713);
+  --maxw:1200px;--font:"Inter",system-ui,Segoe UI,Roboto,Arial,sans-serif;--font-head:"Poppins",system-ui,Segoe UI,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--body);line-height:1.7;background:var(--bg);font-size:17px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:var(--brand);text-decoration:none}
+h1,h2,h3,h4{color:var(--ink);line-height:1.12;font-family:var(--font-head);letter-spacing:-.02em}
+h1{font-size:clamp(2.3rem,5.4vw,4rem);font-weight:800}
+h2{font-size:clamp(1.8rem,3.4vw,2.7rem);font-weight:700}
+h3{font-size:1.25rem;font-weight:600}
+p{margin-bottom:1rem}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+.section{padding:90px 0;position:relative}
+.section-soft{background:linear-gradient(180deg,var(--bg-soft),#fff)}
+.eyebrow{display:inline-flex;align-items:center;gap:7px;color:var(--brand);font-weight:700;text-transform:uppercase;letter-spacing:1.2px;font-size:.74rem;margin-bottom:16px;background:var(--bg-mint);padding:7px 14px;border-radius:999px;border:1px solid rgba(11,107,83,.12)}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(245,166,35,.2)}
+.section-head{max-width:780px;margin:0 auto 54px;text-align:center}
+.lead{font-size:1.2rem;color:var(--body)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:16px 32px;border-radius:999px;font-weight:700;font-size:1rem;font-family:var(--font-head);cursor:pointer;border:2px solid transparent;transition:transform .18s,box-shadow .18s,filter .18s;text-decoration:none;line-height:1;position:relative;overflow:hidden}
+.btn:hover{transform:translateY(-3px)}
+.btn-primary{background:var(--grad-accent);color:#3a2500;box-shadow:var(--shadow-accent)}
+.btn-primary::after{content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:shine 3.6s infinite}
+@keyframes shine{0%,60%{left:-120%}100%{left:150%}}
+.btn-outline{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.5);backdrop-filter:blur(4px)}
+.btn-outline:hover{background:rgba(255,255,255,.18);border-color:#fff}
+.btn-brand{background:var(--grad-brand);color:#fff;box-shadow:var(--shadow-brand)}
+.btn-lg{padding:19px 40px;font-size:1.08rem}
+.btn-block{width:100%}
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--grad-accent);z-index:100;transition:width .1s linear}
+.previewbar{background:#07201a;color:#cfe7de;text-align:center;font-size:.82rem;padding:9px 12px}
+.previewbar b{color:var(--accent-2)}
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.82);backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid rgba(11,107,83,.08);transition:box-shadow .25s}
+.nav{display:flex;align-items:center;justify-content:space-between;height:82px;transition:height .25s}
+.site-header.scrolled .nav{height:66px}
+.site-header.scrolled{box-shadow:0 8px 30px rgba(9,45,36,.08)}
+.brand-logo{display:flex;align-items:center;gap:10px;font-family:var(--font-head);font-weight:800;font-size:1.4rem;color:var(--ink)}
+.brand-logo .dot{width:36px;height:36px;border-radius:11px;background:var(--grad-brand);display:inline-grid;place-items:center;box-shadow:var(--shadow-brand);transition:transform .3s}
+.brand-logo:hover .dot{transform:rotate(-8deg) scale(1.05)}
+.brand-logo .dot::after{content:"S";color:#fff;font-weight:900}
+.brand-logo small{font-size:.6rem;font-weight:700;color:var(--brand);text-transform:uppercase;letter-spacing:1.5px;align-self:flex-start;margin-top:3px}
+.nav-links{display:flex;align-items:center;gap:26px;list-style:none}
+.nav-links a{color:var(--ink);font-weight:600;font-size:.95rem;position:relative}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:2px;background:var(--accent);transition:width .2s;border-radius:2px}
+.nav-links a:hover::after{width:100%}
+.nav-cta{display:flex;align-items:center;gap:14px}
+.nav-toggle{display:none;background:none;border:0;font-size:1.7rem;cursor:pointer;color:var(--ink)}
+/* hero */
+.hero{position:relative;color:#fff;padding:128px 0 150px;overflow:hidden;isolation:isolate;background:var(--grad-dark)}
+.hero-photo{position:absolute;inset:0;z-index:0;background-size:cover;background-position:center;opacity:.18;background-image:url('https://www.sanctify.biz/assets/img/goa-hero-1.jpg')}
+.orb{position:absolute;border-radius:50%;filter:blur(60px);opacity:.5;z-index:1;pointer-events:none}
+.orb.o1{width:500px;height:500px;background:radial-gradient(circle,#17b489,transparent 70%);top:-120px;right:-80px;animation:f1 14s ease-in-out infinite}
+.orb.o2{width:420px;height:420px;background:radial-gradient(circle,#f5a623,transparent 70%);bottom:-140px;left:-100px;animation:f2 17s ease-in-out infinite}
+.orb.o3{width:300px;height:300px;background:radial-gradient(circle,#0d7a5f,transparent 70%);top:40%;left:56%;animation:f1 12s ease-in-out infinite reverse}
+@keyframes f1{0%,100%{transform:translate(0,0)}50%{transform:translate(-40px,30px)}}
+@keyframes f2{0%,100%{transform:translate(0,0)}50%{transform:translate(50px,-30px)}}
+.hero .container{position:relative;z-index:3;max-width:920px}
+.hero h1{color:#fff;margin-bottom:22px;text-shadow:0 2px 40px rgba(0,0,0,.3)}
+.hl{background:var(--grad-accent);-webkit-background-clip:text;background-clip:text;color:transparent}
+.rotator .rw{display:inline-block;background:var(--grad-accent);-webkit-background-clip:text;background-clip:text;color:transparent;transition:opacity .4s,transform .4s}
+.rotator .rw.out{opacity:0;transform:translateY(-12px)}
+.hero p{color:rgba(255,255,255,.94);font-size:1.24rem;margin-bottom:32px;max-width:680px}
+.hero-badges{display:flex;flex-wrap:wrap;gap:10px 12px;margin-bottom:34px}
+.hero-badge{display:flex;align-items:center;gap:8px;font-size:.9rem;color:#eafff7;font-weight:600;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:8px 14px;border-radius:999px;backdrop-filter:blur(6px)}
+.hero-badge .tick{color:#0b2a22;background:var(--accent-2);width:18px;height:18px;border-radius:50%;display:grid;place-items:center;font-size:.7rem;font-weight:900}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px}
+/* stat strip */
+.statstrip{max-width:var(--maxw);margin:-80px auto 0;padding:0 22px;position:relative;z-index:6}
+.statstrip-inner{background:rgba(255,255,255,.86);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.6);border-radius:var(--radius);box-shadow:var(--shadow-lg);display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:28px 20px}
+.statstrip .n{font-size:2.5rem;font-weight:800;font-family:var(--font-head);background:var(--grad-brand);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+.statstrip .l{color:var(--muted);font-size:.88rem;margin-top:6px}
+.statstrip .cell{text-align:center;padding:6px}
+.statstrip .cell+.cell{border-left:1px solid var(--line)}
+/* logo wall */
+.logowall{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
+.logo-item{display:flex;align-items:center;gap:11px;padding:15px 22px;border:1px solid var(--line);border-radius:14px;background:#fff;box-shadow:var(--shadow-sm);font-family:var(--font-head);font-weight:800;color:#93a29b;filter:grayscale(1);opacity:.8;transition:all .2s;font-size:1.02rem}
+.logo-item:hover{filter:none;opacity:1;color:var(--ink);transform:translateY(-3px);box-shadow:var(--shadow)}
+.logo-item .lb{width:34px;height:34px;border-radius:9px;display:grid;place-items:center;color:#fff}
+.logo-item .lb svg{width:18px;height:18px}
+/* network cards */
+.netgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.netcard{position:relative;display:flex;gap:20px;padding:30px;border:1px solid var(--line);border-radius:var(--radius);background:#fff;box-shadow:var(--shadow-sm);transition:transform .2s,box-shadow .2s;overflow:hidden}
+.netcard::before{content:"";position:absolute;top:0;left:0;bottom:0;width:5px;background:var(--accent-c,var(--grad-brand))}
+.netcard:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+.netcard .nico{width:56px;height:56px;border-radius:15px;display:grid;place-items:center;color:#fff;flex-shrink:0;background:var(--accent-c,var(--grad-brand))}
+.netcard .nico svg{width:28px;height:28px}
+.netcard h3{margin-bottom:4px}
+.netcard p{color:var(--muted);font-size:.95rem;margin-bottom:10px}
+.netcard .visit{font-weight:700;color:var(--brand);font-size:.9rem}
+/* generic cards */
+.grid{display:grid;gap:24px}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-4{grid-template-columns:repeat(4,1fr)}
+.card{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;box-shadow:var(--shadow-sm);transition:transform .2s,box-shadow .2s;overflow:hidden}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad-brand);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:transparent}
+.card:hover::before{transform:scaleX(1)}
+.card .ico{width:56px;height:56px;border-radius:16px;background:var(--bg-mint);color:var(--brand);display:grid;place-items:center;margin-bottom:18px;transition:all .22s}
+.card .ico svg{width:28px;height:28px}
+.card:hover .ico{background:var(--grad-brand);color:#fff;transform:rotate(-6deg) scale(1.06)}
+.card h3{margin-bottom:8px}.card p{color:var(--muted);font-size:.95rem;margin:0}
+.card .more{display:inline-block;margin-top:14px;font-weight:700;color:var(--brand);font-size:.9rem}
+/* work cards */
+.workgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.workcard{position:relative;border-radius:var(--radius);overflow:hidden;min-height:300px;display:flex;align-items:flex-end;color:#fff;box-shadow:var(--shadow-sm);transition:transform .2s,box-shadow .2s;background-size:cover;background-position:center}
+.workcard::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent,rgba(6,26,21,.9))}
+.workcard:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+.workcard .wc{position:relative;z-index:1;padding:26px}
+.workcard .wtag{font-size:.7rem;text-transform:uppercase;letter-spacing:.6px;background:rgba(255,255,255,.2);padding:4px 10px;border-radius:6px;backdrop-filter:blur(4px)}
+.workcard h3{color:#fff;margin-top:10px}
+.workcard p{color:rgba(255,255,255,.85);font-size:.9rem;margin:6px 0 0}
+/* split */
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+.split img{border-radius:var(--radius);box-shadow:var(--shadow);width:100%;object-fit:cover;max-height:460px}
+.ticklist{list-style:none}
+.ticklist li{position:relative;padding-left:34px;margin-bottom:13px;color:var(--ink);font-weight:500}
+.ticklist li span{font-weight:400;color:var(--body)}
+.ticklist li::before{content:"✓";position:absolute;left:0;top:2px;width:23px;height:23px;background:var(--grad-brand);color:#fff;border-radius:7px;font-size:.75rem;font-weight:800;display:grid;place-items:center}
+/* articles */
+.article{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);transition:transform .2s,box-shadow .2s}
+.article:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+.article .aimg{height:180px;background-size:cover;background-position:center}
+.article .abody{padding:24px}
+.article .atag{font-size:.7rem;text-transform:uppercase;letter-spacing:.5px;color:var(--brand);font-weight:700}
+.article h3{font-size:1.1rem;margin:8px 0}
+.article p{color:var(--muted);font-size:.9rem;margin:0}
+/* cta */
+.cta-final{background:var(--grad-dark);color:#dfeee8;position:relative;overflow:hidden}
+.cta-final .container{position:relative;z-index:2}
+.cta-final h2{color:#fff}
+.split-cta{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.leadform{background:#fff;border-radius:var(--radius);padding:34px;box-shadow:var(--shadow-lg)}
+.leadform h3{margin-bottom:4px;font-size:1.4rem}
+.field{margin-bottom:15px}
+.field label{display:block;font-weight:600;font-size:.88rem;color:var(--ink);margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;padding:13px 15px;border:1.5px solid var(--line);border-radius:var(--radius-sm);font-size:1rem;font-family:inherit;background:var(--bg-soft);color:var(--ink)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--brand-light);background:#fff;box-shadow:0 0 0 4px rgba(23,180,137,.12)}
+/* floaties */
+.floaties{position:fixed;right:18px;bottom:18px;z-index:60;display:flex;flex-direction:column;gap:12px}
+.floatie{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:1.5rem;box-shadow:var(--shadow-lg);transition:transform .18s}
+.floatie:hover{transform:scale(1.1)}
+.floatie.wa{background:#25d366}.floatie.call{background:var(--grad-brand)}
+/* footer */
+.site-footer{background:var(--grad-dark);color:#a9c4bb;padding:66px 0 26px;font-size:.94rem}
+.footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:34px;margin-bottom:40px}
+.site-footer h4{color:#fff;font-size:1rem;margin-bottom:16px;font-family:var(--font-head)}
+.site-footer a{color:#a9c4bb}.site-footer a:hover{color:#fff}
+.site-footer ul{list-style:none}.site-footer li{margin-bottom:10px}
+.site-footer .brand-logo{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:.84rem;color:#7e9a90}
+/* reveal */
+.has-js .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.has-js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.has-js .reveal{opacity:1!important;transform:none!important}.orb{animation:none}.btn-primary::after{display:none}}
+@media(max-width:900px){
+  .grid-4{grid-template-columns:repeat(2,1fr)}.grid-3,.workgrid{grid-template-columns:repeat(2,1fr)}
+  .netgrid{grid-template-columns:1fr}.statstrip-inner{grid-template-columns:repeat(2,1fr)}.statstrip .cell:nth-child(3){border-left:0}
+  .split,.split-cta{grid-template-columns:1fr;gap:34px}.footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  body{font-size:16px}.section{padding:58px 0}.grid-4,.grid-3,.workgrid{grid-template-columns:1fr}
+  .statstrip-inner{grid-template-columns:1fr 1fr}.statstrip .cell+.cell{border-left:0}
+  .nav-links{display:none}.nav-toggle{display:block}
+  .nav.open .nav-links{display:flex;position:absolute;top:66px;left:0;right:0;flex-direction:column;align-items:flex-start;background:#fff;padding:20px 22px;gap:16px;border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+  .footer-grid{grid-template-columns:1fr}.btn{width:100%}.hero{padding:92px 0 120px}
+}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="previewbar">🎨 <b>DESIGN PREVIEW</b> — proposed corporate home page for sanctify.co. Nothing is live yet; approve it and I'll build the full silo.</div>
+
+<header class="site-header" id="hdr">
+  <div class="container">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand-logo" href="#"><span class="dot"></span>Sanctify<small>.co</small></a>
+      <ul class="nav-links">
+        <li><a href="#network">Network</a></li>
+        <li><a href="#capabilities">What We Do</a></li>
+        <li><a href="#industries">Industries</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#insights">Insights</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="#contact">Get in Touch</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menu">☰</button>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-photo"></div>
+  <span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span>
+  <div class="container">
+    <div class="hero-badges">
+      <span class="hero-badge"><span class="tick">★</span> Est. 2012 · Goa, India</span>
+      <span class="hero-badge"><span class="tick">✓</span> Award-winning group</span>
+      <span class="hero-badge"><span class="tick">✓</span> 100+ brands served</span>
+    </div>
+    <h1>The digital marketing group<br>helping brands grow <span class="rotator"><span class="rw" id="rw" data-words="online|on Google|on social|everywhere">online</span></span></h1>
+    <p>Sanctify is an award-winning digital marketing group founded in Goa in 2012. From web design and SEO to advertising, hosting and local discovery — we build brands that get noticed and businesses that grow.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary btn-lg" href="#work">Explore Our Work →</a>
+      <a class="btn btn-outline btn-lg" href="#network">Discover the Network</a>
+    </div>
+  </div>
+</section>
+
+<div class="statstrip">
+  <div class="statstrip-inner">
+    <div class="cell"><div class="n" data-count="13" data-suffix="+">0</div><div class="l">Years in business</div></div>
+    <div class="cell"><div class="n" data-count="100" data-suffix="+">0</div><div class="l">Brands served</div></div>
+    <div class="cell"><div class="n" data-count="4" data-suffix="">0</div><div class="l">Group properties</div></div>
+    <div class="cell"><div class="n" data-count="4.8" data-dec="1" data-suffix="★">0</div><div class="l">Avg client rating</div></div>
+  </div>
+</div>
+
+<section class="section" style="padding-top:64px">
+  <div class="container">
+    <p class="center" style="text-align:center;color:var(--muted);font-weight:600;margin-bottom:24px">TRUSTED BY LEADING BRANDS</p>
+    <div class="logowall reveal">
+      <span class="logo-item"><span class="lb" style="background:#e11d48"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.9 6.3 6.9.7-5.1 4.6 1.4 6.8L12 17.8 5.9 20.4l1.4-6.8L2.2 9l6.9-.7z"/></svg></span>Casino Pride</span>
+      <span class="logo-item"><span class="lb" style="background:#ef6c4d"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 11l1.5-4A2 2 0 018.4 6h7.2a2 2 0 011.9 1l1.5 4h1a1 1 0 011 1v4a1 1 0 01-1 1h-1a2 2 0 11-4 0H9a2 2 0 11-4 0H4a1 1 0 01-1-1v-4a1 1 0 011-1h1z"/></svg></span>TVS</span>
+      <span class="logo-item"><span class="lb" style="background:#223a44"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M5 11l1.5-4A2 2 0 018.4 6h7.2a2 2 0 011.9 1l1.5 4h1a1 1 0 011 1v4a1 1 0 01-1 1h-1a2 2 0 11-4 0H9a2 2 0 11-4 0H4a1 1 0 01-1-1v-4a1 1 0 011-1h1z"/></svg></span>Mercedes-Benz</span>
+      <span class="logo-item"><span class="lb" style="background:#f59e0b"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 3a1 1 0 011 1v1h10l-2 3.5L17 12H7v9H5V4a1 1 0 011-1z"/></svg></span>Bharatiya Janata Party</span>
+      <span class="logo-item"><span class="lb" style="background:#223a44"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 4h6a2 2 0 012 2v1h3a1 1 0 011 1v10a1 1 0 01-1 1H3a1 1 0 01-1-1V8a1 1 0 011-1h3V6a2 2 0 012-2zm0 3h6V6H9v1z"/></svg></span>Hindustan Petroleum</span>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft" id="network">
+  <div class="container">
+    <div class="section-head reveal"><span class="eyebrow">The Sanctify Network</span><h2>One group, four ways we help you grow</h2><p class="lead">Everything from strategy to hosting, under one trusted brand.</p></div>
+    <div class="netgrid">
+      <a class="netcard reveal" href="https://www.sanctify.in" style="--accent-c:linear-gradient(135deg,#0d7a5f,#17b489)"><div class="nico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3l7 17 2.5-6.5L19 11 3 3z"/></svg></div><div><h3>Sanctify Goa <span style="font-weight:400;color:var(--muted);font-size:.85rem">· sanctify.in</span></h3><p>Our flagship digital marketing agency for Goa businesses — web, SEO, ads &amp; social.</p><span class="visit">Visit site →</span></div></a>
+      <a class="netcard reveal" href="https://www.sanctify.biz" style="--accent-c:linear-gradient(135deg,#f59300,#ffb42e)"><div class="nico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div><div><h3>Sanctify.biz <span style="font-weight:400;color:var(--muted);font-size:.85rem">· sanctify.biz</span></h3><p>Our local-SEO growth engine — hyper-targeted pages that win "near me" searches across Goa.</p><span class="visit">Visit site →</span></div></a>
+      <a class="netcard reveal" href="https://www.sanctify.co.in" style="--accent-c:linear-gradient(135deg,#2f6fa8,#4f97d6)"><div class="nico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="7" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7.5h.01M7 17h.01"/></svg></div><div><h3>Sanctify Hostings <span style="font-weight:400;color:var(--muted);font-size:.85rem">· sanctify.co.in</span></h3><p>Reliable web hosting, domains &amp; email for businesses of every size.</p><span class="visit">Visit site →</span></div></a>
+      <a class="netcard reveal" href="https://www.goa.guru" style="--accent-c:linear-gradient(135deg,#6d5b8e,#9d7fd0)"><div class="nico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.5 7-11a7 7 0 1 0-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div><div><h3>Goa Guru <span style="font-weight:400;color:var(--muted);font-size:.85rem">· goa.guru</span></h3><p>Goa's local discovery portal — connecting visitors with the best businesses on the coast.</p><span class="visit">Visit site →</span></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="capabilities">
+  <div class="container">
+    <div class="section-head reveal"><span class="eyebrow">What we do</span><h2>Capabilities that cover the full journey</h2><p class="lead">Strategy, creativity and technology working together to grow your brand.</p></div>
+    <div class="grid grid-3">
+      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3l7 17 2.5-6.5L19 11 3 3z"/></svg></div><h3>Digital Marketing</h3><p>Full-funnel strategies that turn audiences into customers.</p><span class="more">Learn more →</span></div>
+      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg></div><h3>Web Design &amp; Development</h3><p>Fast, beautiful, conversion-focused websites &amp; apps.</p><span class="more">Learn more →</span></div>
+      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div><h3>Search Engine Optimization</h3><p>Rank higher, earn organic traffic that compounds.</p><span class="more">Learn more →</span></div>
+      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z"/></svg></div><h3>Social Media Marketing</h3><p>Content &amp; campaigns that build loyal communities.</p><span class="more">Learn more →</span></div>
+      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 19l7-7-4-4-7 7v4h4zM14 6l4 4"/></svg></div><h3>Branding &amp; Creative</h3><p>Identities and creative that make brands unforgettable.</p><span class="more">Learn more →</span></div>
+      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 3v18h18M8 16l3-4 3 2 4-6"/></svg></div><h3>Performance Advertising</h3><p>Google &amp; Meta ads engineered for measurable ROI.</p><span class="more">Learn more →</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft" id="industries">
+  <div class="container">
+    <div class="section-head reveal"><span class="eyebrow">Industries</span><h2>Sector expertise, proven by results</h2></div>
+    <div class="grid grid-3">
+      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11h18M5 11V7a2 2 0 012-2h10a2 2 0 012 2v4M4 21v-6h16v6"/></svg></div><h3>Hospitality</h3><p>Hotels, resorts &amp; restaurants — from Supreme Grande to Flora Grand.</p></div>
+      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 11l1.5-4A2 2 0 018.4 6h7.2a2 2 0 011.9 1l1.5 4v6h-2M5 17H3v-6"/></svg></div><h3>Automotive</h3><p>Mercedes-Benz &amp; TVS — dealer marketing that drives leads.</p></div>
+      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21V10l9-6 9 6v11H3zM9 21v-6h6v6"/></svg></div><h3>Real Estate</h3><p>Villas &amp; property brands — high-intent buyer campaigns.</p></div>
+      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 3h4v5h5v4h-5v9h-4v-9H5V8h5z"/></svg></div><h3>Healthcare</h3><p>Clinics like Kenkre Dental — trusted, findable, bookable.</p></div>
+      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2h12v6a6 6 0 01-12 0zM6 22h12M9 22v-4M15 22v-4"/></svg></div><h3>Retail &amp; Luxury</h3><p>Boutiques &amp; jewellery brands — e-commerce &amp; storytelling.</p></div>
+      <div class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3L1 8l11 5 9-4.1V15M5 13v4c0 1.5 3 3 7 3s7-1.5 7-3v-4"/></svg></div><h3>Education</h3><p>Schools &amp; academies — admissions-driving digital presence.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="work">
+  <div class="container">
+    <div class="section-head reveal"><span class="eyebrow">Selected work</span><h2>Brands we've helped grow</h2><p class="lead">A snapshot from a portfolio of 100+ projects across Goa and beyond.</p></div>
+    <div class="workgrid">
+      <a class="workcard reveal" href="#" style="background-image:url('https://www.sanctify.biz/assets/img/automobile.jpg')"><div class="wc"><span class="wtag">Automotive</span><h3>Mercedes-Benz</h3><p>Digital marketing, SEO &amp; SEM · Porvorim, Goa</p></div></a>
+      <a class="workcard reveal" href="#" style="background-image:url('https://www.sanctify.biz/assets/img/nightlife.jpg')"><div class="wc"><span class="wtag">Entertainment</span><h3>Casino Pride</h3><p>Brand guidelines &amp; identity · Goa</p></div></a>
+      <a class="workcard reveal" href="#" style="background-image:url('https://www.sanctify.biz/assets/img/hotel.jpg')"><div class="wc"><span class="wtag">Hospitality</span><h3>Hotel Supreme Grande</h3><p>Website &amp; Facebook marketing · Calangute</p></div></a>
+    </div>
+    <div style="text-align:center;margin-top:34px"><a class="btn btn-brand" href="#">View all case studies →</a></div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="container split">
+    <div class="reveal">
+      <span class="eyebrow">Why Sanctify</span>
+      <h2>A group built on results since 2012</h2>
+      <p>Founded in Vasco-da-Gama, Sanctify has grown into a full-service digital marketing group trusted by national brands and loved local businesses alike. We combine global best-practice with deep local insight.</p>
+      <ul class="ticklist">
+        <li>Award-winning <span>— rated 4.8/5 across 128 client reviews.</span></li>
+        <li>Full-stack <span>— strategy, design, development, media &amp; hosting in one group.</span></li>
+        <li>Measurable <span>— transparent analytics and reporting on every engagement.</span></li>
+        <li>Trusted <span>— from Mercedes-Benz to family-run hotels.</span></li>
+      </ul>
+      <a class="btn btn-brand" href="#">About the company →</a>
+    </div>
+    <img class="reveal" src="https://www.sanctify.biz/assets/img/professional.jpg" alt="The Sanctify team" loading="lazy">
+  </div>
+</section>
+
+<section class="section" id="insights">
+  <div class="container">
+    <div class="section-head reveal"><span class="eyebrow">Insights</span><h2>Ideas &amp; guides from our team</h2></div>
+    <div class="grid grid-3">
+      <a class="article reveal" href="#"><div class="aimg" style="background-image:url('https://www.sanctify.biz/assets/img/seo.jpg')"></div><div class="abody"><span class="atag">SEO</span><h3>Local SEO in 2026: the complete guide</h3><p>How local businesses win "near me" searches on Google.</p></div></a>
+      <a class="article reveal" href="#"><div class="aimg" style="background-image:url('https://www.sanctify.biz/assets/img/social-media.jpg')"></div><div class="abody"><span class="atag">Social Media</span><h3>Building a brand community on Instagram</h3><p>Content pillars and cadence that actually drive engagement.</p></div></a>
+      <a class="article reveal" href="#"><div class="aimg" style="background-image:url('https://www.sanctify.biz/assets/img/web-design.jpg')"></div><div class="abody"><span class="atag">Web Design</span><h3>What makes a website convert</h3><p>The design principles behind high-performing business sites.</p></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="section cta-final" id="contact">
+  <span class="orb o2" style="opacity:.4"></span>
+  <div class="container split-cta">
+    <div class="reveal">
+      <span class="eyebrow" style="background:rgba(255,255,255,.1);color:#ffca55;border-color:rgba(255,255,255,.2)">Let's talk</span>
+      <h2>Ready to grow your brand?</h2>
+      <p style="color:#cfe3db;max-width:46ch">Tell us about your goals and our team will get back to you within one working day.</p>
+      <ul class="ticklist" style="margin-top:14px">
+        <li style="color:#eafff7">Free consultation</li>
+        <li style="color:#eafff7">Response within 1 working day</li>
+        <li style="color:#eafff7">Trusted by 100+ brands</li>
+      </ul>
+    </div>
+    <div class="leadform reveal">
+      <h3>Get in Touch</h3>
+      <p class="mb-0" style="color:var(--muted);font-size:.95rem">We'd love to hear about your project.</p>
+      <form onsubmit="return false" style="margin-top:16px">
+        <div class="field"><label>Name</label><input placeholder="Your name"></div>
+        <div class="field"><label>Email</label><input type="email" placeholder="you@company.com"></div>
+        <div class="field"><label>Company</label><input placeholder="Your company"></div>
+        <div class="field"><label>Message</label><textarea rows="3" placeholder="How can we help?"></textarea></div>
+        <button class="btn btn-primary btn-block btn-lg" type="submit">Send Message →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="brand-logo"><span class="dot"></span>Sanctify<small style="color:var(--accent)">.co</small></div>
+        <p style="margin-top:12px;max-width:32ch">The award-winning digital marketing group, founded in Goa in 2012.</p>
+        <p><a href="tel:+919923352923">+91-9923352923</a><br><a href="mailto:business@sanctify.biz">business@sanctify.biz</a></p>
+      </div>
+      <div><h4>Company</h4><ul><li><a href="#">About</a></li><li><a href="#">Leadership</a></li><li><a href="#">Awards</a></li><li><a href="#">Careers</a></li></ul></div>
+      <div><h4>Explore</h4><ul><li><a href="#capabilities">What We Do</a></li><li><a href="#industries">Industries</a></li><li><a href="#work">Work</a></li><li><a href="#insights">Insights</a></li></ul></div>
+      <div><h4>The Network</h4><ul><li><a href="https://www.sanctify.in">Sanctify Goa ↗</a></li><li><a href="https://www.sanctify.biz">Sanctify.biz ↗</a></li><li><a href="https://www.sanctify.co.in">Sanctify Hostings ↗</a></li><li><a href="https://www.goa.guru">Goa Guru ↗</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Sanctify Advertising &amp; Digital Marketing Agency.</span><span>Vasco-da-Gama, Goa, India</span></div>
+  </div>
+</footer>
+
+<div class="floaties">
+  <a class="floatie wa" href="https://wa.me/919923352923" aria-label="WhatsApp">🟢</a>
+  <a class="floatie call" href="tel:+919923352923" aria-label="Call">📞</a>
+</div>
+
+<script>
+document.documentElement.classList.add('has-js');
+var t=document.querySelector('.nav-toggle'),n=document.querySelector('.nav');
+if(t&&n)t.addEventListener('click',function(){n.classList.toggle('open')});
+var prog=document.getElementById('progress'),hdr=document.getElementById('hdr');
+window.addEventListener('scroll',function(){var h=document.documentElement,st=h.scrollTop,sh=h.scrollHeight-h.clientHeight;if(prog)prog.style.width=(sh>0?st/sh*100:0)+'%';if(hdr)hdr.classList.toggle('scrolled',st>20);},{passive:true});
+function count(el){if(el._done)return;el._done=1;var target=parseFloat(el.getAttribute('data-count')),dec=parseInt(el.getAttribute('data-dec')||'0'),suf=el.getAttribute('data-suffix')||'',dur=1400,t0=null;function s(ts){if(!t0)t0=ts;var p=Math.min((ts-t0)/dur,1),e=1-Math.pow(1-p,3),v=target*e;el.textContent=(dec?v.toFixed(dec):Math.round(v))+suf;if(p<1)requestAnimationFrame(s);}requestAnimationFrame(s);}
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');if(e.target.hasAttribute('data-count'))count(e.target);io.unobserve(e.target);}})},{threshold:.14});document.querySelectorAll('.reveal,[data-count]').forEach(function(el){io.observe(el)});}else{document.querySelectorAll('.reveal').forEach(function(el){el.classList.add('in')});document.querySelectorAll('[data-count]').forEach(count);}
+var rw=document.getElementById('rw');if(rw){var w=(rw.getAttribute('data-words')||'online').split('|'),i=0;setInterval(function(){rw.classList.add('out');setTimeout(function(){i=(i+1)%w.length;rw.textContent=w[i];rw.classList.remove('out');},400);},2600);}
+</script>
+</body>
+</html>
