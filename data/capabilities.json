@@ -1,44 +1,116 @@
 [
   {
     "slug": "digital-marketing", "name": "Digital Marketing", "icon": "rocket",
+    "tagline": "Full-funnel growth, measured in leads and revenue",
     "desc": "Data-driven, full-funnel campaigns that boost visibility, traffic and online conversions.",
     "long": "Great marketing isn't a single channel — it's a system. We connect strategy, search, social, email and paid media into one measurable funnel so every rupee works harder. From first awareness to final conversion, campaigns are planned around your real business goals and reported on the metrics that actually matter — leads, calls and revenue, not vanity numbers.",
+    "body": [
+      "Most businesses in Goa don't have a traffic problem — they have a conversion and consistency problem. Ad spend goes to one platform this month and another the next, nobody owns the numbers, and the reporting is a screenshot of likes. We fix that by treating digital marketing as one connected engine: a clear strategy on top, the right mix of SEO, paid search, social and email underneath, and a single dashboard that ties spend to actual enquiries.",
+      "Every engagement starts with your economics — average order value, margins, seasonality and where your best customers really come from. From there we prioritise the channels that will move revenue fastest, set up proper conversion tracking, and run in monthly cycles of test, measure and refine. You always know what's working, what we're changing, and why."
+    ],
     "points": ["Full-funnel strategy & planning", "Multi-channel campaign management", "Conversion tracking & transparent reporting"],
+    "deliverables": ["Growth strategy & channel plan", "Google Ads & Meta Ads management", "Landing pages built to convert", "Conversion & call tracking setup", "Monthly performance reporting", "Ongoing optimisation & A/B testing"],
+    "faqs": [
+      { "q": "How soon will I see results from digital marketing?", "a": "Paid channels can generate enquiries within days, while SEO and content compound over 3–6 months. We set realistic milestones for each channel up front so you know what to expect and when." },
+      { "q": "Do I need to commit to every channel at once?", "a": "No. We usually start with the one or two channels that will move revenue fastest for your business, prove the model, then reinvest into the next channel once it's working." },
+      { "q": "How do you report on performance?", "a": "You get a monthly report tied to real outcomes — leads, calls and cost per acquisition — plus a live dashboard, not a list of vanity metrics." }
+    ],
+    "related": ["hospitality", "automotive", "real-estate"],
     "inLink": "https://www.sanctify.in/sanctify-facility/digital-marketing-agency-goa/", "inAnchor": "Sanctify Goa's digital marketing services"
   },
   {
     "slug": "seo", "name": "Search Engine Optimization", "icon": "search",
+    "tagline": "Compounding organic visibility across Goa and beyond",
     "desc": "Rank higher on Google with expert keyword strategy, technical SEO, links and on-page optimisation.",
     "long": "Search is where buying decisions begin. Our SEO pairs a clean technical foundation with on-page optimisation, genuinely useful content and trusted local citations to earn rankings that compound month after month. It's the kind of organic visibility that keeps sending customers long after the work is done — especially for local 'near me' searches across Goa.",
+    "body": [
+      "SEO is the highest-leverage marketing channel most Goan businesses ignore. Unlike ads, a page that ranks keeps sending customers for months or years without a per-click cost. But it only works when the fundamentals are right: a fast, crawlable site, pages structured around real search intent, and enough authority for Google to trust you over competitors.",
+      "We work in three layers. Technical SEO clears the obstacles that stop Google indexing and ranking your pages. On-page SEO aligns each page with what people actually type. And off-page work — local citations, Google Business Profile, and genuinely earned links — builds the authority that lifts your whole domain. For local businesses we obsess over the 'near me' and map-pack searches that drive walk-ins and calls."
+    ],
     "points": ["Technical & on-page SEO", "Local SEO & Google Business Profile", "Content strategy & quality link building"],
+    "deliverables": ["Full technical SEO audit", "Keyword & search-intent mapping", "On-page optimisation", "Local SEO & Google Business Profile", "Content plan for target keywords", "Quality link building & citations"],
+    "faqs": [
+      { "q": "How long does SEO take to work?", "a": "Most sites see meaningful movement in 3–6 months, with results compounding after that. Local SEO for a Google Business Profile can move faster — often within weeks." },
+      { "q": "Can you guarantee the #1 ranking?", "a": "No honest agency can guarantee a specific position, because Google's algorithm isn't ours to control. What we guarantee is best-practice work, transparent reporting, and steady, measurable progress." },
+      { "q": "Is local SEO different from regular SEO?", "a": "Yes — local SEO focuses on map-pack visibility, your Google Business Profile, reviews and location signals, which is what drives calls and visits for Goa businesses." }
+    ],
+    "related": ["hospitality", "healthcare", "real-estate"],
     "inLink": "https://www.sanctify.in/sanctify-facility/search-engine-optimization-seo-company-in-goa-india/", "inAnchor": "the SEO company in Goa, Sanctify Goa"
   },
   {
     "slug": "social-media-marketing", "name": "Social Media Marketing", "icon": "chat",
+    "tagline": "Turn followers into a community, and community into customers",
     "desc": "Engage audiences and build brand presence with content and campaigns that drive real results.",
     "long": "Social is where brands become part of everyday life. We craft a consistent voice, a steady content calendar and scroll-stopping creative, then amplify the best of it with targeted paid campaigns on Facebook and Instagram — turning followers into a community, and a community into paying customers.",
+    "body": [
+      "In a place like Goa, where word-of-mouth and discovery happen on Instagram and Facebook, social media is often the first impression a customer gets of your brand. A dormant or inconsistent feed quietly costs you bookings. A living, on-brand presence does the opposite — it builds familiarity and trust before someone ever contacts you.",
+      "We handle the whole cycle: a monthly content calendar, branded creative and reels, community management, and paid social campaigns that put your best content in front of the right local audience. Everything ladders up to business goals — reservations, walk-ins, enquiries — not just reach for its own sake."
+    ],
     "points": ["Content calendars & branded creatives", "Instagram, Facebook & LinkedIn management", "Paid social campaigns"],
+    "deliverables": ["Monthly content calendar", "Branded posts, stories & reels", "Community management & replies", "Meta (Facebook/Instagram) ad campaigns", "Influencer & collaboration coordination", "Monthly engagement & growth report"],
+    "faqs": [
+      { "q": "Which platforms should my business be on?", "a": "It depends on your audience. For most Goa hospitality, retail and lifestyle brands, Instagram and Facebook drive the most value; B2B brands often benefit from LinkedIn too. We recommend a focused mix rather than being everywhere." },
+      { "q": "Do you create the content or do we?", "a": "We can do it all — strategy, copy, design and scheduling — or collaborate with your in-house team. Many clients provide raw photos/videos and we handle the rest." },
+      { "q": "Is paid social worth it for a small business?", "a": "Yes, when it's targeted. Even a modest budget, aimed at the right local audience with strong creative, can consistently generate enquiries and fill quiet periods." }
+    ],
+    "related": ["hospitality", "retail-luxury", "education"],
     "inLink": "https://www.sanctify.in/sanctify-the-best-facebook-marketing-agency-in-goa/", "inAnchor": "Sanctify Goa's social & Facebook marketing"
   },
   {
     "slug": "web-design-development", "name": "Web Design & Development", "icon": "browser",
+    "tagline": "Fast, mobile-first websites engineered to convert",
     "desc": "Stunning, SEO-optimised websites built for speed, performance and lead generation.",
     "long": "Your website is your hardest-working salesperson. We design and build fast, mobile-first sites engineered around a single goal — turning visitors into enquiries — with clean code, thoughtful UX and the technical SEO that helps Google trust your pages from day one. Every build is responsive, secure and ready to scale.",
+    "body": [
+      "A beautiful website that loads slowly, buries the phone number, or breaks on a phone isn't an asset — it's a leak. We start every build from the visitor's job: what they need to see, trust and do, in the fewest taps possible. Then we design around that path and back it with clean, fast, secure code.",
+      "Whether you need a booking-focused hotel site, an e-commerce store, or a lead-generating brochure site, we build mobile-first, tune Core Web Vitals for speed, and bake in the technical SEO foundations so the site is ready to rank. You get a site that looks premium, works everywhere, and is easy to update."
+    ],
     "points": ["Mobile-first responsive design", "E-commerce & booking systems", "Core Web Vitals & speed tuned"],
+    "deliverables": ["UX & wireframe planning", "Custom responsive design", "Development on WordPress or custom stack", "E-commerce & booking integration", "Speed & Core Web Vitals optimisation", "On-page technical SEO setup"],
+    "faqs": [
+      { "q": "How long does a website take to build?", "a": "A focused brochure site typically takes 2–4 weeks; larger e-commerce or booking sites take longer. We agree a clear timeline and milestones before starting." },
+      { "q": "Will I be able to update the site myself?", "a": "Yes. We build on friendly content-management systems and hand over with a short training session so your team can make everyday edits." },
+      { "q": "Do you also host the website?", "a": "We can. Through our network property Sanctify Hostings (sanctify.co.in) we offer reliable hosting, or we're happy to deploy to your existing host." }
+    ],
+    "related": ["hospitality", "real-estate", "retail-luxury"],
     "inLink": "https://www.sanctify.in/sanctify-facility/web-designing-company-in-goa-india/", "inAnchor": "the web designing company in Goa, Sanctify Goa"
   },
   {
     "slug": "content-marketing", "name": "Content Marketing", "icon": "doc",
+    "tagline": "Earn attention instead of renting it",
     "desc": "Powerful content strategies that build authority, engagement and lasting organic reach.",
     "long": "Content is how brands earn attention instead of renting it. From SEO articles and guides to video scripts and email, we create content mapped to what your customers are genuinely searching for — building the kind of authority that fuels your SEO, social and email channels together, and keeps compounding over time.",
+    "body": [
+      "Content ties your whole marketing together. The same well-planned article can rank on Google, feed a week of social posts, and anchor an email — which is why content marketing has the best long-term return of any channel when it's done with intent rather than published for the sake of it.",
+      "We map content to the questions your customers actually ask at each stage, from 'what are my options' to 'why choose you'. Then we produce it — SEO articles, guides, reel scripts, email sequences — in your brand voice, and measure it by the traffic, rankings and enquiries it generates, not word count."
+    ],
     "points": ["SEO blog & article writing", "Video & reel scripting", "Email newsletters & sequences"],
+    "deliverables": ["Content strategy & topic mapping", "SEO articles & long-form guides", "Reel & video scripts", "Email newsletters & sequences", "Editorial calendar", "Performance tracking by keyword & traffic"],
+    "faqs": [
+      { "q": "How is content marketing different from just blogging?", "a": "Blogging is publishing posts; content marketing is a strategy where every piece has a job — to rank, to nurture, or to convert — and is measured against that goal." },
+      { "q": "How often should we publish?", "a": "Consistency beats volume. For most businesses a steady cadence of high-quality, search-mapped pieces outperforms a burst of thin posts." },
+      { "q": "Can content really drive sales?", "a": "Yes — content that answers real buying questions builds trust and captures search demand, feeding your SEO and email channels and shortening the path to a sale." }
+    ],
+    "related": ["healthcare", "education", "real-estate"],
     "inLink": "https://www.sanctify.in/sanctify-facility/", "inAnchor": "the full Sanctify Goa services"
   },
   {
     "slug": "branding-creative", "name": "Branding & Creative", "icon": "pen",
+    "tagline": "Identities people recognise in a single glance",
     "desc": "Distinctive identities and creative that make brands unforgettable across every touchpoint.",
     "long": "A brand is a promise people can recognise in a glance. We shape identities — logo, colour, typography and tone of voice — into a coherent system that looks unmistakably yours across every screen, print piece and storefront. Strong branding isn't decoration; it's what makes marketing memorable and trust easy to give.",
+    "body": [
+      "Before a customer reads a word, they've already judged your brand by how it looks and feels. Inconsistent logos, clashing colours and a muddled message make even a great business look uncertain — while a confident, coherent identity makes a small business look established and a premium one look worth the price.",
+      "We build brands as systems, not one-off logos: a distinctive mark, a considered colour and type palette, clear usage guidelines and a tone of voice — so everything from your signage to your Instagram grid to your invoices feels like one brand. That consistency is what makes every rupee of marketing work harder."
+    ],
     "points": ["Logo & visual identity design", "Brand guidelines & systems", "Print & digital creative"],
+    "deliverables": ["Logo & visual identity design", "Colour, type & brand system", "Brand guidelines document", "Print collateral (menus, signage, cards)", "Social & digital templates", "Packaging & campaign creative"],
+    "faqs": [
+      { "q": "We already have a logo — do we need branding?", "a": "Often what's needed isn't a new logo but a system around it: consistent colours, fonts, templates and guidelines so your brand looks coherent everywhere. We can refine what you have or rebuild from scratch." },
+      { "q": "What do I actually receive?", "a": "Depending on scope: logo files in all formats, a colour and type palette, a brand guidelines document, and ready-to-use templates for print and social." },
+      { "q": "Does branding really affect sales?", "a": "Yes — consistent, professional branding builds instant trust, supports premium pricing, and makes all your other marketing more recognisable and effective." }
+    ],
+    "related": ["hospitality", "retail-luxury", "automotive"],
     "inLink": "https://www.sanctify.in/sanctify-facility/graphic-designing-company-in-goa-india/", "inAnchor": "the graphic design & branding company in Goa, Sanctify Goa"
   }
 ]

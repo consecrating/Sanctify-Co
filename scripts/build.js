@@ -120,7 +120,7 @@ function footer() {
         <div class="foot-social">${social}</div>
       </div>
       <div class="foot-cols">
-        <div class="foot-col"><h4>Explore</h4><ul>${navLi}<li><a href="/contact.html">Contact</a></li></ul></div>
+        <div class="foot-col"><h4>Explore</h4><ul>${navLi}<li><a href="/reviews.html">Reviews</a></li><li><a href="/faq.html">FAQ</a></li><li><a href="/contact.html">Contact</a></li></ul></div>
         <div class="foot-col"><h4>Our Network</h4><ul>${netLi}</ul></div>
         <div class="foot-col"><h4>Get in touch</h4><ul class="foot-contact">
           <li><a href="tel:${site.phoneRaw}">${PHONE}${esc(site.phone)}</a></li>
@@ -130,7 +130,7 @@ function footer() {
         </ul></div>
       </div>
     </div>
-    <div class="foot-bottom"><span>© <span id="year">2026</span> ${esc(site.legalName)}</span><span class="foot-legal"><a href="/terms.html">Terms of Use</a> · <a href="/privacy.html">Privacy Policy</a></span><span>${esc(site.addressLocality)}, ${esc(site.addressRegion)}, India</span></div>
+    <div class="foot-bottom"><span>© <span id="year">2026</span> ${esc(site.legalName)}</span><span class="foot-legal"><a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a> · <a href="/cookies.html">Cookies</a> · <a href="/sitemap.html">Sitemap</a></span><span>${esc(site.addressLocality)}, ${esc(site.addressRegion)}, India</span></div>
   </div></footer>`;
 }
 function chrome() {
@@ -170,8 +170,8 @@ function renderHome() {
   const netCards = site.network.map(n => `<a class="net rv" href="${n.url}" rel="noopener"><span class="ic">${icon(n.icon)}</span><div><h3>${esc(n.name)}</h3><div class="dom">${esc(n.domain)}</div><p>${esc(n.desc)}</p><span class="go">Visit site →</span></div></a>`).join("");
   const pills = site.pills.map((p, i) => `<span class="pill${i === 0 ? " on" : ""}">${esc(p)}</span>`).join("");
   const rstats = site.results.map(r => `<div class="rstat"><div class="n"><span data-count="${r.n}" data-suffix="${r.suffix}">0</span></div><div class="l">${esc(r.label)}</div></div>`).join("");
-  const svc = caps.map(c => `<a class="svc rv" href="/capabilities.html#${c.slug}"><div class="ic">${icon(c.icon)}</div><h3>${esc(c.name)}</h3><p>${esc(c.desc)}</p><span class="lm">Learn more →</span></a>`).join("");
-  const wtiles = work.slice(0, 3).map(w => `<a class="wtile rv" href="/work.html" style="background-image:url('${img(w.img)}')"><div class="wc"><span class="wt">${esc(w.industry)}</span><h3>${esc(w.client)}</h3><p>${esc(w.service)} · ${esc(w.location)}</p></div></a>`).join("");
+  const svc = caps.map(c => `<a class="svc rv" href="/capabilities/${c.slug}.html"><div class="ic">${icon(c.icon)}</div><h3>${esc(c.name)}</h3><p>${esc(c.desc)}</p><span class="lm">Learn more →</span></a>`).join("");
+  const wtiles = work.slice(0, 3).map(w => `<a class="wtile rv" href="/work/${w.slug}.html" style="background-image:url('${img(w.img)}')"><div class="wc"><span class="wt">${esc(w.industry)}</span><h3>${esc(w.client)}</h3><p>${esc(w.service)} · ${esc(w.location)}</p></div></a>`).join("");
   const tcards = site.testimonials.map(t => `<div class="tcard"><div class="stars">★★★★★</div><p class="q">"${esc(t.quote)}"</p><div class="who"><span class="av">${esc(t.av)}</span><div><b>${esc(t.name)}</b><small>${esc(t.role)}</small></div></div></div>`).join("");
   const faqs = site.faqs.map((f, i) => `<details class="faq rv"${i === 0 ? " open" : ""}><summary>${esc(f.q)}</summary><div class="b">${esc(f.a)}</div></details>`).join("");
 
@@ -277,36 +277,121 @@ ${ctaSection()}</main>`;
     schema: [orgSchema(), bc("About", "/about.html")] }, body));
 }
 
+/* ---------- detail-page building blocks ---------- */
+function crumbs(items) {
+  return `<nav class="crumbs" aria-label="Breadcrumb"><div class="container">${items.map((it, i) => i < items.length - 1 ? `<a href="${it.href}">${esc(it.name)}</a><span>/</span>` : `<span class="cur">${esc(it.name)}</span>`).join("")}</div></nav>`;
+}
+function detailHero(eyebrow, h1, sub, imgKey, alt) {
+  return `<section class="detail-hero"><div class="container detail-hero-grid">
+    <div class="rv"><span class="eyebrow">${esc(eyebrow)}</span><h1>${esc(h1)}</h1><p class="lead">${esc(sub)}</p>
+      <div class="acts" style="margin-top:22px"><a class="btn btn-acc" href="/contact.html">${icon("chat")} Get a free quote</a><a class="btn btn-wa" href="https://wa.me/${site.whatsapp}">${WA} WhatsApp</a></div></div>
+    <div class="detail-hero-img rv"><img src="${img(imgKey)}" alt="${esc(alt)}" loading="eager" width="560" height="440"></div>
+  </div></section>`;
+}
+function proseParas(arr) { return arr.map(p => `<p>${esc(p)}</p>`).join(""); }
+function chkList(arr) { return `<ul class="chk">${arr.map(x => `<li>${esc(x)}</li>`).join("")}</ul>`; }
+function faqBlock(faqs) {
+  if (!faqs || !faqs.length) return "";
+  return `<section class="section" style="padding-top:0"><div class="container" style="max-width:820px"><div class="section-head left rv" style="margin-bottom:18px"><span class="eyebrow">FAQ</span><h2>Common questions</h2></div><div class="faqwrap">${faqs.map((f, i) => `<details class="faq rv"${i === 0 ? " open" : ""}><summary>${esc(f.q)}</summary><div class="b">${esc(f.a)}</div></details>`).join("")}</div></div></section>`;
+}
+function relatedGrid(title, cards) {
+  if (!cards.length) return "";
+  return `<section class="section soft"><div class="container"><div class="section-head rv" style="margin-bottom:26px"><span class="eyebrow">Keep exploring</span><h2>${esc(title)}</h2></div><div class="rel-grid">${cards.join("")}</div></div></section>`;
+}
+const capBySlug = s => caps.find(c => c.slug === s);
+const indBySlug = s => inds.find(i => i.slug === s);
+
 function renderCapabilities() {
-  const cards = caps.map(c => `<div class="svc rv" id="${c.slug}"><div class="ic">${icon(c.icon)}</div><h3>${esc(c.name)}</h3><p>${esc(c.long)}</p><ul style="list-style:none;margin:8px 0 14px">${c.points.map(p => `<li style="font-size:.9rem;color:var(--muted);padding:3px 0">✓ ${esc(p)}</li>`).join("")}</ul><a class="lm" href="${c.inLink}" rel="noopener">Delivered in Goa by ${esc(c.inAnchor)} →</a></div>`).join("");
+  const cards = caps.map(c => `<a class="svc rv" href="/capabilities/${c.slug}.html"><div class="ic">${icon(c.icon)}</div><h3>${esc(c.name)}</h3><p>${esc(c.desc)}</p><span class="lm">Explore ${esc(c.name)} →</span></a>`).join("");
   const body = `<main>
-${pageHero("What we do", "Capabilities across the full journey", "Strategy, creativity and technology working together to grow your brand. Delivered in Goa by Sanctify Goa (sanctify.in).")}
-<section class="section"><div class="container"><div class="svc-grid">${cards}</div></div></section>
+${pageHero("What we do", "Capabilities across the full journey", "Strategy, creativity and technology working together to grow your brand. Click any capability for the full detail.")}
+<section class="section" style="padding-top:14px"><div class="container"><div class="svc-grid">${cards}</div>
+<p class="lead" style="text-align:center;margin-top:34px;max-width:60ch;margin-left:auto;margin-right:auto">All client work is delivered in Goa by our flagship agency, <a href="https://www.sanctify.in" rel="noopener" style="color:var(--acc-d);font-weight:600">Sanctify Goa (sanctify.in)</a>.</p></div></section>
 ${ctaSection()}</main>`;
   write("capabilities.html", page({ pathname: "/capabilities.html", active: "/capabilities.html", image: "web-design",
     title: `Capabilities — Digital Marketing, SEO, Web & Branding | Sanctify`,
-    description: "Explore Sanctify's capabilities: digital marketing, SEO, social media, web design & development, content marketing and branding — for brands across Goa.",
+    description: "Explore Sanctify's capabilities: digital marketing, SEO, social media, web design & development, content marketing and branding — dedicated pages for brands across Goa.",
     schema: [orgSchema(), bc("Capabilities", "/capabilities.html")].concat(caps.map(serviceSchema)) }, body));
 }
 
+function renderCapabilityDetails() {
+  for (const c of caps) {
+    const relInds = (c.related || []).map(indBySlug).filter(Boolean);
+    const relCards = relInds.map(i => `<a class="rel-card" href="/industries/${i.slug}.html" style="background-image:url('${img(i.img)}')"><div class="rc-body"><span>Industry</span><h3>${esc(i.name)}</h3></div></a>`);
+    const body = `<main>
+${crumbs([{ name: "Home", href: "/" }, { name: "Capabilities", href: "/capabilities.html" }, { name: c.name, href: `/capabilities/${c.slug}.html` }])}
+${detailHero(c.name, c.tagline, c.desc, c.icon === "search" ? "seo" : c.icon === "browser" ? "web-design" : c.icon === "chat" ? "social-media" : c.icon === "doc" ? "content-marketing" : c.icon === "pen" ? "graphic-design" : "google-ads", c.name + " services in Goa by Sanctify")}
+<section class="section"><div class="container detail-body">
+  <div class="prose rv"><p class="intro">${esc(c.long)}</p>${proseParas(c.body)}
+    <h2>What we deliver</h2>${chkList(c.deliverables)}
+    <p style="margin-top:20px"><a class="lm" href="${c.inLink}" rel="noopener">Delivered in Goa by ${esc(c.inAnchor)} →</a></p>
+  </div>
+  <aside class="detail-side rv">
+    <div class="side-card"><h3>${esc(c.name)} highlights</h3>${chkList(c.points)}
+      <a class="btn btn-acc" href="/contact.html" style="width:100%;margin-top:8px">Get a free quote →</a>
+      <a class="btn btn-out" href="/capabilities.html" style="width:100%;margin-top:10px">All capabilities</a>
+    </div>
+  </aside>
+</div></section>
+${faqBlock(c.faqs)}
+${relatedGrid("Industries we do this for", relCards)}
+${ctaSection()}</main>`;
+    write(`capabilities/${c.slug}.html`, page({ pathname: `/capabilities/${c.slug}.html`, active: "/capabilities.html", image: "web-design",
+      title: `${c.name} in Goa | Sanctify`,
+      description: `${c.desc} ${c.tagline}. Delivered across Goa by Sanctify.`,
+      schema: [orgSchema(), serviceSchema(c), breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Capabilities", href: "/capabilities.html" }, { name: c.name, href: `/capabilities/${c.slug}.html` }]), faqSchema(c.faqs.map(f => ({ q: f.q, a: f.a })))] }, body));
+  }
+}
+
 function renderIndustries() {
-  const cards = inds.map(i => `<a class="wtile rv" href="/work.html" style="background-image:url('${img(i.img)}')"><div class="wc"><span class="wt">Industry</span><h3>${esc(i.name)}</h3><p>${esc(i.desc)}</p></div></a>`).join("");
+  const cards = inds.map(i => `<a class="wtile rv" href="/industries/${i.slug}.html" style="background-image:url('${img(i.img)}')"><div class="wc"><span class="wt">Industry</span><h3>${esc(i.name)}</h3><p>${esc(i.desc)}</p><span class="lm" style="color:#fff;margin-top:8px;display:inline-block">View sector →</span></div></a>`).join("");
   const body = `<main>
-${pageHero("Industries", "Sector expertise, proven by results", "From hospitality and automotive to healthcare, retail and education — we know what makes each industry's customers click.")}
-<section class="section"><div class="container"><div class="workgrid">${cards}</div>
+${pageHero("Industries", "Sector expertise, proven by results", "From hospitality and automotive to healthcare, retail and education — we know what makes each industry's customers click. Open any sector for the full playbook.")}
+<section class="section" style="padding-top:14px"><div class="container"><div class="workgrid">${cards}</div>
 <p class="lead" style="text-align:center;margin-top:34px;max-width:60ch;margin-left:auto;margin-right:auto">Every sector needs a different playbook. See real, industry-specific campaigns in our <a href="https://www.sanctify.in/showcase/" rel="noopener" style="color:var(--acc-d);font-weight:600">Sanctify Goa showcase</a>.</p></div></section>
 ${ctaSection()}</main>`;
   write("industries.html", page({ pathname: "/industries.html", active: "/industries.html", image: "hotel",
     title: `Industries We Serve — Hospitality, Auto, Healthcare & More | Sanctify`,
-    description: "Sanctify serves hospitality, automotive, real estate, healthcare, retail and education brands across Goa with tailored digital marketing.",
+    description: "Sanctify serves hospitality, automotive, real estate, healthcare, retail and education brands across Goa — dedicated pages with the playbook for each sector.",
     schema: [orgSchema(), bc("Industries", "/industries.html")] }, body));
 }
 
+function renderIndustryDetails() {
+  for (const i of inds) {
+    const relCaps = (i.services || []).map(capBySlug).filter(Boolean);
+    const svcCards = relCaps.map(c => `<a class="rel-card rel-svc" href="/capabilities/${c.slug}.html"><div class="rc-ic">${icon(c.icon)}</div><div class="rc-body2"><h3>${esc(c.name)}</h3><p>${esc(c.desc)}</p></div></a>`);
+    const relWork = work.filter(w => (i.examples || []).some(e => w.client.indexOf(e) !== -1) || w.industry.toLowerCase() === i.name.toLowerCase());
+    const workCards = relWork.map(w => `<a class="rel-card" href="/work/${w.slug}.html" style="background-image:url('${img(w.img)}')"><div class="rc-body"><span>${esc(w.industry)}</span><h3>${esc(w.client)}</h3></div></a>`);
+    const body = `<main>
+${crumbs([{ name: "Home", href: "/" }, { name: "Industries", href: "/industries.html" }, { name: i.name, href: `/industries/${i.slug}.html` }])}
+${detailHero(i.name, i.tagline, i.intro, i.img, i.name + " digital marketing in Goa by Sanctify")}
+<section class="section"><div class="container detail-body">
+  <div class="prose rv">${proseParas(i.body)}
+    <h2>Challenges we solve in ${esc(i.name.toLowerCase())}</h2>${chkList(i.challenges)}
+  </div>
+  <aside class="detail-side rv">
+    <div class="side-card"><h3>Services for ${esc(i.name)}</h3><ul class="side-links">${relCaps.map(c => `<li><a href="/capabilities/${c.slug}.html">${esc(c.name)} →</a></li>`).join("")}</ul>
+      <a class="btn btn-acc" href="/contact.html" style="width:100%;margin-top:8px">Talk to us →</a>
+      <a class="btn btn-out" href="/industries.html" style="width:100%;margin-top:10px">All industries</a>
+    </div>
+  </aside>
+</div></section>
+${relatedGrid("Services for this sector", svcCards)}
+${workCards.length ? relatedGrid("Related work", workCards) : ""}
+${faqBlock(i.faqs)}
+${ctaSection()}</main>`;
+    write(`industries/${i.slug}.html`, page({ pathname: `/industries/${i.slug}.html`, active: "/industries.html", image: i.img,
+      title: `${i.name} Marketing in Goa | Sanctify`,
+      description: `${i.intro}`.slice(0, 160),
+      schema: [orgSchema(), breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Industries", href: "/industries.html" }, { name: i.name, href: `/industries/${i.slug}.html` }]), faqSchema(i.faqs.map(f => ({ q: f.q, a: f.a })))] }, body));
+  }
+}
+
 function renderWork() {
-  const tiles = work.map(w => `<div class="svc rv" style="padding:0;overflow:hidden"><div style="height:200px;background-size:cover;background-position:center;background-image:url('${img(w.img)}')" role="img" aria-label="${esc(w.client + " — " + w.industry + " digital marketing project by Sanctify in " + w.location)}"></div><div style="padding:26px"><span class="lm" style="text-transform:uppercase;font-size:.68rem;letter-spacing:.08em">${esc(w.industry)}</span><h3 style="margin:8px 0 6px">${esc(w.client)}</h3><p style="font-size:.93rem">${esc(w.summary)}</p><p style="font-size:.84rem;color:var(--muted);margin:8px 0 0">${esc(w.service)} · ${esc(w.location)}</p>${w.inLink ? `<a class="lm" href="${w.inLink}" rel="noopener" style="display:inline-block;margin-top:10px">View ${esc(w.inAnchor)} ↗</a>` : ""}</div></div>`).join("");
+  const tiles = work.map(w => `<a class="svc rv" href="/work/${w.slug}.html" style="padding:0;overflow:hidden"><div style="height:200px;background-size:cover;background-position:center;background-image:url('${img(w.img)}')" role="img" aria-label="${esc(w.client + " — " + w.industry + " project by Sanctify in " + w.location)}"></div><div style="padding:26px"><span class="lm" style="text-transform:uppercase;font-size:.68rem;letter-spacing:.08em">${esc(w.industry)}</span><h3 style="margin:8px 0 6px">${esc(w.client)}</h3><p style="font-size:.93rem">${esc(w.summary)}</p><p style="font-size:.84rem;color:var(--muted);margin:8px 0 0">${esc(w.service)} · ${esc(w.location)}</p><span class="lm" style="display:inline-block;margin-top:10px">Read case study →</span></div></a>`).join("");
   const body = `<main>
-${pageHero("Selected work", "Brands we've helped grow", "A snapshot from a portfolio of 100+ projects across Goa and beyond.")}
-<section class="section"><div class="container"><div class="svc-grid">${tiles}</div></div></section>
+${pageHero("Selected work", "Brands we've helped grow", "A snapshot from a portfolio of 100+ projects across Goa and beyond. Open any project for the full case study.")}
+<section class="section" style="padding-top:14px"><div class="container"><div class="svc-grid">${tiles}</div></div></section>
 ${ctaSection()}</main>`;
   write("work.html", page({ pathname: "/work.html", active: "/work.html", image: "automobile",
     title: `Our Work & Case Studies — Sanctify Digital Marketing Goa`,
@@ -314,11 +399,46 @@ ${ctaSection()}</main>`;
     schema: [orgSchema(), bc("Work", "/work.html")] }, body));
 }
 
+function renderWorkDetails() {
+  for (const w of work) {
+    const others = work.filter(x => x.slug !== w.slug).slice(0, 3);
+    const otherCards = others.map(x => `<a class="rel-card" href="/work/${x.slug}.html" style="background-image:url('${img(x.img)}')"><div class="rc-body"><span>${esc(x.industry)}</span><h3>${esc(x.client)}</h3></div></a>`);
+    const facts = `<div class="side-card"><h3>Project snapshot</h3><ul class="fact-list">
+      <li><span>Client</span><strong>${esc(w.client)}</strong></li>
+      <li><span>Industry</span><strong>${esc(w.industry)}</strong></li>
+      <li><span>Location</span><strong>${esc(w.location)}</strong></li>
+      <li><span>Services</span><strong>${esc(w.service)}</strong></li>
+    </ul>
+    <a class="btn btn-acc" href="/contact.html" style="width:100%;margin-top:14px">Start your project →</a>
+    <a class="btn btn-out" href="/work.html" style="width:100%;margin-top:10px">All case studies</a>
+    ${w.inLink ? `<a class="lm" href="${w.inLink}" rel="noopener" style="display:block;margin-top:14px;text-align:center">View ${esc(w.inAnchor)} ↗</a>` : ""}</div>`;
+    const body = `<main>
+${crumbs([{ name: "Home", href: "/" }, { name: "Work", href: "/work.html" }, { name: w.client, href: `/work/${w.slug}.html` }])}
+${detailHero(w.industry + " · " + w.location, w.client, w.summary, w.img, w.client + " — " + w.industry + " project by Sanctify in " + w.location)}
+<section class="section"><div class="container detail-body">
+  <div class="prose rv">
+    <h2>The challenge</h2><p>${esc(w.challenge)}</p>
+    <h2>Our approach</h2>${chkList(w.approach)}
+    <h2>The results</h2>${chkList(w.results)}
+    ${w.quote ? `<blockquote class="pull-quote">${esc(w.quote)}</blockquote>` : ""}
+  </div>
+  <aside class="detail-side rv">${facts}</aside>
+</div></section>
+${relatedGrid("More of our work", otherCards)}
+${ctaSection()}</main>`;
+    write(`work/${w.slug}.html`, page({ pathname: `/work/${w.slug}.html`, active: "/work.html", image: w.img,
+      title: `${w.client} — ${w.industry} Case Study | Sanctify Goa`,
+      description: `${w.summary}`.slice(0, 160),
+      schema: [orgSchema(), breadcrumbSchema([{ name: "Home", href: "/" }, { name: "Work", href: "/work.html" }, { name: w.client, href: `/work/${w.slug}.html` }])] }, body));
+  }
+}
+
 function renderInsights() {
-  const cards = insights.map(a => `<a class="svc rv" href="/insights.html"><div class="ic">${icon("doc")}</div><span class="lm" style="text-transform:uppercase;font-size:.72rem;letter-spacing:.08em">${esc(a.tag)}</span><h3 style="margin:8px 0">${esc(a.title)}</h3><p>${esc(a.excerpt)}</p></a>`).join("");
+  const cards = insights.map(a => `<a class="svc rv" href="${a.url}" rel="noopener"><div class="thumb" style="background-image:url('${img(a.img)}')"></div><span class="lm" style="text-transform:uppercase;font-size:.72rem;letter-spacing:.08em">${esc(a.tag)}</span><h3 style="margin:8px 0">${esc(a.title)}</h3><p>${esc(a.excerpt)}</p><span class="lm" style="display:inline-block;margin-top:8px">Read on sanctify.in ↗</span></a>`).join("");
   const body = `<main>
-${pageHero("Insights", "Ideas & guides from our studio", "Practical digital marketing tips, trends and playbooks from the Sanctify team.")}
-<section class="section"><div class="container"><div class="svc-grid">${cards}</div></div></section>
+${pageHero("Insights", "Ideas & guides from our studio", "Practical digital marketing tips, trends and playbooks. Each guide opens in full on our flagship site, sanctify.in.")}
+<section class="section" style="padding-top:14px"><div class="container"><div class="svc-grid">${cards}</div>
+<p class="lead" style="text-align:center;margin-top:34px;max-width:60ch;margin-left:auto;margin-right:auto">Browse the complete library on the <a href="https://www.sanctify.in/blog/" rel="noopener" style="color:var(--acc-d);font-weight:600">Sanctify Goa blog</a>.</p></div></section>
 ${ctaSection()}</main>`;
   write("insights.html", page({ pathname: "/insights.html", active: "/insights.html", image: "seo",
     title: `Insights — Digital Marketing Tips & Trends | Sanctify Goa`,
@@ -361,12 +481,93 @@ ${pageHero("Get in touch", "Let's grow your brand together", "Tell us about your
     schema: [orgSchema(), bc("Contact", "/contact.html")] }, body));
 }
 
+function renderFAQ() {
+  const all = [].concat(
+    site.faqs.map(f => ({ q: f.q, a: f.a, cat: "About Sanctify" })),
+    caps.flatMap(c => (c.faqs || []).map(f => ({ q: f.q, a: f.a, cat: c.name })))
+  );
+  const groups = {};
+  for (const f of all) { (groups[f.cat] = groups[f.cat] || []).push(f); }
+  const sections = Object.keys(groups).map(cat => `<div class="rv" style="margin-bottom:10px"><h2 style="font-size:1.25rem;margin:26px 0 12px">${esc(cat)}</h2><div class="faqwrap">${groups[cat].map((f, i) => `<details class="faq"><summary>${esc(f.q)}</summary><div class="b">${esc(f.a)}</div></details>`).join("")}</div></div>`).join("");
+  const body = `<main>
+${pageHero("Help centre", "Frequently asked questions", "Answers about Sanctify, our services and how we work. Can't find what you need? Get in touch.")}
+<section class="section" style="padding-top:8px"><div class="container" style="max-width:860px">${sections}</div></section>
+${ctaSection()}</main>`;
+  write("faq.html", page({ pathname: "/faq.html", active: "", image: "professional",
+    title: `FAQ — Digital Marketing Questions Answered | Sanctify Goa`,
+    description: "Frequently asked questions about Sanctify — our digital marketing, SEO, web design and branding services, timelines, reporting and how we work in Goa.",
+    schema: [orgSchema(), bc("FAQ", "/faq.html"), faqSchema(all.map(f => ({ q: f.q, a: f.a })))] }, body));
+}
+
+function renderReviews() {
+  const cards = site.testimonials.map(t => `<div class="tcard rv"><div class="stars">★★★★★</div><p class="q">"${esc(t.quote)}"</p><div class="who"><span class="av">${esc(t.av)}</span><div><b>${esc(t.name)}</b><small>${esc(t.role)}</small></div></div></div>`).join("");
+  const body = `<main>
+${pageHero("Client reviews", "Rated " + site.rating.value + "/5 by " + site.rating.count + " clients", "Real feedback from businesses we've helped grow across Goa. Read them all on our Google profile.")}
+<section class="section" style="padding-top:10px"><div class="container">
+  <div style="text-align:center;margin-bottom:30px"><a class="btn btn-acc" href="${site.reviewsUrl}" rel="noopener">${icon("star", false)} See all reviews on Google →</a></div>
+  <div class="rev-grid">${cards}</div>
+</div></section>
+${ctaSection()}</main>`;
+  write("reviews.html", page({ pathname: "/reviews.html", active: "", image: "social-media",
+    title: `Client Reviews — ${site.rating.value}/5 from ${site.rating.count} Clients | Sanctify Goa`,
+    description: `Read what clients say about Sanctify — rated ${site.rating.value}/5 from ${site.rating.count} Google reviews. Real results in SEO, web design, ads and branding across Goa.`,
+    schema: [orgSchema(), bc("Reviews", "/reviews.html")] }, body));
+}
+
+function renderCookies() {
+  const html = `
+  <p>This Cookie Policy explains how ${esc(site.legalName)} uses cookies and similar technologies on ${site.baseUrl.replace(/^https?:\/\//, "")}.</p>
+  <h2>1. What are cookies?</h2>
+  <p>Cookies are small text files placed on your device when you visit a website. They help the site work, remember your preferences, and provide information to the site owner.</p>
+  <h2>2. How we use cookies</h2>
+  <p>We use essential cookies to make the Site function, and analytics cookies (such as Google Analytics) to understand how visitors use the Site so we can improve it. We may also use cookies to measure the performance of marketing campaigns.</p>
+  <h2>3. Managing cookies</h2>
+  <p>You can control and delete cookies through your browser settings. Blocking some cookies may affect how parts of the Site work.</p>
+  <h2>4. Third-party cookies</h2>
+  <p>Some cookies are set by third-party services we use, such as Google. These providers have their own privacy and cookie policies.</p>
+  <h2>5. Updates</h2>
+  <p>We may update this policy from time to time. Please check back for the latest version.</p>`;
+  const body = legalBody({ eyebrow: "Legal", h1: "Cookie Policy", sub: "How Sanctify uses cookies and similar technologies.", html });
+  write("cookies.html", page({ pathname: "/cookies.html", active: "", image: "goa-hero-1",
+    title: `Cookie Policy | ${site.brand}`,
+    description: `Cookie Policy for the ${site.brand} website — what cookies we use, why, and how to manage them.`,
+    schema: [orgSchema(), bc("Cookie Policy", "/cookies.html")] }, body));
+}
+
+function allUrls() {
+  return ["/", "/about.html", "/capabilities.html"]
+    .concat(caps.map(c => `/capabilities/${c.slug}.html`))
+    .concat(["/industries.html"]).concat(inds.map(i => `/industries/${i.slug}.html`))
+    .concat(["/work.html"]).concat(work.map(w => `/work/${w.slug}.html`))
+    .concat(["/insights.html", "/reviews.html", "/faq.html", "/contact.html", "/terms.html", "/privacy.html", "/cookies.html", "/sitemap.html"]);
+}
+
+function renderHtmlSitemap() {
+  const grp = (title, links) => `<div class="rv" style="margin-bottom:22px"><h2 style="font-size:1.15rem;margin-bottom:10px">${esc(title)}</h2><ul class="site-map-list">${links.join("")}</ul></div>`;
+  const li = (href, label) => `<li><a href="${href}">${esc(label)}</a></li>`;
+  const body = `<main>
+${pageHero("Sitemap", "Everything on this site", "A complete index of every page on sanctify.co.")}
+<section class="section" style="padding-top:10px"><div class="container" style="max-width:900px">
+  ${grp("Main", [li("/", "Home"), li("/about.html", "About Sanctify"), li("/contact.html", "Contact"), li("/reviews.html", "Client Reviews"), li("/faq.html", "FAQ")])}
+  ${grp("Capabilities", [li("/capabilities.html", "All Capabilities")].concat(caps.map(c => li(`/capabilities/${c.slug}.html`, c.name))))}
+  ${grp("Industries", [li("/industries.html", "All Industries")].concat(inds.map(i => li(`/industries/${i.slug}.html`, i.name))))}
+  ${grp("Work & Case Studies", [li("/work.html", "All Work")].concat(work.map(w => li(`/work/${w.slug}.html`, w.client))))}
+  ${grp("Resources", [li("/insights.html", "Insights")])}
+  ${grp("Legal", [li("/terms.html", "Terms of Use"), li("/privacy.html", "Privacy Policy"), li("/cookies.html", "Cookie Policy")])}
+</div></section></main>`;
+  write("sitemap.html", page({ pathname: "/sitemap.html", active: "", image: "goa-hero-1",
+    title: `Sitemap | ${site.brand}`,
+    description: "Complete sitemap of the Sanctify corporate website — all capability, industry, case study and company pages.",
+    schema: [orgSchema(), bc("Sitemap", "/sitemap.html")] }, body));
+}
+
 /* ---------- assets + sitemap + robots ---------- */
 function copyDir(from, to) { fs.mkdirSync(to, { recursive: true }); for (const e of fs.readdirSync(from, { withFileTypes: true })) { const s = path.join(from, e.name), d = path.join(to, e.name); if (e.isDirectory()) copyDir(s, d); else fs.copyFileSync(s, d); } }
 function sitemapRobots() {
-  const pages = ["/", "/about.html", "/capabilities.html", "/industries.html", "/work.html", "/insights.html", "/contact.html", "/terms.html", "/privacy.html"];
+  const pages = allUrls();
   const today = new Date().toISOString().slice(0, 10);
-  const sm = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map(u => `  <url><loc>${site.baseUrl}${u}</loc><lastmod>${today}</lastmod><changefreq>monthly</changefreq><priority>${u === "/" ? "1.0" : "0.8"}</priority></url>`).join("\n")}\n</urlset>\n`;
+  const prio = u => u === "/" ? "1.0" : (/(capabilities|industries|work|about|contact)\.html$/.test(u) || u.split("/").length === 3 ? "0.8" : "0.6");
+  const sm = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${pages.map(u => `  <url><loc>${site.baseUrl}${u}</loc><lastmod>${today}</lastmod><changefreq>monthly</changefreq><priority>${prio(u)}</priority></url>`).join("\n")}\n</urlset>\n`;
   write("sitemap.xml", sm);
   write("robots.txt", `User-agent: *\nAllow: /\n\nSitemap: ${site.baseUrl}/sitemap.xml\n`);
 }
@@ -464,8 +665,15 @@ function aiAbout() {
 /* ---------- run ---------- */
 fs.rmSync(DIST, { recursive: true, force: true });
 fs.mkdirSync(DIST, { recursive: true });
-renderHome(); renderAbout(); renderCapabilities(); renderIndustries(); renderWork(); renderInsights(); renderContact(); renderTerms(); renderPrivacy();
+renderHome(); renderAbout();
+renderCapabilities(); renderCapabilityDetails();
+renderIndustries(); renderIndustryDetails();
+renderWork(); renderWorkDetails();
+renderInsights(); renderReviews(); renderFAQ(); renderContact();
+renderTerms(); renderPrivacy(); renderCookies();
+renderHtmlSitemap();
 copyDir(path.join(ROOT, "src", "assets"), path.join(DIST, "assets"));
 sitemapRobots();
 aiAbout();
-console.log("Built:", fs.readdirSync(DIST).filter(f => f.endsWith(".html")).length, "pages + assets + ai-about");
+function countPages(dir) { let n = 0; for (const e of fs.readdirSync(dir, { withFileTypes: true })) { if (e.isDirectory()) n += countPages(path.join(dir, e.name)); else if (e.name.endsWith(".html")) n++; } return n; }
+console.log("Built:", countPages(DIST), "HTML pages + assets + ai-about");

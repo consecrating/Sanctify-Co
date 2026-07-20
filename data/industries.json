@@ -1,8 +1,104 @@
 [
-  { "slug": "hospitality", "name": "Hospitality", "img": "hotel", "desc": "Hotels, resorts, restaurants and beach shacks — from Hotel Supreme Grande to The Flora Grand." },
-  { "slug": "automotive", "name": "Automotive", "img": "automobile", "desc": "Dealers and rentals — including work for Mercedes-Benz and TVS — marketing that drives leads." },
-  { "slug": "real-estate", "name": "Real Estate", "img": "real-estate", "desc": "Villas and property brands — high-intent buyer campaigns and lead capture." },
-  { "slug": "healthcare", "name": "Healthcare", "img": "healthcare", "desc": "Clinics like Kenkre Dental — trusted, findable and easy to book online." },
-  { "slug": "retail-luxury", "name": "Retail & Luxury", "img": "retail", "desc": "Boutiques and jewellery brands — e-commerce and brand storytelling." },
-  { "slug": "education", "name": "Education", "img": "education", "desc": "Schools and academies — admissions-driving digital presence." }
+  {
+    "slug": "hospitality", "name": "Hospitality", "img": "hotel",
+    "tagline": "Fill rooms and tables, on and off season",
+    "desc": "Hotels, resorts, restaurants and beach shacks — from Hotel Supreme Grande to The Flora Grand.",
+    "intro": "Goa lives and breathes hospitality — and competition for every booking is fierce. We help hotels, resorts, restaurants and shacks stay visible when travellers are searching, and convert that attention into direct reservations.",
+    "body": [
+      "The hospitality customer journey is almost entirely digital: a traveller searches, compares on Google and Instagram, reads reviews, then books — often in a single sitting on a phone. If your property isn't fast to find, easy to trust and simple to book, that guest goes to the competitor who is. Worse, over-reliance on OTA platforms quietly eats your margins through commissions.",
+      "We build hospitality brands a direct-booking engine: a fast, mobile-first website, strong local SEO and Google Business Profile presence, a living social feed that sells the experience, and seasonal paid campaigns to fill the quiet weeks. The goal is more direct bookings, less OTA dependence, and a brand guests recognise before they arrive."
+    ],
+    "challenges": ["High OTA commissions eating into margins", "Extreme seasonality and quiet-period gaps", "Fierce competition for 'hotels in Goa' searches", "Reviews and reputation driving booking decisions"],
+    "services": ["seo", "social-media-marketing", "web-design-development"],
+    "examples": ["Hotel Supreme Grande", "The Flora Grand"],
+    "faqs": [
+      { "q": "Can you help reduce our dependence on booking platforms?", "a": "Yes. By strengthening your direct-booking website, SEO and social presence, we help shift more reservations to your own channels — saving you the commissions OTAs charge." },
+      { "q": "How do you handle Goa's seasonality?", "a": "We plan campaigns around your calendar — building visibility ahead of peak season and running targeted offers to fill quieter periods." }
+    ]
+  },
+  {
+    "slug": "automotive", "name": "Automotive", "img": "automobile",
+    "tagline": "Drive qualified showroom and service enquiries",
+    "desc": "Dealers and rentals — including work for Mercedes-Benz and TVS — marketing that drives leads.",
+    "intro": "From luxury dealerships to two-wheeler brands and rentals, automotive buyers research online long before they visit. We turn that research into booked test drives, service appointments and showroom footfall.",
+    "body": [
+      "Car and bike buyers spend weeks comparing models, prices and dealers online — and the dealership that shows up consistently, with a credible presence and easy enquiry paths, wins the visit. For a brand like Mercedes-Benz, that means matching premium showrooms with an equally premium digital experience; for rentals and two-wheelers, it means being the obvious local choice in search and maps.",
+      "We run full-funnel automotive campaigns: SEO and Google Ads to capture high-intent 'buy' and 'service near me' searches, social campaigns to showcase models and offers, and lead-capture landing pages wired to your sales team. Every enquiry is tracked so you can see exactly which campaigns fill the showroom."
+    ],
+    "challenges": ["Long, research-heavy buying cycles", "High-value leads that must reach sales fast", "Balancing brand prestige with performance marketing", "Competing for 'near me' service and dealer searches"],
+    "services": ["digital-marketing", "seo", "branding-creative"],
+    "examples": ["Mercedes-Benz (Counto Motors)", "TVS"],
+    "faqs": [
+      { "q": "Do you have experience with premium automotive brands?", "a": "Yes — our work for the Mercedes-Benz dealership (Counto Motors) combined premium brand standards with performance marketing that drove qualified showroom enquiries." },
+      { "q": "Can you track which campaigns generate real leads?", "a": "Absolutely. We set up call and form tracking so every enquiry is attributed to the campaign that created it." }
+    ]
+  },
+  {
+    "slug": "real-estate", "name": "Real Estate", "img": "real-estate",
+    "tagline": "High-intent buyer campaigns and clean lead capture",
+    "desc": "Villas and property brands — high-intent buyer campaigns and lead capture.",
+    "intro": "Property is Goa's premium play — and buyers are often out-of-state or overseas, researching entirely online. We help villa developers and property brands reach serious buyers and capture qualified enquiries.",
+    "body": [
+      "A single real-estate lead can be worth lakhs, so the marketing bar is high. Buyers want to see the property beautifully, trust the developer, and enquire easily — often from another city or country. Generic listings and slow, cluttered websites lose these buyers; polished visuals, clear information and fast follow-up win them.",
+      "We build property brands high-converting landing pages, run targeted Google and Meta campaigns aimed at genuine buyer intent (not tyre-kickers), and set up clean lead capture and tracking so your sales team can respond within minutes. Strong branding and photography tie it together so the project feels as premium as its price."
+    ],
+    "challenges": ["Very high lead value demands quality over quantity", "Out-of-state and NRI buyers researching remotely", "Long decision cycles needing nurture", "Trust and credibility are decisive"],
+    "services": ["digital-marketing", "web-design-development", "seo"],
+    "examples": ["Goan villa & property developers"],
+    "faqs": [
+      { "q": "How do you avoid wasting budget on unqualified leads?", "a": "We target by genuine buyer intent, qualify through the landing page, and continuously optimise campaigns toward the leads that actually convert — not just cheap clicks." },
+      { "q": "Can you reach NRI and out-of-state buyers?", "a": "Yes — we can geo-target campaigns to specific cities and countries where your buyers are, with messaging tailored to remote purchasers." }
+    ]
+  },
+  {
+    "slug": "healthcare", "name": "Healthcare", "img": "healthcare",
+    "tagline": "Trusted, findable and easy to book",
+    "desc": "Clinics like Kenkre Dental — trusted, findable and easy to book online.",
+    "intro": "Patients choose clinics they can find and trust. We help doctors, dentists and clinics build a credible online presence and make booking an appointment effortless.",
+    "body": [
+      "Healthcare decisions are driven by trust and proximity. When someone searches 'dentist near me' or 'clinic in Panjim', they pick from the practices that appear, look professional, and have good reviews. A clinic that's invisible on Google — or has an outdated site — loses patients to competitors who simply show up better.",
+      "We give clinics a trust-building website, strong local SEO and Google Business Profile optimisation, and a steady stream of reviews and helpful content that positions the practice as the local expert. Appointment paths are made obvious and simple, so interest turns into booked visits."
+    ],
+    "challenges": ["Trust and credibility are paramount", "Local 'near me' visibility is decisive", "Reviews heavily influence patient choice", "Clear, simple booking is essential"],
+    "services": ["seo", "web-design-development", "content-marketing"],
+    "examples": ["Kenkre Dental Care"],
+    "faqs": [
+      { "q": "Do you have experience with medical and dental clinics?", "a": "Yes — for example our work with Kenkre Dental Care in Panjim combined a trust-building clinic website with local SEO that makes the practice easy to find and book." },
+      { "q": "Can you help us get more Google reviews?", "a": "Yes. We set up simple systems and prompts that make it easy for happy patients to leave reviews, strengthening your local reputation and rankings." }
+    ]
+  },
+  {
+    "slug": "retail-luxury", "name": "Retail & Luxury", "img": "retail",
+    "tagline": "E-commerce and brand storytelling that sells",
+    "desc": "Boutiques and jewellery brands — e-commerce and brand storytelling.",
+    "intro": "For boutiques, jewellery and lifestyle brands, presentation is everything. We combine premium branding, storytelling and e-commerce to turn browsers into buyers — online and in-store.",
+    "body": [
+      "Luxury and retail buying is emotional and visual. Customers buy into a feeling and a brand story as much as a product, and they expect a shopping experience — website, social, packaging — that matches the price tag. A clumsy online store or inconsistent branding instantly undercuts a premium positioning.",
+      "We craft cohesive brand identities, shoot and present products beautifully, build smooth e-commerce experiences, and run social and content campaigns that tell your brand's story. The result is a retail brand that feels premium everywhere a customer encounters it, and an online store engineered to convert."
+    ],
+    "challenges": ["Presentation and consistency must feel premium", "Emotional, story-led purchase decisions", "Smooth e-commerce and mobile checkout expected", "Standing out in a crowded lifestyle market"],
+    "services": ["branding-creative", "social-media-marketing", "web-design-development"],
+    "examples": ["Goan boutiques & jewellery brands"],
+    "faqs": [
+      { "q": "Can you build our online store?", "a": "Yes — we design and develop e-commerce sites with smooth, mobile-first checkout, and integrate payments and inventory as needed." },
+      { "q": "Do you help with product photography and creative?", "a": "We coordinate premium product visuals and create the social and campaign creative that makes your brand look as good as it is." }
+    ]
+  },
+  {
+    "slug": "education", "name": "Education", "img": "education",
+    "tagline": "Admissions-driving digital presence",
+    "desc": "Schools and academies — admissions-driving digital presence.",
+    "intro": "Schools, colleges and academies compete for the attention of parents and students who research entirely online. We help institutions build credibility and drive admission enquiries.",
+    "body": [
+      "Choosing an institution is a high-stakes, research-heavy decision for parents and students. They compare websites, read reviews, watch campus content and shortlist online long before an enquiry. Institutions with a dated presence or weak search visibility simply don't make the shortlist — regardless of how good the education is.",
+      "We help education brands present themselves credibly with a clear, informative website, strong local SEO for course and location searches, and social content that showcases campus life and outcomes. Admission enquiry paths are made prominent and simple, and campaigns are timed around admission cycles to maximise applications."
+    ],
+    "challenges": ["Research-heavy, high-stakes decisions", "Reaching both parents and students", "Admission-cycle timing and seasonality", "Credibility and social proof are critical"],
+    "services": ["seo", "social-media-marketing", "content-marketing"],
+    "examples": ["Goan schools & academies"],
+    "faqs": [
+      { "q": "Can you drive admission enquiries specifically?", "a": "Yes — we build clear enquiry paths, run campaigns timed to your admission cycles, and target the courses and locations parents and students search for." },
+      { "q": "How do you build credibility for an institution?", "a": "Through an informative, professional website, genuine campus content, reviews, and content that showcases outcomes and faculty expertise." }
+    ]
+  }
 ]

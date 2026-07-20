@@ -48,14 +48,14 @@
     { "name": "Kenkre Dental", "tag": "Healthcare", "badge": "KD", "color": "#e5233d" }
   ],
   "hashtags": [
-    { "tag": "#DigitalMarketing", "href": "/capabilities.html#digital-marketing" },
-    { "tag": "#SEO", "href": "/capabilities.html#seo" },
-    { "tag": "#WebDesign", "href": "/capabilities.html#web-design-development" },
-    { "tag": "#GoogleAds", "href": "/capabilities.html#digital-marketing" },
-    { "tag": "#SocialMedia", "href": "/capabilities.html#social-media-marketing" },
-    { "tag": "#Branding", "href": "/capabilities.html#branding-creative" },
-    { "tag": "#ContentMarketing", "href": "/capabilities.html#content-marketing" },
-    { "tag": "#LocalSEO", "href": "/capabilities.html#seo" },
+    { "tag": "#DigitalMarketing", "href": "/capabilities/digital-marketing.html" },
+    { "tag": "#SEO", "href": "/capabilities/seo.html" },
+    { "tag": "#WebDesign", "href": "/capabilities/web-design-development.html" },
+    { "tag": "#GoogleAds", "href": "/capabilities/digital-marketing.html" },
+    { "tag": "#SocialMedia", "href": "/capabilities/social-media-marketing.html" },
+    { "tag": "#Branding", "href": "/capabilities/branding-creative.html" },
+    { "tag": "#ContentMarketing", "href": "/capabilities/content-marketing.html" },
+    { "tag": "#LocalSEO", "href": "/capabilities/seo.html" },
     { "tag": "#WebHosting", "href": "https://www.sanctify.co.in" },
     { "tag": "#GoaBusiness", "href": "/industries.html" }
   ],

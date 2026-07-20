@@ -1,8 +1,52 @@
 [
-  { "client": "Mercedes-Benz (Counto Motors)", "industry": "Automotive", "location": "Ribandar / Porvorim, Goa", "service": "Digital marketing, SEO & SEM", "img": "automobile", "summary": "Full digital marketing, SEO and paid search for the Mercedes-Benz dealership — driving qualified showroom enquiries across North Goa.", "inLink": "https://www.sanctify.in/counto-motors-mercedes-benz-dealership-in-ribander-north-goa-goa/", "inAnchor": "the Counto Motors Mercedes-Benz case study on Sanctify Goa" },
-  { "client": "Casino Pride", "industry": "Entertainment", "location": "Goa", "service": "Brand identity & guidelines", "img": "nightlife", "summary": "Brand identity and guidelines for one of Goa's best-known entertainment destinations." },
-  { "client": "Hindustan Petroleum", "industry": "Corporate", "location": "Goa", "service": "Event management & social media", "img": "professional", "summary": "On-ground event management and social media coverage for a national energy brand." },
-  { "client": "Hotel Supreme Grande", "industry": "Hospitality", "location": "Calangute, Goa", "service": "Website & Facebook marketing", "img": "hotel", "summary": "A booking-focused hotel website plus Facebook marketing to help fill rooms through peak season." },
-  { "client": "Kenkre Dental Care", "industry": "Healthcare", "location": "Panjim, Goa", "service": "Clinic website & local SEO", "img": "healthcare", "summary": "A trust-building clinic website and local SEO that makes the practice easy to find and book in Panjim.", "inLink": "https://www.sanctify.in/kenkre-dental-care-dental-clinic-in-panjim-north-goa-goa/", "inAnchor": "the Kenkre Dental Care case study on Sanctify Goa" },
-  { "client": "Mahalasa Travels", "industry": "Travel", "location": "Vasco, Goa", "service": "Website design", "img": "travel", "summary": "A clean, conversion-ready website for a Vasco-based travel operator." }
+  {
+    "slug": "mercedes-benz-counto-motors", "client": "Mercedes-Benz (Counto Motors)", "industry": "Automotive", "location": "Ribandar / Porvorim, Goa", "service": "Digital marketing, SEO & SEM", "img": "automobile",
+    "summary": "Full digital marketing, SEO and paid search for the Mercedes-Benz dealership — driving qualified showroom enquiries across North Goa.",
+    "challenge": "A globally prestigious brand needed a local digital presence that matched its premium showroom experience — and that reliably fed qualified test-drive and service enquiries to the sales team, rather than low-quality clicks.",
+    "approach": ["Built and optimised high-intent landing pages for models, offers and service", "Ran targeted Google Ads and Meta campaigns aligned to buyer intent", "Strengthened local SEO and Google Business Profile for dealer and service searches", "Set up call and form tracking to attribute every enquiry to its source"],
+    "results": ["More qualified showroom and test-drive enquiries", "Clear attribution from ad spend to real leads", "Consistent local visibility for dealer and service searches"],
+    "quote": "Sanctify paired our brand standards with marketing that actually filled the showroom.",
+    "inLink": "https://www.sanctify.in/counto-motors-mercedes-benz-dealership-in-ribander-north-goa-goa/", "inAnchor": "the Counto Motors Mercedes-Benz case study on Sanctify Goa"
+  },
+  {
+    "slug": "casino-pride", "client": "Casino Pride", "industry": "Entertainment", "location": "Panjim, Goa", "service": "Brand identity & guidelines", "img": "nightlife",
+    "summary": "Brand identity and guidelines for one of Goa's best-known entertainment destinations.",
+    "challenge": "One of Goa's most recognisable entertainment names needed a cohesive brand identity and clear guidelines to stay consistent and premium across a wide range of touchpoints.",
+    "approach": ["Developed a refined visual identity and mark", "Defined colour, typography and usage rules", "Created a brand guidelines system for consistent application", "Delivered templates for print and digital use"],
+    "results": ["A consistent, premium brand across every touchpoint", "Clear guidelines for internal and partner use", "A stronger, more recognisable brand presence"],
+    "quote": ""
+  },
+  {
+    "slug": "hindustan-petroleum", "client": "Hindustan Petroleum", "industry": "Corporate", "location": "Goa", "service": "Event management & social media", "img": "professional",
+    "summary": "On-ground event management and social media coverage for a national energy brand.",
+    "challenge": "A national energy brand needed professional on-ground event execution paired with real-time social media coverage that reflected its corporate stature.",
+    "approach": ["Planned and managed on-ground event logistics", "Produced live social media coverage and content", "Maintained brand-consistent messaging throughout", "Delivered post-event content and reporting"],
+    "results": ["Smoothly executed corporate events", "Engaging real-time social coverage", "Content assets for ongoing brand use"],
+    "quote": ""
+  },
+  {
+    "slug": "hotel-supreme-grande", "client": "Hotel Supreme Grande", "industry": "Hospitality", "location": "Calangute, Goa", "service": "Website & Facebook marketing", "img": "hotel",
+    "summary": "A booking-focused hotel website plus Facebook marketing to help fill rooms through peak season.",
+    "challenge": "A Calangute hotel needed to drive more direct bookings and reduce reliance on high-commission OTA platforms, especially through peak season.",
+    "approach": ["Designed a fast, booking-focused hotel website", "Optimised for mobile and direct-enquiry paths", "Ran targeted Facebook campaigns around peak demand", "Highlighted offers and experiences to drive reservations"],
+    "results": ["More direct booking enquiries", "Reduced dependence on OTA commissions", "Stronger seasonal occupancy"],
+    "quote": ""
+  },
+  {
+    "slug": "kenkre-dental-care", "client": "Kenkre Dental Care", "industry": "Healthcare", "location": "Panjim, Goa", "service": "Clinic website & local SEO", "img": "healthcare",
+    "summary": "A trust-building clinic website and local SEO that makes the practice easy to find and book in Panjim.",
+    "challenge": "A dental practice in Panjim needed to be easy to find for local patients searching online, and to convert that visibility into booked appointments with a credible, reassuring web presence.",
+    "approach": ["Built a clean, trust-building clinic website", "Optimised local SEO and Google Business Profile", "Made appointment booking simple and prominent", "Supported reputation with review prompts"],
+    "results": ["Improved local search visibility in Panjim", "Easier appointment booking for patients", "A more credible, professional online presence"],
+    "quote": "",
+    "inLink": "https://www.sanctify.in/kenkre-dental-care-dental-clinic-in-panjim-north-goa-goa/", "inAnchor": "the Kenkre Dental Care case study on Sanctify Goa"
+  },
+  {
+    "slug": "mahalasa-travels", "client": "Mahalasa Travels", "industry": "Travel", "location": "Vasco, Goa", "service": "Website design", "img": "travel",
+    "summary": "A clean, conversion-ready website for a Vasco-based travel operator.",
+    "challenge": "A Vasco travel operator needed a clean, modern website that built trust and made it easy for travellers to explore packages and enquire.",
+    "approach": ["Designed a clear, conversion-ready website", "Structured packages and services for easy browsing", "Optimised for mobile and quick enquiries", "Built on an easy-to-update foundation"],
+    "results": ["A professional, trustworthy online presence", "Easier enquiries from travellers", "A site the team can update themselves"],
+    "quote": ""
+  }
 ]
