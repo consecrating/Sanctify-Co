@@ -331,3 +331,21 @@ p{margin-bottom:1rem}
   .rel-grid,.rev-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:560px){.rel-grid,.rev-grid{grid-template-columns:1fr}}
+
+
+/* ============ industries grid — redesigned card layout ============ */
+.ind-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.ind-card{display:grid;grid-template-columns:.45fr .55fr;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-s);transition:transform .22s,box-shadow .22s,border-color .22s}
+.ind-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-l);border-color:var(--acc-soft)}
+.ind-img{min-height:240px;background-size:cover;background-position:center}
+.ind-body{padding:28px 30px;display:flex;flex-direction:column;justify-content:center}
+.ind-icon{width:44px;height:44px;border-radius:12px;background:var(--acc-soft);color:var(--acc-d);display:grid;place-items:center;margin-bottom:12px;transition:background .2s,color .2s}
+.ind-icon svg{width:22px;height:22px}
+.ind-card:hover .ind-icon{background:var(--acc);color:#fff}
+.ind-label{font-family:var(--head);font-weight:700;font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;color:var(--acc-d);margin-bottom:6px;display:block}
+.ind-card h3{font-family:var(--head);font-weight:700;font-size:1.12rem;color:var(--ink);line-height:1.25;margin-bottom:10px}
+.ind-card p{font-size:.9rem;color:var(--body);margin:0 0 14px;line-height:1.6}
+.ind-cta{font-family:var(--head);font-weight:600;font-size:.88rem;color:var(--acc-d);margin-top:auto;display:inline-flex;align-items:center;gap:6px;transition:color .2s}
+.ind-card:hover .ind-cta{color:var(--acc)}
+@media(max-width:900px){.ind-grid{grid-template-columns:1fr}.ind-card{grid-template-columns:.4fr .6fr}}
+@media(max-width:560px){.ind-card{grid-template-columns:1fr}.ind-img{min-height:180px}}
