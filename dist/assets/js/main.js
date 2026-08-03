@@ -108,3 +108,7 @@
   var y = document.getElementById("year"); if (y) y.textContent = new Date().getFullYear();
 })();
 
+
+
+// TOC scroll-spy (article pages)
+(function(){var toc=document.querySelector(".toc");if(!toc)return;var links=[].slice.call(toc.querySelectorAll("a"));var ids=links.map(function(a){return a.getAttribute("href").slice(1);});var heads=ids.map(function(id){return document.getElementById(id);});function onScroll(){var y=window.scrollY+140;var idx=0;for(var i=0;i<heads.length;i++){if(heads[i]&&heads[i].offsetTop<=y)idx=i;}links.forEach(function(a,i){a.classList.toggle("active",i===idx);});}window.addEventListener("scroll",onScroll,{passive:true});onScroll();})();
