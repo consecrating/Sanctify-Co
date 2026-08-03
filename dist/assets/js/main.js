@@ -98,7 +98,7 @@
   var form = document.querySelector("#lead-form");
   if (form) form.addEventListener("submit", function (e) {
     e.preventDefault();
-    var d = new FormData(form), to = form.getAttribute("data-email") || "business@sanctify.biz",
+    var d = new FormData(form), to = form.getAttribute("data-email") || "help@sanctify.in",
         status = form.querySelector(".form-status");
     var body = ["Name: " + (d.get("name") || ""), "Email: " + (d.get("email") || ""), "Company: " + (d.get("company") || ""), "Message: " + (d.get("message") || ""), "", "From: " + location.href];
     window.location.href = "mailto:" + to + "?subject=" + encodeURIComponent("Enquiry from Sanctify.co") + "&body=" + encodeURIComponent(body.join("\n"));

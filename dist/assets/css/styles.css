@@ -188,9 +188,9 @@ p{margin-bottom:1rem}
 .faq[open] summary::after{transform:rotate(45deg)}
 .faq .b{padding:0 24px 20px;color:var(--body)}
 /* CTA */
-.ctabox{background:var(--ink);border-radius:26px;padding:60px 40px;text-align:center;color:#fff;position:relative;overflow:hidden}
+.ctabox{background:linear-gradient(135deg,#c20b58 0%,#9e0946 50%,#6b0633 100%);border-radius:26px;padding:60px 40px;text-align:center;color:#fff;position:relative;overflow:hidden}
 .ctabox h2{color:#fff}
-.ctabox p{color:#a9b4c6;max-width:52ch;margin:14px auto 26px}
+.ctabox p{color:rgba(255,255,255,.85);max-width:52ch;margin:14px auto 26px}
 .ctabox .acts{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 /* footer */
 .footer{position:relative;background:var(--ink);color:#93a0b6;padding:0 0 26px;overflow:hidden}
