@@ -470,3 +470,12 @@ p{margin-bottom:1rem}
 .mega-promo2 .mp-a{display:inline-flex;align-items:center;gap:6px;font-family:var(--head);font-weight:600;font-size:.82rem;color:var(--acc-d);background:#fff;padding:9px 16px;border-radius:100px;width:fit-content;transition:transform .15s}
 .mega-promo2 .mp-a:hover{transform:translateX(3px)}
 @media(max-width:960px){.mega-panel{display:none!important}}
+
+
+/* Lead magnet box */
+.lead-magnet{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;background:linear-gradient(135deg,var(--acc),var(--acc-d) 70%,#6b0633);color:#fff;border-radius:20px;padding:30px 34px;margin:40px 0 0;box-shadow:var(--shadow)}
+.lead-magnet .lm-ey{font-family:var(--head);font-size:.66rem;text-transform:uppercase;letter-spacing:.12em;opacity:.85;display:block;margin-bottom:8px}
+.lead-magnet h3{font-family:var(--head);font-weight:700;font-size:1.35rem;color:#fff;margin-bottom:8px;line-height:1.2}
+.lead-magnet p{margin:0;font-size:.95rem;opacity:.9;max-width:52ch}
+.lead-magnet .btn{flex-shrink:0}
+@media(max-width:640px){.lead-magnet{flex-direction:column;align-items:flex-start}}
