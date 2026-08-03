@@ -351,30 +351,6 @@ p{margin-bottom:1rem}
 @media(max-width:560px){.ind-card{grid-template-columns:1fr}.ind-img{min-height:180px}}
 
 
-/* ============ Mega Menu ============ */
-.mega-wrap{position:fixed;top:78px;left:50%;transform:translateX(-50%);width:min(960px,calc(100vw - 40px));background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-l);padding:32px 34px;display:grid;grid-template-columns:1fr 1fr 1fr 240px;gap:28px;opacity:0;visibility:hidden;transition:opacity .22s,transform .18s,visibility .22s;z-index:200;pointer-events:none}
-.mega-wrap.show{opacity:1;visibility:visible;pointer-events:auto}
-.mega::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px}
-.mega-col h4{font-family:var(--head);font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--acc-d);margin-bottom:14px;font-weight:700}
-.mega-col ul{list-style:none;display:grid;gap:4px}
-.mega-col li{position:static}
-.mega-col a{display:flex;align-items:center;gap:10px;padding:7px 10px;border-radius:10px;transition:background .15s}
-.mega-col a:hover{background:var(--soft)}
-.mega-col .mi{width:32px;height:32px;border-radius:8px;background:var(--acc-soft);color:var(--acc-d);display:grid;place-items:center;flex-shrink:0;transition:background .2s,color .2s}
-.mega-col a:hover .mi{background:var(--acc);color:#fff}
-.mega-col .mi svg{width:16px;height:16px}
-.mega-col .mt{font-family:var(--head);font-weight:600;font-size:.88rem;color:var(--ink);display:block}
-.mega-col .ms{font-size:.76rem;color:var(--muted);display:block;margin-top:1px}
-.mega-promo{border-radius:var(--radius-s);overflow:hidden;display:flex;flex-direction:column;background:var(--soft)}
-.mega-promo img{width:100%;height:130px;object-fit:cover}
-.mega-promo .mp-body{padding:16px;background:linear-gradient(135deg,var(--acc),var(--acc-d));color:#fff;flex:1;display:flex;flex-direction:column;justify-content:center}
-.mega-promo .mp-eyebrow{font-family:var(--head);font-size:.62rem;text-transform:uppercase;letter-spacing:.1em;opacity:.8;margin-bottom:4px}
-.mega-promo .mp-title{font-family:var(--head);font-weight:700;font-size:1rem;margin-bottom:6px}
-.mega-promo .mp-desc{font-size:.78rem;opacity:.88;line-height:1.5;margin-bottom:10px}
-.mega-promo .mp-btn{display:inline-flex;align-items:center;gap:6px;font-family:var(--head);font-weight:600;font-size:.82rem;color:#fff;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);padding:8px 14px;border-radius:100px;transition:background .2s;width:fit-content}
-.mega-promo .mp-btn:hover{background:rgba(255,255,255,.3)}
-@media(max-width:900px){.mega{display:none}}
-
 
 /* ============ Blog / Journal ============ */
 .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
@@ -397,11 +373,11 @@ p{margin-bottom:1rem}
 .blog-featured p{font-size:1rem;color:var(--body);margin-bottom:20px;line-height:1.7}
 .blog-featured .bf-meta{font-size:.82rem;color:var(--muted);margin-bottom:16px}
 /* Blog detail */
-.blog-detail{max-width:1000px;margin:0 auto}
+.blog-detail{max-width:var(--maxw);margin:0 auto}
 .blog-detail h1{font-size:clamp(1.8rem,3.8vw,2.6rem);margin-bottom:16px}
 .blog-detail .bd-meta{font-size:.88rem;color:var(--muted);margin-bottom:28px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .blog-detail .bd-hero{width:100%;border-radius:var(--radius);margin-bottom:32px;box-shadow:var(--shadow)}
-.blog-detail .prose{line-height:1.85;font-size:1.08rem;max-width:none}
+.blog-detail .prose{line-height:1.85;font-size:1.1rem;max-width:none}
 .blog-detail .prose h2{font-size:1.6rem;margin:38px 0 16px}
 .blog-detail .prose h3{font-size:1.25rem;margin:28px 0 12px}
 .blog-detail .prose ul,.blog-detail .prose ol{margin:14px 0 14px 28px}
@@ -410,3 +386,27 @@ p{margin-bottom:1rem}
 .blog-detail .prose p{margin-bottom:18px}
 @media(max-width:900px){.blog-grid{grid-template-columns:1fr 1fr}.blog-featured{grid-template-columns:1fr}}
 @media(max-width:560px){.blog-grid{grid-template-columns:1fr}}
+
+
+/* ============ Mega Menu (v2 — JS injected to body, robust) ============ */
+.mega-panel{position:fixed;top:74px;left:50%;transform:translateX(-50%) translateY(10px);width:min(1080px,calc(100vw - 48px));background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow-l);padding:30px 32px;display:grid;grid-template-columns:1fr 1fr 1fr 270px;gap:26px;opacity:0;visibility:hidden;transition:opacity .2s ease,transform .2s ease,visibility .2s;z-index:300}
+.mega-panel.open{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.mega-panel h4{font-family:var(--head);font-size:.7rem;text-transform:uppercase;letter-spacing:.12em;color:var(--acc-d);margin:0 0 14px;font-weight:700}
+.mega-panel ul{list-style:none;display:grid;gap:3px;margin:0;padding:0}
+.mega-panel li{margin:0;padding:0}
+.mega-link{display:flex;align-items:center;gap:11px;padding:8px 10px;border-radius:11px;transition:background .15s}
+.mega-link:hover{background:var(--soft)}
+.mega-ic{width:34px;height:34px;border-radius:9px;background:var(--acc-soft);color:var(--acc-d);display:grid;place-items:center;flex-shrink:0;transition:background .18s,color .18s}
+.mega-link:hover .mega-ic{background:var(--acc);color:#fff}
+.mega-ic svg{width:17px;height:17px}
+.mega-tt{font-family:var(--head);font-weight:600;font-size:.9rem;color:var(--ink);display:block;line-height:1.2}
+.mega-ss{font-size:.76rem;color:var(--muted);display:block;margin-top:2px}
+.mega-promo2{border-radius:14px;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow-s)}
+.mega-promo2 .mp-img{height:120px;background-size:cover;background-position:center}
+.mega-promo2 .mp-inner{padding:18px;background:linear-gradient(150deg,var(--acc),var(--acc-d) 70%,#6b0633);color:#fff;flex:1;display:flex;flex-direction:column;justify-content:center}
+.mega-promo2 .mp-ey{font-family:var(--head);font-size:.62rem;text-transform:uppercase;letter-spacing:.12em;opacity:.85;margin-bottom:5px}
+.mega-promo2 .mp-h{font-family:var(--head);font-weight:700;font-size:1.05rem;margin-bottom:7px}
+.mega-promo2 .mp-p{font-size:.8rem;opacity:.9;line-height:1.5;margin-bottom:14px}
+.mega-promo2 .mp-a{display:inline-flex;align-items:center;gap:6px;font-family:var(--head);font-weight:600;font-size:.82rem;color:var(--acc-d);background:#fff;padding:9px 16px;border-radius:100px;width:fit-content;transition:transform .15s}
+.mega-promo2 .mp-a:hover{transform:translateX(3px)}
+@media(max-width:960px){.mega-panel{display:none!important}}
