@@ -54,7 +54,7 @@
       link("/journal.html", svg.journal, "Journal", "Latest insights") +
       '</ul></div>';
 
-    var promo = '<div class="mega-promo2"><div class="mp-img" style="background-image:url(\'/assets/img/digital-marketing-guide.jpg\')"></div><div class="mp-inner"><span class="mp-ey">From the Journal</span><span class="mp-h">Insights &amp; ideas</span><span class="mp-p">Marketing, design &amp; growth stories from the Sanctify team in Goa.</span><a class="mp-a" href="/journal.html">Read the Journal &rarr;</a></div></div>';
+    var promo = '<div class="mega-promo2"><div class="mp-img" style="background-image:url(\'/assets/img/digital-marketing-guide.jpg\')"></div><div class="mp-inner"><span class="mp-ey">From the Journal</span><span class="mp-h">Insights &amp; ideas</span><span class="mp-p">Marketing, design &amp; growth stories from the Sanctify team in Goa.</span><a class="mp-a" href="/journal.html">Read the Journal <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-1px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div></div>';
 
     var panel = document.createElement("div");
     panel.className = "mega-panel";
