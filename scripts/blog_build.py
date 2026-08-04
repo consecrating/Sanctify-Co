@@ -118,7 +118,7 @@ def render_article(p):
     <div class="faqwrap">{faqs_html}</div>
     <div class="lead-magnet">
       <div class="lm-body"><span class="lm-ey">Free for Goa businesses</span><h3>{lm["title"]}</h3><p>{lm["desc"]}</p></div>
-      <a class="btn btn-acc-lt" href="/contact.html">{lm["cta"]} &rarr;</a>
+      <a class="btn btn-acc-lt" href="/contact.html">{lm["cta"]} <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="margin-left:7px;vertical-align:-2px"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
     <div class="author-card"><span class="aav">S</span><div><div class="an">Sanctify Team</div><div class="ab">Goa's award-winning digital marketing agency since 2012 — helping 100+ brands rank higher and grow.</div></div></div>
     <div class="share-bar"><span>Share:</span>

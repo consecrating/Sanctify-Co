@@ -477,7 +477,8 @@ p{margin-bottom:1rem}
 .lead-magnet .lm-ey{font-family:var(--head);font-size:.66rem;text-transform:uppercase;letter-spacing:.12em;opacity:.85;display:block;margin-bottom:8px}
 .lead-magnet h3{font-family:var(--head);font-weight:700;font-size:1.35rem;color:#fff;margin-bottom:8px;line-height:1.2}
 .lead-magnet p{margin:0;font-size:.95rem;opacity:.9;max-width:52ch}
-.lead-magnet .btn{flex-shrink:0}
+.lead-magnet .btn,.lead-magnet a.btn{flex-shrink:0;background:#fff;color:var(--acc-d);border:0;text-decoration:none;font-weight:700;box-shadow:0 8px 22px rgba(0,0,0,.18)}
+.lead-magnet .btn:hover,.lead-magnet a.btn:hover{background:#fff;color:var(--acc);transform:translateY(-3px);text-decoration:none}
 @media(max-width:640px){.lead-magnet{flex-direction:column;align-items:flex-start}}
 
 
