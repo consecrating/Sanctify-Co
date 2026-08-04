@@ -491,3 +491,35 @@ p{margin-bottom:1rem}
 .pagination li.active span{background:var(--acc);border-color:var(--acc);color:#fff}
 .pagination li.prev a,.pagination li.next a{font-size:1.2rem}
 .pagination li.disabled span{opacity:.4;cursor:not-allowed}
+
+
+/* ===== Flagship campaigns (industries) ===== */
+.flagship-hero{display:grid;grid-template-columns:1.12fr .88fr;align-items:stretch;margin-bottom:30px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-s)}
+a.flagship-hero,a.flagship-card{text-decoration:none;color:inherit;transition:transform .22s,box-shadow .22s}
+a.flagship-hero:hover,a.flagship-card:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
+.flagship-hero .fh-img{background-size:cover;background-position:center;min-height:420px}
+.flagship-hero .fh-body{display:flex;flex-direction:column;justify-content:center;padding:40px 44px}
+.flagship-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.flagship-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-s);display:flex;flex-direction:column}
+.flagship-card .fc-img{background-size:cover;background-position:center;height:230px}
+.flagship-card .fc-body{padding:26px 28px 30px;display:flex;flex-direction:column;flex:1}
+.fh-tag{font-family:var(--head);font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--acc-d);margin-bottom:12px}
+.flagship-hero h3,.flagship-card h3{font-family:var(--head);color:var(--ink);line-height:1.25;margin:0 0 12px}
+.flagship-hero h3{font-size:clamp(1.45rem,2.5vw,2rem)}
+.flagship-card h3{font-size:1.22rem}
+.flagship-hero p,.flagship-card p{color:var(--body);line-height:1.7;font-size:.97rem;margin:0 0 18px}
+.fh-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.fh-tags span{font-family:var(--head);font-size:.72rem;font-weight:600;letter-spacing:.01em;color:var(--acc-d);background:var(--acc-soft);border:1px solid #f3c6da;padding:5px 12px;border-radius:999px}
+.flagship-card .fh-tags{margin-top:auto;margin-bottom:0}
+.fh-cta{font-family:var(--head);font-weight:700;font-size:.9rem;color:var(--acc-d);display:inline-flex;align-items:center;gap:6px}
+@media(max-width:900px){.flagship-hero{grid-template-columns:1fr}.flagship-hero .fh-img{min-height:250px}.flagship-hero .fh-body{padding:28px 24px 32px}.flagship-grid{grid-template-columns:1fr}}
+
+/* ===== Service domains table ===== */
+.svc-domains{width:100%;border-collapse:separate;border-spacing:0;margin-top:8px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-s)}
+.svc-domains th,.svc-domains td{text-align:left;padding:20px 24px;border-bottom:1px solid var(--line);vertical-align:top}
+.svc-domains thead th{background:var(--ink);color:#fff;font-family:var(--head);font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;border-bottom:none}
+.svc-domains tbody th{font-family:var(--head);color:var(--ink);font-size:1.02rem;font-weight:700;width:30%}
+.svc-domains tbody td{color:var(--body);line-height:1.65;font-size:.96rem}
+.svc-domains tbody tr:last-child th,.svc-domains tbody tr:last-child td{border-bottom:none}
+.svc-domains tbody tr:hover td,.svc-domains tbody tr:hover th{background:var(--soft)}
+@media(max-width:680px){.svc-domains thead{display:none}.svc-domains tbody th,.svc-domains tbody td{display:block;width:auto;border-bottom:none;padding:16px 20px 0}.svc-domains tbody td{padding-top:6px;padding-bottom:18px;border-bottom:1px solid var(--line)}.svc-domains tbody tr:last-child td{border-bottom:none}}
