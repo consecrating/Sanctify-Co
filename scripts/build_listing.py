@@ -5,11 +5,16 @@ DIST = "/projects/sandbox/Sanctify-Co/dist"
 sys.path.insert(0, os.path.dirname(__file__))
 from blogs_data import POSTS
 
-FEAT = {"slug":"seo-guide-goa-2026","title":"The Complete SEO Guide for Goa Businesses in 2026","cat":"SEO",
+SEO_GUIDE = {"slug":"seo-guide-goa-2026","title":"The Complete SEO Guide for Goa Businesses in 2026","cat":"SEO",
         "img":"blog-seo-goa.jpg","date":"2026-08-03","datefmt":"3 Aug 2026","read":12,
         "excerpt":"Everything a Goa business needs to know about ranking on Google — local SEO, GBP, AI-search optimisation and content strategy."}
 
 PER_PAGE_1_GRID = 15   # page 1 grid cards (16 total incl. featured)
+
+# Combine all posts (SEO guide + 20) and sort newest-first by date
+ALL_POSTS = sorted([SEO_GUIDE] + list(POSTS), key=lambda p: p["date"], reverse=True)
+FEAT = ALL_POSTS[0]            # newest post is featured
+REST = ALL_POSTS[1:]           # remaining, already newest-first
 
 def card(p):
     return (f'<a class="blog-card" href="/journal/{p["slug"]}.html"><div class="bc-img" style="background-image:url(\'/assets/img/{p["img"]}\')">'
@@ -47,8 +52,8 @@ def pagination(current, total, urls):
 # Page URLs
 URLS = ["/journal.html", "/journal/page/2.html"]
 
-grid_p1 = POSTS[:PER_PAGE_1_GRID]
-grid_p2 = POSTS[PER_PAGE_1_GRID:]
+grid_p1 = REST[:PER_PAGE_1_GRID]
+grid_p2 = REST[PER_PAGE_1_GRID:]
 
 def build_page(page_num, feat_html, cards_list, intro_html):
     cards = "\n  ".join(card(p) for p in cards_list)
