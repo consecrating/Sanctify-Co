@@ -1,0 +1,15 @@
+loc-panaji|0f76e55c-2a3e-4070-9597-48695ade4170
+loc-calangute|68ba4ee8-ab09-4e04-9188-6971ef34f98a
+loc-baga|c5926240-ff56-4d10-89c1-64d7f3f1688c
+loc-candolim|7bec7e89-da18-42f8-8605-810e6e201e2a
+loc-mapusa|4d078e87-b5fe-4da3-bb57-7d0d7ddb9c5a
+loc-porvorim|f339675f-bdbc-4c45-8f99-e3e440cb16b3
+loc-anjuna|f91b7620-1e62-426e-9f64-be8ab356616a
+loc-assagao|bee3887d-96f2-48c9-808b-335cc3242b25
+loc-morjim|076eaf7d-9d7b-46bc-a48d-c32a03514b62
+loc-margao|fc819b8e-93eb-4f53-ad11-0f2f6707b1d3
+loc-vasco|3d5210d9-8627-459c-a5dc-074c723da23c
+loc-colva|88090157-06fd-41e4-a50a-ed526d97adec
+loc-cavelossim|46afb10e-106b-4134-bc27-ceabebb83a0a
+loc-palolem|c8873787-d565-4d99-8ac2-037358252b4d
+loc-ponda|f00d39bc-ec08-4235-b24b-beec860fc91a

@@ -1,0 +1,15 @@
+loc-panaji|Aerial view of Panaji Panjim Goa city with colourful Portuguese Latin Quarter houses, the Mandovi river and promenade, commercial capital, warm daylight, professional travel photography
+loc-calangute|Calangute beach Goa aerial with golden sand, beach shacks, umbrellas and busy shoreline, vibrant tourist hub, bright sunny day
+loc-baga|Baga beach Goa at dusk with beach shacks, water sports jetskis and lively nightlife glow, popular tourist destination
+loc-candolim|Candolim Goa upscale beach with palm trees, premium resorts and calm shoreline, elegant tourist area, golden hour
+loc-mapusa|Mapusa Goa bustling market town street with shops, vendors and local commerce, authentic Goan town, daytime
+loc-porvorim|Porvorim Goa modern commercial and residential area with contemporary buildings, offices and greenery on a hillside, business hub
+loc-anjuna|Anjuna Goa cliffside with the famous flea market, cafes and Arabian sea views, bohemian tourist vibe, sunny
+loc-assagao|Assagao Goa upscale village with luxury villas, boutique cafes and lush green surroundings, premium lifestyle, soft light
+loc-morjim|Morjim beach North Goa serene shoreline with yoga and wellness resorts, calm waves and palm trees, tranquil upscale
+loc-margao|Margao Madgaon South Goa commercial centre with the historic municipal market, shops and busy town square, daytime
+loc-vasco|Vasco da Gama Goa port city skyline with harbour, ships and commercial buildings, industrial coastal town, clear day
+loc-colva|Colva beach South Goa wide white sand, palm fringe and resorts, popular family beach destination, bright
+loc-cavelossim|Cavelossim South Goa luxury beach resort with infinity pool, palm trees and pristine shoreline, premium hospitality, golden hour
+loc-palolem|Palolem beach Canacona South Goa crescent bay with colourful wooden fishing boats, palms and clear water, scenic tropical
+loc-ponda|Ponda Goa temple town and industrial estate with lush hills, a Hindu temple and small factories, inland Goa commerce
